@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 import heroBg from "@/assets/image.jpg";
 
 const importantDates = [
-  { label: "Full Paper Submission", date: "10th November, 2025" },
-  { label: "Acceptance Notification", date: "10th December, 2025" },
+  { label: "Full Paper Submission", date: "10th December, 2025" },
+  { label: "Acceptance Notification", date: "10th January, 2026" },
   { label: "Registration", date: "20th March, 2026" },
   { label: "Presentation Submission", date: "20th March, 2026" },
   { label: "Conference On", date: "21st – 23rd April, 2026" },
