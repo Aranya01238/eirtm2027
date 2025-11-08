@@ -104,9 +104,9 @@ const importantDates = [
 const generateSlug = (text: string) => {
   return text
     .toLowerCase()
-    .replace(/ & /g, '-')
-    .replace(/ /g, '-')
-    .replace(/[^\w-]+/g, '');
+    .replace(/ & /g, "-")
+    .replace(/ /g, "-")
+    .replace(/[^\w-]+/g, "");
 };
 
 const CallForPapers = () => {
@@ -124,20 +124,21 @@ const CallForPapers = () => {
         if (element) {
           // Adjust this value based on your fixed header height
           const headerOffset = 80;
-          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          const elementPosition =
+            element.getBoundingClientRect().top + window.pageYOffset;
           window.scrollTo({
             top: elementPosition - headerOffset,
-            behavior: "smooth"
+            behavior: "smooth",
           });
         }
       }
     };
 
     handleHashChange(); // Call on mount
-    window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener("hashchange", handleHashChange);
 
     return () => {
-      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener("hashchange", handleHashChange);
     };
   }, []); // Empty dependency array means this runs once on mount
 
@@ -225,9 +226,10 @@ const CallForPapers = () => {
                   <Card
                     id={trackSlug}
                     className={`p-6 border bg-white rounded-xl shadow-sm transition-all
-                      ${(isCurrentlyHovered || (isHashActive && !hoveredSlug))
-                        ? "border-cyan-400 shadow-[0_0_20px_#06b6d4]"
-                        : "border-sky-100"
+                      ${
+                        isCurrentlyHovered || (isHashActive && !hoveredSlug)
+                          ? "border-cyan-400 shadow-[0_0_20px_#06b6d4]"
+                          : "border-sky-100"
                       }
                       hover:bg-cyan-50 hover:shadow-[0_0_20px_#06b6d4]
                     `}
