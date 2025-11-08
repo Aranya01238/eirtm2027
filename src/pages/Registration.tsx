@@ -5,31 +5,27 @@ import { Check, Users, Briefcase, GraduationCap, Globe } from "lucide-react";
 const Registration = () => {
   const registrationCategories = [
     {
-      category: "Indian Students",
+      category: "Academic (1 Paper)",
       icon: GraduationCap,
-      earlyBird: "₹4,000",
-      regular: "₹5,000",
-      color: "primary",
-    },
-    {
-      category: "Indian Academicians",
-      icon: Users,
-      earlyBird: "₹6,000",
-      regular: "₹7,500",
+      regular: "$250",
       color: "secondary",
     },
     {
-      category: "Indian Industry",
+      category: "Academic (2 Papers)",
+      icon: GraduationCap,
+      regular: "$350",
+      color: "secondary",
+    },
+    {
+      category: "Industry",
       icon: Briefcase,
-      earlyBird: "₹8,000",
-      regular: "₹10,000",
+      regular: "$400",
       color: "primary",
     },
     {
-      category: "Foreign Delegates",
-      icon: Globe,
-      earlyBird: "$200",
-      regular: "$250",
+      category: "Attendee",
+      icon: Users,
+      regular: "$150",
       color: "secondary",
     },
   ];
@@ -54,7 +50,6 @@ const Registration = () => {
           <div className="w-24 h-1 bg-gradient-primary mx-auto mb-6"></div>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Register for ICEBM 2026 and be part of an exciting academic event.
-            Early bird registration closes on "".
           </p>
         </div>
 
@@ -66,10 +61,10 @@ const Registration = () => {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
             <div>
-              <strong>Early Bird Registration:</strong> Until ""
+              <strong>Registration:</strong> Until ""
             </div>
             <div>
-              <strong>Regular Registration:</strong> ""
+              <strong>Late Registration:</strong> ""
             </div>
           </div>
         </Card>
@@ -110,14 +105,6 @@ const Registration = () => {
                     {item.category}
                   </h3>
                   <div className="space-y-3">
-                    <div className="text-center p-3 bg-muted rounded-lg">
-                      <p className="text-sm text-muted-foreground mb-1">
-                        Early Bird
-                      </p>
-                      <p className="text-2xl font-bold text-primary">
-                        {item.earlyBird}
-                      </p>
-                    </div>
                     <div className="text-center p-3 bg-muted rounded-lg">
                       <p className="text-sm text-muted-foreground mb-1">
                         Regular
@@ -248,7 +235,7 @@ const Registration = () => {
         <Card className="p-12 text-center bg-gradient-primary text-white">
           <h2 className="text-4xl font-bold mb-4">Register Now</h2>
           <p className="text-xl mb-8 opacity-90">
-            Secure your spot at ICEBM 2026 with early bird rates
+            Secure your spot at ICEBM 2026
           </p>
           <Button
             size="lg"

@@ -3,72 +3,91 @@ import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { FileText, Target, Zap, Cpu, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react"; // Added useState import
 
 const tracks = [
   {
     category: "Business",
     topics: [
-      "Branding and Corporate Identity",
-      "Business Administration and Leadership",
-      "Business Law and Corporate Governance",
-      "Business Planning and Strategic Models",
-      "Competitive Strategy and Negotiation",
-      "Risk Management and Venture Capital",
+      "Corporate Governance & Ethics",
+      "Strategic Planning & Competitive Advantage",
+      "Entrepreneurship & Business Models",
+      "Global Markets & Emerging Economies",
+      "Organizational Behaviour & Leadership",
+      "Risk Management & Business Continuity",
+      "Mergers, Acquisitions & Negotiations",
     ],
   },
   {
     category: "Management",
     topics: [
-      "Human Resource and Talent Management",
-      "Financial and Operations Management",
-      "Project and Change Management",
-      "Sustainability and Environment Management",
-      "Technology and Innovation Management",
-      "Quality Assurance and Strategic Planning",
+      "Human Resource & Talent Development",
+      "Financial & Risk Management",
+      "Operations & Supply Chain Management",
+      "Technology, Innovation and AI in Management",
+      "Sustainability & Environmental Management",
+      "Strategic & Quality Management",
+      "Event, Tourism & Hospitality Management",
     ],
   },
   {
     category: "Accounting & Banking",
     topics: [
-      "Corporate and Cost Accounting",
-      "Accounting Ethics and Transparency",
-      "Banking Regulations and Risk Management",
-      "Monetary Policy and Financial Inclusion",
-      "Stock Market, Securities, and Investments",
-      "Cryptocurrencies and Islamic Banking",
+      "Financial & Managerial Accounting",
+      "Corporate & Public Accounting Standards",
+      "Banking Systems & Monetary Policy",
+      "Financial Instruments & Capital Markets",
+      "Auditing & Risk Analysis",
+      "Cryptocurrency & Digital Banking",
+      "International & Islamic Banking Practices",
     ],
   },
   {
     category: "Finance",
     topics: [
-      "Corporate and Managerial Finance",
-      "Behavioral and Quantitative Finance",
-      "Financial Risk Management",
-      "Entrepreneurial and Venture Capital Financing",
-      "Financial Regulations and Inclusion",
-      "Global and International Finance",
+      "Corporate Finance & Investment Strategies",
+      "Behavioral & Empirical Finance",
+      "Financial Markets, Regulations & Inclusion",
+      "Risk Management, Financial Engineering and Fintech",
+      "Insurance & Financial Services",
+      "Global Financial Crisis & Policy Responses",
+      "Public, Personal & Project Finance",
     ],
   },
   {
     category: "Economics",
     topics: [
-      "Macroeconomics and Microeconomics",
-      "Fiscal Policy and Economic Development",
-      "Employment, Inflation, and Growth",
-      "Political and International Economics",
-      "Applied and Energy Economics",
-      "Human Capital and Income Distribution",
+      "Microeconomics & Macroeconomics",
+      "Economic Growth & Development",
+      "Fiscal & Monetary Policy",
+      "International & Comparative Economics",
+      "Employment, Inflation & Human Capital",
+      "Econometrics & Data Analysis",
+      "Energy & Environmental Economics",
     ],
   },
   {
-    category: "Marketing & E-Commerce",
+    category: "Marketing",
     topics: [
-      "Digital and Social Media Marketing",
-      "Consumer Behavior and Brand Equity",
-      "AI and Big Data in Retail",
-      "Cross-Border and Mobile E-Commerce",
-      "E-Commerce Laws, Security, and Data Privacy",
-      "Smart Logistics and Omnichannel Systems",
+      "Consumer Behavior & Brand Management",
+      "Digital, Social & Influencer Marketing",
+      "Marketing Analytics & Artificial Intelligence",
+      "International & Cross-Cultural Marketing",
+      "Content & Viral Marketing Strategies",
+      "CRM & Customer Experience Management",
+      "Sustainable & Ethical Marketing Practices",
+    ],
+  },
+  {
+    category: "E-Commerce and Q-Commerce",
+    topics: [
+      "Online Platforms & Marketplaces",
+      "Mobile & Omnichannel Commerce",
+      "Data Privacy & Cybersecurity",
+      "Blockchain & Smart Logistics",
+      "Ecommerce Strategy & Digital Payments",
+      "Big Data & Internet-of-Things Applications",
+      "Cross-Border & Legal Frameworks in Ecommerce",
     ],
   },
 ];
@@ -81,7 +100,47 @@ const importantDates = [
   { event: "Conference Dates", date: "21st – 23rd April, 2026" },
 ];
 
+// Helper function to generate URL-friendly slugs
+const generateSlug = (text: string) => {
+  return text
+    .toLowerCase()
+    .replace(/ & /g, '-')
+    .replace(/ /g, '-')
+    .replace(/[^\w-]+/g, '');
+};
+
 const CallForPapers = () => {
+  const [activeHashSlug, setActiveHashSlug] = useState<string | null>(null);
+  const [hoveredSlug, setHoveredSlug] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      const slug = hash ? hash.substring(1) : null;
+      setActiveHashSlug(slug); // Set the active slug from the URL hash
+
+      if (slug) {
+        const element = document.getElementById(slug);
+        if (element) {
+          // Adjust this value based on your fixed header height
+          const headerOffset = 80;
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: elementPosition - headerOffset,
+            behavior: "smooth"
+          });
+        }
+      }
+    };
+
+    handleHashChange(); // Call on mount
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []); // Empty dependency array means this runs once on mount
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-blue-50 text-[#0f172a] pt-24 pb-16 font-sans">
       <motion.div
@@ -151,26 +210,46 @@ const CallForPapers = () => {
             Conference Tracks
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {tracks.map((track, i) => (
-              <motion.div key={i} whileHover={{ scale: 1.02 }}>
-                <Card className="p-6 border border-sky-100 bg-white hover:bg-cyan-50 rounded-xl shadow-sm transition-all hover:shadow-[0_0_20px_#06b6d4]">
-                  <h3 className="text-xl font-bold mb-3 text-sky-700 flex items-center gap-2">
-                    <Cpu className="h-5 w-5 text-cyan-500" />
-                    <span>{track.category}</span>
-                  </h3>
-                  <ul className="list-disc list-inside text-[#334155] font-medium space-y-1 pl-3">
-                    {track.topics.map((topic, idx) => (
-                      <li
-                        key={idx}
-                        className="hover:text-cyan-600 hover:drop-shadow-[0_0_6px_#06b6d4] transition-all"
-                      >
-                        {topic}
-                      </li>
-                    ))}
-                  </ul>
-                </Card>
-              </motion.div>
-            ))}
+            {tracks.map((track, i) => {
+              const trackSlug = generateSlug(track.category);
+              const isHashActive = activeHashSlug === trackSlug;
+              const isCurrentlyHovered = hoveredSlug === trackSlug;
+
+              return (
+                <motion.div
+                  key={i}
+                  whileHover={{ scale: 1.02 }}
+                  onMouseEnter={() => setHoveredSlug(trackSlug)}
+                  onMouseLeave={() => setHoveredSlug(null)}
+                >
+                  <Card
+                    id={trackSlug}
+                    className={`p-6 border bg-white rounded-xl shadow-sm transition-all
+                      ${(isCurrentlyHovered || (isHashActive && !hoveredSlug))
+                        ? "border-cyan-400 shadow-[0_0_20px_#06b6d4]"
+                        : "border-sky-100"
+                      }
+                      hover:bg-cyan-50 hover:shadow-[0_0_20px_#06b6d4]
+                    `}
+                  >
+                    <h3 className="text-xl font-bold mb-3 text-sky-700 flex items-center gap-2">
+                      <Cpu className="h-5 w-5 text-cyan-500" />
+                      <span>{track.category}</span>
+                    </h3>
+                    <ul className="list-disc list-inside text-[#334155] font-medium space-y-1 pl-3">
+                      {track.topics.map((topic, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-cyan-600 hover:drop-shadow-[0_0_6px_#06b6d4] transition-all"
+                        >
+                          {topic}
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
 

@@ -13,14 +13,27 @@ const importantDates = [
   { label: "Conference On", date: "21st – 23rd April, 2026" },
 ];
 
+// Helper function to generate URL-friendly slugs
+const generateSlug = (text: string) => {
+  return text
+    .toLowerCase()
+    .replace(/ & /g, '-')
+    .replace(/ /g, '-')
+    .replace(/[^\w-]+/g, '');
+};
+
 const tracks = [
   "Business",
   "Management",
   "Accounting & Banking",
   "Finance",
   "Economics",
-  "Marketing & E-Commerce",
-];
+  "Marketing",
+  "E-Commerce and Q-Commerce",
+].map(category => ({
+  category,
+  slug: generateSlug(category)
+}));
 
 const Home = () => {
   return (
@@ -147,12 +160,14 @@ const Home = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 250 }}
             >
-              <Card className="p-6 flex items-center gap-3 border-l-4 border-l-sky-400 bg-white hover:bg-cyan-50 rounded-lg transition-all shadow-sm hover:shadow-[0_0_15px_#06b6d4]">
-                <Cpu className="h-6 w-6 text-sky-500 flex-shrink-0" />
-                <p className="font-semibold text-[#0f172a] text-left">
-                  {track}
-                </p>
-              </Card>
+              <Link to={`/call-for-papers#${track.slug}`}>
+                <Card className="p-6 flex items-center gap-3 border-l-4 border-l-sky-400 bg-white hover:bg-cyan-50 rounded-lg transition-all shadow-sm hover:shadow-[0_0_15px_#06b6d4]">
+                  <Cpu className="h-6 w-6 text-sky-500 flex-shrink-0" />
+                  <p className="font-semibold text-[#0f172a] text-left">
+                    {track.category}
+                  </p>
+                </Card>
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -162,17 +177,13 @@ const Home = () => {
           <div>
             <h3 className="text-2xl font-bold text-sky-700 mb-2">Business</h3>
             <p>
-              Includes topics such as Branding, Business Models, Leadership,
-              Planning, Corporate Governance, Negotiation, Risk Management, and
-              Venture Capital fostering innovation and competitive strategy.
+              Includes Corporate Governance & Ethics, Strategic Planning & Competitive Advantage, Entrepreneurship & Business Models, Global Markets & Emerging Economies, Organizational Behaviour & Leadership, Risk Management & Business Continuity, and Mergers, Acquisitions & Negotiations.
             </p>
           </div>
           <div>
             <h3 className="text-2xl font-bold text-sky-700 mb-2">Management</h3>
             <p>
-              Covers Human Resource Management, Operations Management, Strategic
-              Planning, Financial and Quality Management, Sustainability, and
-              Project Management to enhance global leadership practices.
+              Covers Human Resource & Talent Development, Financial & Risk Management, Operations & Supply Chain Management, Technology, Innovation and AI in Management, Sustainability & Environmental Management, Strategic & Quality Management, and Event, Tourism & Hospitality Management.
             </p>
           </div>
           <div>
@@ -180,35 +191,35 @@ const Home = () => {
               Accounting & Banking
             </h3>
             <p>
-              Encompasses Accounting Ethics, Cost Accounting, Corporate
-              Accounting, Monetary Policy, Stock Market, and Islamic Banking,
-              focusing on transparency and financial inclusion.
+              Encompasses Financial & Managerial Accounting, Corporate & Public Accounting Standards, Banking Systems & Monetary Policy, Financial Instruments & Capital Markets, Auditing & Risk Analysis, Cryptocurrency & Digital Banking, and International & Islamic Banking Practices.
             </p>
           </div>
           <div>
             <h3 className="text-2xl font-bold text-sky-700 mb-2">Finance</h3>
             <p>
-              Topics include Corporate Finance, Financial Risk Management,
-              Behavioral Finance, Venture Capital Financing, Hedge Funds, and
-              Financial Regulations driving innovation in the financial sector.
+              Topics include Corporate Finance & Investment Strategies, Behavioral & Empirical Finance, Financial Markets, Regulations & Inclusion, Risk Management, Financial Engineering and Fintech, Insurance & Financial Services, Global Financial Crisis & Policy Responses, and Public, Personal & Project Finance.
             </p>
           </div>
           <div>
             <h3 className="text-2xl font-bold text-sky-700 mb-2">Economics</h3>
             <p>
-              Focuses on Economic Development, Fiscal Policy, International
-              Economics, Inflation, Employment, and Economic Systems shaping
-              national and global growth paradigms.
+              Focuses on Microeconomics & Macroeconomics, Economic Growth & Development, Fiscal & Monetary Policy, International & Comparative Economics, Employment, Inflation & Human Capital, Econometrics & Data Analysis, and Energy & Environmental Economics.
             </p>
           </div>
           <div>
             <h3 className="text-2xl font-bold text-sky-700 mb-2">
-              Marketing & E-Commerce
+              Marketing
             </h3>
             <p>
-              Includes Digital Marketing, Consumer Behavior, AI in Retail,
-              Cross-Border E-commerce, Data Privacy, Blockchain Security, and
-              Smart Logistics transforming the digital business landscape.
+              Includes Consumer Behavior & Brand Management, Digital, Social & Influencer Marketing, Marketing Analytics & Artificial Intelligence, International & Cross-Cultural Marketing, Content & Viral Marketing Strategies, CRM & Customer Experience Management, and Sustainable & Ethical Marketing Practices.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold text-sky-700 mb-2">
+              E-Commerce and Q-Commerce
+            </h3>
+            <p>
+              Covers Online Platforms & Marketplaces, Mobile & Omnichannel Commerce, Data Privacy & Cybersecurity, Blockchain & Smart Logistics, Ecommerce Strategy & Digital Payments, Big Data & Internet-of-Things Applications, and Cross-Border & Legal Frameworks in Ecommerce.
             </p>
           </div>
         </div>
