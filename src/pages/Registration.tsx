@@ -7,25 +7,25 @@ const Registration = () => {
     {
       category: "Academic (1 Paper)",
       icon: GraduationCap,
-      regular: "$250",
+      regular: "€250",
       color: "secondary",
     },
     {
       category: "Academic (2 Papers)",
       icon: GraduationCap,
-      regular: "$350",
+      regular: "€350",
       color: "secondary",
     },
     {
       category: "Industry",
       icon: Briefcase,
-      regular: "$400",
+      regular: "€400",
       color: "primary",
     },
     {
       category: "Attendee",
       icon: Users,
-      regular: "$150",
+      regular: "€150",
       color: "secondary",
     },
   ];
