@@ -142,46 +142,21 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Tracks Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-blue-50 text-center">
-        <h2 className="text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-cyan-500">
-          Conference Tracks
+      {/* Conference Tracks Button */}
+      <section className="py-16 text-center bg-gradient-to-b from-white to-blue-50">
+        <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-cyan-500 mb-6">
+          Explore Conference Tracks
         </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-sky-500 mx-auto mb-10 rounded"></div>
-        <p className="text-[#1e293b] text-lg mb-12 max-w-3xl mx-auto font-medium">
-          ICEBM 2026 invites contributions under the following major tracks and
-          focus areas:
+        <p className="text-[#1e293b] text-lg mb-10 max-w-3xl mx-auto font-medium">
+          Discover the diverse range of topics and focus areas for ICEBM 2026.
         </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-6"> {/* Removed justify-items-center */}
-          {tracks.map((track, i) => {
-            const isLastItem = i === tracks.length - 1;
-            // Check if the last item is alone in its row for lg (3 columns) and sm (2 columns)
-            const isLastItemAloneInRowLg = isLastItem && (tracks.length % 3 === 1);
-            const isLastItemAloneInRowSm = isLastItem && (tracks.length % 2 === 1);
-
-            return (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 250 }}
-                // Apply centering classes only to the last item if it's alone in its row
-                className={`${isLastItemAloneInRowLg ? 'lg:col-span-3 lg:justify-self-center' : ''} ${isLastItemAloneInRowSm ? 'sm:col-span-2 sm:justify-self-center' : ''}`}
-              >
-                <Link to={`/call-for-papers#${track.slug}`}>
-                  <Card className="p-6 flex items-center gap-3 border-l-4 border-l-sky-400 bg-white hover:bg-cyan-50 rounded-lg transition-all shadow-sm hover:shadow-[0_0_15px_#06b6d4]">
-                    <Cpu className="h-6 w-6 text-sky-500 flex-shrink-0" />
-                    <p className="font-semibold text-[#0f172a] text-left">
-                      {track.category}
-                    </p>
-                  </Card>
-                </Link>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* This section has been removed as per your request. */}
+        <Button
+          asChild
+          size="lg"
+          className="bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-sky-500 hover:to-cyan-600 text-white font-semibold px-8 py-6 shadow-md hover:shadow-[0_0_20px_#06b6d4] transition-transform hover:scale-105"
+        >
+          <Link to="/call-for-papers">View Conference Tracks</Link>
+        </Button>
       </section>
 
       {/* Important Dates */}
