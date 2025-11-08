@@ -153,76 +153,35 @@ const Home = () => {
           focus areas:
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-6">
-          {tracks.map((track, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 250 }}
-            >
-              <Link to={`/call-for-papers#${track.slug}`}>
-                <Card className="p-6 flex items-center gap-3 border-l-4 border-l-sky-400 bg-white hover:bg-cyan-50 rounded-lg transition-all shadow-sm hover:shadow-[0_0_15px_#06b6d4]">
-                  <Cpu className="h-6 w-6 text-sky-500 flex-shrink-0" />
-                  <p className="font-semibold text-[#0f172a] text-left">
-                    {track.category}
-                  </p>
-                </Card>
-              </Link>
-            </motion.div>
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-6"> {/* Removed justify-items-center */}
+          {tracks.map((track, i) => {
+            const isLastItem = i === tracks.length - 1;
+            // Check if the last item is alone in its row for lg (3 columns) and sm (2 columns)
+            const isLastItemAloneInRowLg = isLastItem && (tracks.length % 3 === 1);
+            const isLastItemAloneInRowSm = isLastItem && (tracks.length % 2 === 1);
+
+            return (
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 250 }}
+                // Apply centering classes only to the last item if it's alone in its row
+                className={`${isLastItemAloneInRowLg ? 'lg:col-span-3 lg:justify-self-center' : ''} ${isLastItemAloneInRowSm ? 'sm:col-span-2 sm:justify-self-center' : ''}`}
+              >
+                <Link to={`/call-for-papers#${track.slug}`}>
+                  <Card className="p-6 flex items-center gap-3 border-l-4 border-l-sky-400 bg-white hover:bg-cyan-50 rounded-lg transition-all shadow-sm hover:shadow-[0_0_15px_#06b6d4]">
+                    <Cpu className="h-6 w-6 text-sky-500 flex-shrink-0" />
+                    <p className="font-semibold text-[#0f172a] text-left">
+                      {track.category}
+                    </p>
+                  </Card>
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
 
-        {/* Track Descriptions */}
-        <div className="max-w-5xl mx-auto mt-12 text-left text-[#334155] space-y-8">
-          <div>
-            <h3 className="text-2xl font-bold text-sky-700 mb-2">Business</h3>
-            <p>
-              Includes Corporate Governance & Ethics, Strategic Planning & Competitive Advantage, Entrepreneurship & Business Models, Global Markets & Emerging Economies, Organizational Behaviour & Leadership, Risk Management & Business Continuity, and Mergers, Acquisitions & Negotiations.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-2xl font-bold text-sky-700 mb-2">Management</h3>
-            <p>
-              Covers Human Resource & Talent Development, Financial & Risk Management, Operations & Supply Chain Management, Technology, Innovation and AI in Management, Sustainability & Environmental Management, Strategic & Quality Management, and Event, Tourism & Hospitality Management.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-2xl font-bold text-sky-700 mb-2">
-              Accounting & Banking
-            </h3>
-            <p>
-              Encompasses Financial & Managerial Accounting, Corporate & Public Accounting Standards, Banking Systems & Monetary Policy, Financial Instruments & Capital Markets, Auditing & Risk Analysis, Cryptocurrency & Digital Banking, and International & Islamic Banking Practices.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-2xl font-bold text-sky-700 mb-2">Finance</h3>
-            <p>
-              Topics include Corporate Finance & Investment Strategies, Behavioral & Empirical Finance, Financial Markets, Regulations & Inclusion, Risk Management, Financial Engineering and Fintech, Insurance & Financial Services, Global Financial Crisis & Policy Responses, and Public, Personal & Project Finance.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-2xl font-bold text-sky-700 mb-2">Economics</h3>
-            <p>
-              Focuses on Microeconomics & Macroeconomics, Economic Growth & Development, Fiscal & Monetary Policy, International & Comparative Economics, Employment, Inflation & Human Capital, Econometrics & Data Analysis, and Energy & Environmental Economics.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-2xl font-bold text-sky-700 mb-2">
-              Marketing
-            </h3>
-            <p>
-              Includes Consumer Behavior & Brand Management, Digital, Social & Influencer Marketing, Marketing Analytics & Artificial Intelligence, International & Cross-Cultural Marketing, Content & Viral Marketing Strategies, CRM & Customer Experience Management, and Sustainable & Ethical Marketing Practices.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-2xl font-bold text-sky-700 mb-2">
-              E-Commerce and Q-Commerce
-            </h3>
-            <p>
-              Covers Online Platforms & Marketplaces, Mobile & Omnichannel Commerce, Data Privacy & Cybersecurity, Blockchain & Smart Logistics, Ecommerce Strategy & Digital Payments, Big Data & Internet-of-Things Applications, and Cross-Border & Legal Frameworks in Ecommerce.
-            </p>
-          </div>
-        </div>
+        {/* This section has been removed as per your request. */}
       </section>
 
       {/* Important Dates */}
