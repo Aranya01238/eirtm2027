@@ -224,6 +224,7 @@ const Home = () => {
               <div className="absolute left-[6vw] top-10 z-10">
                 <div className="h-14 w-14 rounded-full bg-white shadow-md ring-1 ring-slate-200 flex items-center justify-center">
                   <Cpu className="h-7 w-7 text-sky-600" />
+                  
                 </div>
               </div>
               <div className="absolute left-[22vw] top-40 z-10">
