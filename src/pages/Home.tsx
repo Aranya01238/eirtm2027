@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Calendar, MapPin, Users, BookOpen, Award, Cpu, CheckCircle } from "lucide-react";
-import { motion } from "framer-motion";
-import DeskCalendar from "@/components/DeskCalendar";
+import { motion, useReducedMotion } from "framer-motion";
+import { useEffect, useState } from "react";
+import CurvedTimeline from "@/components/CurvedTimeline";
 import heroBg from "@/assets/image.jpg";
 import aboutImg from "@/assets/abt.png";
 import ribbonImg from "@/assets/rbn.png";
@@ -39,6 +40,19 @@ const tracks = [
 }));
 
 const Home = () => {
+  const prefersReducedMotion = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <div className="min-h-screen bg-sky-100 text-[#0f172a] font-sans">
       {/* Hero Section */}
@@ -268,35 +282,9 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Important Dates */}
-      <section className="py-20 bg-gradient-to-b from-blue-50 to-white text-center">
-        <h2 className="text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-cyan-500">
-          Important Dates
-        </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-sky-400 to-cyan-400 mx-auto mb-10 rounded"></div>
-
-        {/* Integrated Desk Calendar */}
-        <div className="max-w-6xl mx-auto px-6 mb-12">
-          <DeskCalendar />
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-          {importantDates.map((item, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 250 }}
-            >
-              <Card className="p-8 bg-white border border-cyan-200 rounded-xl text-center hover:shadow-[0_0_25px_#38bdf8]">
-                <Calendar className="h-10 w-10 text-sky-600 mx-auto mb-3" />
-                <h3 className="text-xl font-semibold text-sky-700 mb-1">
-                  {item.label}
-                </h3>
-                <p className="text-[#334155] font-medium">{item.date}</p>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+      {/* Important Dates - Curved Timeline with Path Animation */}
+      <section className="relative">
+        <CurvedTimeline />
       </section>
 
       {/* CTA Section */}
