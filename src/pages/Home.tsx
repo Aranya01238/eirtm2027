@@ -252,8 +252,7 @@ const Home = () => {
 
           {/* Support text above the Explore button */}
           <p className="text-[#1e293b] text-lg mt-3 mb-4 max-w-3xl mx-auto font-medium">
-            <br /> Click the button below to explore the tracks
-            
+            <br /> Click the button below to explore the tracks         
           </p>
 
           {/* Explore Tracks button centered below the ribbon */}
