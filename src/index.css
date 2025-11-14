@@ -173,11 +173,14 @@ All colors MUST be HSL.
   animation: pulseGlow 2.8s infinite ease-in-out;
 }
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0% { transform: translateY(0) scale(1); }
+  25% { transform: translateY(-12px) scale(1.02); }
+  50% { transform: translateY(-24px) scale(1.04); }
+  75% { transform: translateY(-12px) scale(1.02); }
+  100% { transform: translateY(0) scale(1); }
 }
 .animate-float {
-  animation: float 6s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
 }
 @layer utilities {
   .perspective-1000 { perspective: 1000px; }
