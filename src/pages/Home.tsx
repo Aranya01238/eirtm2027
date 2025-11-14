@@ -9,6 +9,7 @@ import heroBg from "@/assets/image.png";
 import aboutImg from "@/assets/abt.png";
 import ribbonImg from "@/assets/rbn.png";
 import pla from "@/assets/Place-du-Tertre-Night.jpg";
+import trc from "@/assets/wonderful-night-view-paris-capital-260nw-1207417153.jpg";
 
 const importantDates = [
   { label: "Full Paper Submission", date: "10th December, 2025" },
@@ -235,13 +236,14 @@ const Home = () => {
       </section>
 
       {/* Conference Tracks (Curved ribbon + floating avatars) */}
-      <section className="relative py-24 bg-gradient-to-b from-white to-blue-50 overflow-hidden">
-        <div className="max-w-6xl mx-auto text-center relative">
+      <section className="relative py-24 overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${trc})` }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent" />
+        <div className="max-w-6xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-sm font-medium mb-3">
             Tracks
           </div>
-          <h2 className="text-4xl font-bold text-[#0f172a] mb-3">Conference Tracks</h2>
-          <p className="text-[#1e293b] text-lg mb-12 max-w-3xl mx-auto font-medium">
+          <h2 className="text-4xl font-bold text-[#ffff] mb-3">Conference Tracks</h2>
+          <p className="text-[#ffff] text-lg mb-12 max-w-3xl mx-auto font-medium">
             See how our tracks span research and practice across modern domains.
           </p>
 
@@ -258,28 +260,28 @@ const Home = () => {
             {/* Floating bubbles/icons spread edge-to-edge */}
             <div className="hidden md:block">
               <div className="absolute left-[6vw] top-10 z-10">
-                <div className="h-14 w-14 rounded-full bg-white shadow-md ring-1 ring-slate-200 flex items-center justify-center">
+                <div className="h-14 w-14 rounded-full bg-white shadow-md ring-1 ring-slate-200 flex items-center justify-center animate-float transition-shadow hover:shadow-[0_0_25px_#38bdf8] hover:ring-2 hover:ring-cyan-300" style={{ animationDelay: '0s' }}>
                   <Cpu className="h-7 w-7 text-sky-600" />
 
                 </div>
               </div>
               <div className="absolute left-[22vw] top-40 z-10">
-                <div className="h-12 w-12 rounded-full bg-white shadow-md ring-1 ring-slate-200 flex items-center justify-center">
+                <div className="h-12 w-12 rounded-full bg-white shadow-md ring-1 ring-slate-200 flex items-center justify-center animate-float transition-shadow hover:shadow-[0_0_25px_#38bdf8] hover:ring-2 hover:ring-cyan-300" style={{ animationDelay: '0.5s' }}>
                   <Users className="h-6 w-6 text-cyan-600" />
                 </div>
               </div>
               <div className="absolute left-1/2 -translate-x-1/2 top-6 z-10">
-                <div className="h-16 w-16 rounded-full bg-white shadow-md ring-1 ring-slate-200 flex items-center justify-center">
+                <div className="h-16 w-16 rounded-full bg-white shadow-md ring-1 ring-slate-200 flex items-center justify-center animate-float transition-shadow hover:shadow-[0_0_25px_#38bdf8] hover:ring-2 hover:ring-cyan-300" style={{ animationDelay: '1s' }}>
                   <BookOpen className="h-8 w-8 text-sky-600" />
                 </div>
               </div>
               <div className="absolute right-[20vw] top-36 z-10">
-                <div className="h-12 w-12 rounded-full bg-white shadow-md ring-1 ring-slate-200 flex items-center justify-center">
+                <div className="h-12 w-12 rounded-full bg-white shadow-md ring-1 ring-slate-200 flex items-center justify-center animate-float transition-shadow hover:shadow-[0_0_25px_#38bdf8] hover:ring-2 hover:ring-cyan-300" style={{ animationDelay: '1.5s' }}>
                   <Award className="h-6 w-6 text-cyan-600" />
                 </div>
               </div>
               <div className="absolute right-[6vw] top-8 z-10">
-                <div className="h-14 w-14 rounded-full bg-white shadow-md ring-1 ring-slate-200 flex items-center justify-center">
+                <div className="h-14 w-14 rounded-full bg-white shadow-md ring-1 ring-slate-200 flex items-center justify-center animate-float transition-shadow hover:shadow-[0_0_25px_#38bdf8] hover:ring-2 hover:ring-cyan-300" style={{ animationDelay: '2s' }}>
                   <MapPin className="h-7 w-7 text-sky-600" />
                 </div>
               </div>
@@ -287,7 +289,7 @@ const Home = () => {
           </div>
 
           {/* Support text above the Explore button */}
-          <p className="text-[#1e293b] text-lg mt-3 mb-4 max-w-3xl mx-auto font-medium">
+          <p className="text-[#ffff] text-lg mt-3 mb-4 max-w-3xl mx-auto font-medium">
             <br /> Click the button below to explore the tracks         
           </p>
 
