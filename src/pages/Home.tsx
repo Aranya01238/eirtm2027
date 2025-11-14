@@ -2,12 +2,13 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Calendar, MapPin, Users, BookOpen, Award, Cpu, CheckCircle } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import CurvedTimeline from "@/components/CurvedTimeline";
 import heroBg from "@/assets/image.png";
 import aboutImg from "@/assets/abt.png";
 import ribbonImg from "@/assets/rbn.png";
+import pla from "@/assets/Place-du-Tertre-Night.jpg";
 
 const importantDates = [
   { label: "Full Paper Submission", date: "10th December, 2025" },
@@ -42,6 +43,8 @@ const tracks = [
 const Home = () => {
   const prefersReducedMotion = useReducedMotion();
   const [isMobile, setIsMobile] = useState(false);
+  const heroImages = [heroBg, pla];
+  const [currentHero, setCurrentHero] = useState(0);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -53,13 +56,32 @@ const Home = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrentHero((i) => (i + 1) % heroImages.length);
+    }, 6000);
+    return () => clearInterval(id);
+  }, [heroImages.length]);
+
   return (
     <div className="min-h-screen bg-sky-100 text-[#0f172a] font-sans">
       {/* Hero Section */}
       <section
-        className="relative -mt-24 min-h-[85vh] bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroBg})` }}
+        className="relative -mt-24 min-h-[85vh]"
       >
+        <div className="absolute inset-0 overflow-hidden">
+          <AnimatePresence initial={false}>
+            <motion.div
+              key={currentHero}
+              initial={prefersReducedMotion ? { opacity: 0 } : { x: '100%' }}
+              animate={prefersReducedMotion ? { opacity: 1 } : { x: 0 }}
+              exit={prefersReducedMotion ? { opacity: 0 } : { x: '-100%' }}
+              transition={{ duration: 0.8 }}
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${heroImages[currentHero]})` }}
+            />
+          </AnimatePresence>
+        </div>
         {/* Light overlay similar to the example */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 to-transparent" />
 
