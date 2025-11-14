@@ -5,7 +5,7 @@ import { Calendar, MapPin, Users, BookOpen, Award, Cpu, CheckCircle } from "luci
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 import CurvedTimeline from "@/components/CurvedTimeline";
-import heroBg from "@/assets/image.jpg";
+import heroBg from "@/assets/image.png";
 import aboutImg from "@/assets/abt.png";
 import ribbonImg from "@/assets/rbn.png";
 
@@ -61,7 +61,7 @@ const Home = () => {
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         {/* Light overlay similar to the example */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 to-transparent" />
 
         <motion.div
           className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 flex flex-col justify-center min-h-[85vh]"
@@ -70,11 +70,11 @@ const Home = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="max-w-2xl">
-            <p className="text-sky-700 font-semibold tracking-wide mb-2">ICEBM 2026</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-[#0f172a] mb-4">
+            <p className="text-[#ffff00] font-semibold tracking-wide mb-2">ICEBM 2026</p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-[#ffff] mb-4">
               International Conference on Economics, Business & Management
             </h1>
-            <div className="flex flex-wrap items-center gap-3 text-[#1e293b] text-base md:text-lg mb-6">
+            <div className="flex flex-wrap items-center gap-3 text-[#92b3e7] text-base md:text-lg mb-6">
               <div className="inline-flex items-center gap-2">
                 <Calendar className="h-5 w-5 text-cyan-600" />
                 <span>21–23 April, 2026</span>
