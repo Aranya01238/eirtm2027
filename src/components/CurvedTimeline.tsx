@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Calendar, MapPin, Users, BookOpen, Award } from "lucide-react";
 
 const timelineData = [
@@ -13,20 +15,20 @@ const timelineData = [
   { id: 6, title: "Post-Conference Proceedings", date: "30th May, 2026", description: "Online access to all recorded sessions and final proceedings.", icon: BookOpen },
 ];
 
-const TimelineItem = ({ item, isLeft, topPosition, horizontalClass }) => {
-  const variants = {
-    hidden: { opacity: 0, x: isLeft ? -100 : 100, scale: 0.8 },
-    visible: { opacity: 1, x: 0, scale: 1, transition: { duration: 0.6, ease: "easeOut" } }
-  } as const;
+type TimelineItemProps = {
+  item: { id: number; title: string; date: string; description: string; icon: React.ComponentType<{ className?: string }> };
+  isLeft: boolean;
+  topPosition: number;
+  horizontalClass: string;
+  refCallback?: (el: HTMLDivElement | null) => void;
+};
 
+const TimelineItem = ({ item, isLeft, topPosition, horizontalClass, refCallback }: TimelineItemProps) => {
   return (
     <motion.div
       className={`absolute w-full md:w-1/2 transition-transform duration-500 ${horizontalClass}`}
       style={{ top: `${topPosition}px`, transform: `translateY(-50%)` }}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.5 }}
-      variants={variants}
+      ref={refCallback}
     >
       <div className={`flex w-full h-full justify-center ${isLeft ? 'md:justify-end md:pr-10' : 'md:justify-start md:pl-10'}`}>
         <div className="w-full max-w-sm lg:max-w-md p-6 bg-white border border-gray-100 shadow-xl rounded-xl transition duration-300 hover:shadow-2xl hover:border-indigo-400 z-10">
@@ -48,6 +50,10 @@ export default function VerticalPathTimeline() {
   const timelineRef = useRef(null);
   const pathRef = useRef(null);
   const svgRef = useRef(null);
+  const circleRefs = useRef<(SVGCircleElement | null)[]>([]);
+  const markerRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const scrollContentRef = useRef<HTMLDivElement | null>(null);
 
   const itemVerticalSpacing = 320;
   const totalItems = timelineData.length;
@@ -58,19 +64,26 @@ export default function VerticalPathTimeline() {
 
   const curvePoints = useRef([]);
   const generateCurvePath = () => {
-    let p = `M 100 ${initialBuffer}`;
-    curvePoints.current = [{ x: 100, y: initialBuffer }];
+    const leftX = 0; // start at left edge
+    const rightX = 100; // go to right edge
+    const cLeft = 25; // left control x
+    const cRight = 75; // right control x
+
+    let p = `M ${leftX} ${initialBuffer}`;
+    curvePoints.current = [{ x: leftX, y: initialBuffer }];
 
     for (let i = 1; i < totalItems; i++) {
       const y = initialBuffer + i * itemVerticalSpacing;
       const prevY = initialBuffer + (i - 1) * itemVerticalSpacing;
 
       if (i % 2 !== 0) {
-        p += ` C 100 ${prevY + itemVerticalSpacing * 0.5}, 150 ${y - itemVerticalSpacing * 0.5}, 150 ${y}`;
-        curvePoints.current.push({ x: 150, y });
+        // curve to right side
+        p += ` C ${cLeft} ${prevY + itemVerticalSpacing * 0.5}, ${cRight} ${y - itemVerticalSpacing * 0.5}, ${rightX} ${y}`;
+        curvePoints.current.push({ x: rightX, y });
       } else {
-        p += ` C 150 ${prevY + itemVerticalSpacing * 0.5}, 50 ${y - itemVerticalSpacing * 0.5}, 50 ${y}`;
-        curvePoints.current.push({ x: 50, y });
+        // curve back to left side
+        p += ` C ${cRight} ${prevY + itemVerticalSpacing * 0.5}, ${cLeft} ${y - itemVerticalSpacing * 0.5}, ${leftX} ${y}`;
+        curvePoints.current.push({ x: leftX, y });
       }
     }
 
@@ -81,14 +94,10 @@ export default function VerticalPathTimeline() {
   const minScrollHeight = `${Math.ceil(svgHeight / 16) + 10}rem`;
 
   useEffect(() => {
-    const gsap = window.gsap;
-    const ScrollTrigger = (window as any).ScrollTrigger;
-    if (!gsap || !ScrollTrigger || !pathRef.current) return;
+    if (!pathRef.current || !timelineRef.current) return;
 
     // Register plugin if needed
-    if (gsap && ScrollTrigger && typeof gsap.registerPlugin === 'function') {
-      try { gsap.registerPlugin(ScrollTrigger); } catch (e) {}
-    }
+    gsap.registerPlugin(ScrollTrigger);
 
     const path = pathRef.current;
 
@@ -97,26 +106,70 @@ export default function VerticalPathTimeline() {
         const len = path.getTotalLength();
         gsap.set(path, { strokeDasharray: len, strokeDashoffset: len });
       } catch (e) {
-        // path not ready yet
+        return;
       }
     };
 
     setLength();
     window.addEventListener('resize', setLength);
 
-    const anim = ScrollTrigger.create({
-      trigger: timelineRef.current,
-      start: "top center",
-      end: "bottom center",
-      scrub: 1,
-      animation: gsap.to(path, { strokeDashoffset: 0, ease: "none" })
+    const scrollDistance = Math.max(0, svgHeight - window.innerHeight);
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: timelineRef.current,
+        start: "top top",
+        end: `+=${scrollDistance}`,
+        scrub: 1,
+        pin: true,
+        anticipatePin: 1,
+      },
+    });
+
+    tl.to(path, { strokeDashoffset: 0, ease: "none" });
+    if (scrollContentRef.current) {
+      tl.to(scrollContentRef.current, { y: -scrollDistance, ease: "none" }, 0);
+    }
+
+    const len = path.getTotalLength();
+    const revealLengths: number[] = [];
+    curvePoints.current.forEach((pt) => {
+      let bestDist = Infinity;
+      let bestLen = 0;
+      for (let L = 0; L <= len; L += 5) {
+        const p = path.getPointAtLength(L);
+        const dx = p.x - pt.x;
+        const dy = p.y - pt.y;
+        const d = dx * dx + dy * dy;
+        if (d < bestDist) {
+          bestDist = d;
+          bestLen = L;
+        }
+      }
+      revealLengths.push(bestLen);
+    });
+
+    gsap.set(cardRefs.current, { opacity: 0, y: 20 });
+    gsap.set(circleRefs.current, { opacity: 0, scale: 0.6 });
+
+    tl.eventCallback("onUpdate", () => {
+      const st = tl.scrollTrigger;
+      if (!st) return;
+      const drawn = st.progress * len;
+      revealLengths.forEach((L, i) => {
+        const show = drawn >= L - 2; // small tolerance
+        const card = cardRefs.current[i];
+        const circle = circleRefs.current[i];
+        if (!card || !circle) return;
+        gsap.to(card, { opacity: show ? 1 : 0, y: show ? 0 : 20, duration: 0.25, ease: "power1.out" });
+        gsap.to(circle, { opacity: show ? 1 : 0, scale: show ? 1 : 0.6, duration: 0.2, ease: "power1.out" });
+      });
     });
 
     return () => {
       window.removeEventListener('resize', setLength);
-      if (anim) anim.kill();
+      if (tl.scrollTrigger) tl.scrollTrigger.kill();
     };
-  }, []);
+  }, [svgHeight]);
 
   return (
     <div className="bg-gray-50 py-20 font-sans" style={{ minHeight: minScrollHeight }}>
@@ -124,24 +177,62 @@ export default function VerticalPathTimeline() {
         <h1 className="text-center text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">Conference Milestones</h1>
         <p className="text-center text-xl text-cyan-600 mb-20 max-w-3xl mx-auto">Scroll down to follow the path of our upcoming global conference.</p>
 
-        <div ref={timelineRef} className="relative mx-auto max-w-xl md:max-w-4xl" style={{ height: `${svgHeight}px` }}>
-          <svg ref={svgRef} className="absolute left-1/2 transform -translate-x-1/2 h-full w-[200px] z-0 hidden md:block" viewBox={`0 0 200 ${svgHeight}`} style={{ top: 0, height: `${svgHeight}px` }}>
-            <path d={curveD} stroke="#e5e7eb" strokeWidth="6" fill="none" strokeLinecap="round" />
-            <path id="timelineAnimatedPath" ref={pathRef} d={curveD} stroke="#00d9ffff" strokeWidth="6" fill="none" strokeLinecap="round" />
+        <div ref={timelineRef} className="relative mx-auto w-full h-screen overflow-hidden">
+          <div ref={scrollContentRef} className="absolute inset-0">
+            <svg
+              ref={svgRef}
+              className="absolute left-0 h-full w-full z-0 hidden md:block"
+              viewBox={`0 0 100 ${svgHeight}`}
+              preserveAspectRatio="none"
+              style={{ top: 0, height: `${svgHeight}px` }}
+            >
+              <path d={curveD} stroke="#e5e7eb" strokeWidth="6" fill="none" strokeLinecap="round" />
+              <path id="timelineAnimatedPath" ref={pathRef} d={curveD} stroke="#00d9ffff" strokeWidth="6" fill="none" strokeLinecap="round" />
 
-            {curvePoints.current.map((pt, i) => (
-              <circle key={`s-${i}`} cx={pt.x} cy={pt.y} r="8" fill="#4f46e5" stroke="#fff" strokeWidth="4" />
-            ))}
+              {curvePoints.current.map((pt, i) => (
+                <circle
+                  key={`s-${i}`}
+                  ref={(el) => (circleRefs.current[i] = el)}
+                  cx={pt.x}
+                  cy={pt.y}
+                  r="8"
+                  fill="#4f46e5"
+                  stroke="#fff"
+                  strokeWidth="4"
+                  opacity="0"
+                />
+              ))}
 
-          </svg>
+            </svg>
 
-          <div className="w-full h-full relative">
-            {timelineData.map((item, index) => {
+            <div className="w-full h-full relative" style={{ height: `${svgHeight}px` }}>
+              {timelineData.map((item, index) => {
               const top = initialBuffer + index * itemVerticalSpacing;
               const isLeft = index % 2 === 0;
               const hc = isLeft ? "left-0" : "right-0";
-              return <TimelineItem key={item.id} item={item} isLeft={isLeft} topPosition={top} horizontalClass={hc} />;
+              return (
+                <TimelineItem
+                  key={item.id}
+                  item={item}
+                  isLeft={isLeft}
+                  topPosition={top}
+                  horizontalClass={hc}
+                  refCallback={(el: HTMLDivElement | null) => (cardRefs.current[index] = el)}
+                />
+              );
             })}
+              {timelineData.map((_, index) => {
+                const top = initialBuffer + index * itemVerticalSpacing;
+                return (
+                  <div
+                    key={`m-${index}`}
+                    ref={(el) => (markerRefs.current[index] = el)}
+                    className="absolute left-0 w-px h-px"
+                    style={{ top: `${top}px` }}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
