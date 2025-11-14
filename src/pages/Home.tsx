@@ -57,7 +57,7 @@ const Home = () => {
     <div className="min-h-screen bg-sky-100 text-[#0f172a] font-sans">
       {/* Hero Section */}
       <section
-        className="relative min-h-[85vh] bg-cover bg-center"
+        className="relative -mt-24 min-h-[85vh] bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         {/* Light overlay similar to the example */}

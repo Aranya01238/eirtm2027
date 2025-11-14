@@ -73,11 +73,7 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-lg shadow-lg border-b border-border/50"
-          : "bg-gradient-to-b from-background/80 to-transparent backdrop-blur-sm"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background shadow-lg border-b border-border"
     >
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex items-center h-16 relative">
