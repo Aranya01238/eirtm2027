@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import iemLogo from "@/assets/iem-logo.png";
-import uemLogo from "@/assets/uem-logo.png";
-import { iemLogoUrl, uemLogoUrl } from "@/config/logoSources";
+import iemLogo from "@/assets/cropped-eirtmlogo.png";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -81,13 +79,13 @@ export const Navbar = () => {
           : "bg-gradient-to-b from-background/80 to-transparent backdrop-blur-sm"
       }`}
     >
-      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex items-center h-16 relative">
           {/* Left IEM logo (transparent) */}
           <div className="hidden lg:flex items-center gap-4">
             <Link to="/" className="flex-shrink-0 group">
               <img
-                src={iemLogoUrl ?? iemLogo}
+                src={iemLogo ?? iemLogo}
                 alt="IEM Logo"
                 className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
                 onError={(e) => {
@@ -192,19 +190,6 @@ export const Navbar = () => {
               </div>
             </div>
           </div>
-
-          {/* Right UEM logo (transparent) */}
-          <Link to="/" className="hidden lg:flex flex-shrink-0 group ml-auto">
-            <img
-              src={uemLogoUrl ?? uemLogo}
-              alt="UEM Logo"
-              className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
-              onError={(e) => {
-                const img = e.currentTarget as HTMLImageElement;
-                if (img.src !== uemLogo) img.src = uemLogo;
-              }}
-            />
-          </Link>
 
 
           {/* Mobile menu button */}
