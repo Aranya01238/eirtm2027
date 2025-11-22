@@ -83,7 +83,7 @@ export const Navbar = () => {
               <img
                 src={iemLogo ?? iemLogo}
                 alt="IEM Logo"
-                className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
+                className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
                 onError={(e) => {
                   const img = e.currentTarget as HTMLImageElement;
                   if (img.src !== iemLogo) img.src = iemLogo;
