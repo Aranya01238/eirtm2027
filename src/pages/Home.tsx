@@ -307,37 +307,50 @@ const Home = () => {
       </section>
 
       {/* Important Dates - Curved Timeline with Path Animation */}
-      <section className="relative">
+      <section className="relative mb-0">
         <CurvedTimeline />
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 text-center bg-gradient-to-b from-white to-blue-50">
-        <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-cyan-500 mb-6">
-          Join ICEBM 2026
-        </h2>
-        <p className="text-[#1e293b] text-lg mb-10 max-w-3xl mx-auto font-medium">
-          Be part of a global forum redefining the future of economics,
-          management, and digital business ecosystems.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button
-            asChild
-            size="lg"
-            className="bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-sky-500 hover:to-cyan-600 text-white font-semibold px-8 py-6 shadow-md hover:shadow-[0_0_20px_#06b6d4] transition-transform hover:scale-105"
-          >
-            <Link to="/submission">Submit Paper</Link>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="border-2 border-sky-500 text-sky-700 hover:bg-sky-500 hover:text-white px-8 py-6 transition-transform hover:scale-105"
-          >
-            <Link to="/contact">Contact Us</Link>
-          </Button>
-        </div>
-      </section>
+      <section className="py-48 relative" style={{backgroundImage: `url('/src/assets/photo-1541338906008-f2d4ad1b2231.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-8">
+    {/* Left: Text and Buttons */}
+    <div>
+      <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-[#ffff] mb-6">
+        Join ICEBM 2026
+      </h2>
+      <p className="text-yellow-300 text-lg mb-10 max-w-3xl font-medium">
+        Be part of a global forum redefining the future of economics,
+        management, and digital business ecosystems.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4 justify-start">
+        <Button
+          asChild
+          size="lg"
+          className="bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-sky-500 hover:to-cyan-600 text-white font-semibold px-8 py-6 shadow-md hover:shadow-[0_0_20px_#06b6d4] transition-transform hover:scale-105"
+        >
+          <Link to="/submission">Submit Paper</Link>
+        </Button>
+        <Button
+          asChild
+          size="lg"
+          variant="outline"
+          className="border-2 border-sky-500 text-sky-700 hover:bg-sky-500 hover:text-white px-8 py-6 transition-transform hover:scale-105"
+        >
+          <Link to="/contact">Contact Us</Link>
+        </Button>
+      </div>
+    </div>
+    {/* Right: Image */}
+    <div className="flex justify-end">
+      <img
+        src="/src/assets/Gemini_Generated_Image_7wsqb57wsqb57wsq.png"
+        alt="Conference"
+        className="w-full max-w-md rounded-3xl object-cover shadow-xl"
+      />
+    </div>
+  </div>
+</section>
     </div>
   );
 };
