@@ -12,8 +12,8 @@ import pla from "@/assets/Place-du-Tertre-Night.jpg";
 import trc from "@/assets/wonderful-night-view-paris-capital-260nw-1207417153.jpg";
 
 const importantDates = [
-  { label: "Full Paper Submission", date: "10th December, 2025" },
-  { label: "Acceptance Notification", date: "10th January, 2026" },
+  { label: "Full Paper Submission", date: "10th January, 2026" },
+  { label: "Acceptance Notification", date: "10th February, 2026" },
   { label: "Registration", date: "20th March, 2026" },
   { label: "Presentation Submission", date: "20th March, 2026" },
   { label: "Conference On", date: "21st – 23rd April, 2026" },
@@ -115,7 +115,7 @@ const Home = () => {
                 size="lg"
                 className="rounded-full bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-sky-600 hover:to-cyan-600 text-white font-semibold px-8 py-6 shadow-md hover:shadow-[0_10px_30px_rgba(56,189,248,0.45)] transition-transform hover:scale-[1.02]"
               >
-                <Link to="/registration">Get Ticket</Link>
+                <Link to="/registration">Registration</Link>
               </Button>
               <Button
                 asChild
