@@ -315,7 +315,8 @@ const Home = () => {
 
       {/* CTA Section */}
       <section className="py-48 relative" style={{backgroundImage: `url(${ass})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-8">
+  <div className="absolute inset-0 bg-black/80" style={{zIndex:1}}></div>
+  <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-8">
     {/* Left: Text and Buttons */}
     <div>
       <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-[#ffff] mb-6">
@@ -348,7 +349,7 @@ const Home = () => {
       <img
         src={imgs}
         alt="Conference"
-        className="w-full max-w-md rounded-3xl object-cover shadow-xl"
+        className="w-full max-w-2xl rounded-3xl object-cover shadow-2xl"
       />
     </div>
   </div>
