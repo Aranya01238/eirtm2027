@@ -10,6 +10,8 @@ import aboutImg from "@/assets/abt.png";
 import ribbonImg from "@/assets/rbn.png";
 import pla from "@/assets/Place-du-Tertre-Night.jpg";
 import trc from "@/assets/wonderful-night-view-paris-capital-260nw-1207417153.jpg";
+import ass from "@/assets/ars.png";
+import imgs from "@/assets/Gemini_Generated_Image_7wsqb57wsqb57wsq.png";
 
 const importantDates = [
   { label: "Full Paper Submission", date: "10th January, 2026" },
@@ -312,7 +314,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-48 relative" style={{backgroundImage: `url('/src/assets/photo-1541338906008-f2d4ad1b2231.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+      <section className="py-48 relative" style={{backgroundImage: `url(${ass})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
   <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-8">
     {/* Left: Text and Buttons */}
     <div>
@@ -344,7 +346,7 @@ const Home = () => {
     {/* Right: Image */}
     <div className="flex justify-end">
       <img
-        src="/src/assets/Gemini_Generated_Image_7wsqb57wsqb57wsq.png"
+        src={imgs}
         alt="Conference"
         className="w-full max-w-md rounded-3xl object-cover shadow-xl"
       />
