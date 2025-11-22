@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Facebook, Linkedin, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Linkedin, Twitter, Mail, MapPin } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -19,7 +19,9 @@ export const Footer = () => {
                 International Conference on Economics, Business, and Management
               </strong>
               <br />
-              Organized by the Institute of Engineering & Management, Kolkata
+              In association with The Photovoltaic Institute of Île-de-France, France
+              <br />
+              EMLV - The Leonard De Vinci Business School, Paris
             </p>
             <p className="text-sm text-slate-500">
               Join global thought leaders, researchers, and industry experts to
@@ -62,9 +64,9 @@ export const Footer = () => {
                   <MapPin className="h-5 w-5 text-cyan-700" />
                 </div>
                 <span>
-                  Institute of Engineering & Management,
+                  Venue: The Photovoltaic Institute of Île-de-France,
                   <br />
-                  Salt Lake City, Sector V, Kolkata, India
+                  Paris, France
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -72,18 +74,13 @@ export const Footer = () => {
                   <Mail className="h-5 w-5 text-cyan-700" />
                 </div>
                 <a
-                  href="mailto:info@icebm2026.org"
+                  href="mailto:Sanghamitra@iem.edu.in"
                   className="hover:text-cyan-600 transition-colors"
                 >
-                  info@icebm2026.org
+                  Sanghamitra@iem.edu.in
                 </a>
               </li>
-              <li className="flex items-center gap-3">
-                <div className="bg-cyan-100 p-2 rounded-lg">
-                  <Phone className="h-5 w-5 text-cyan-700" />
-                </div>
-                <span>+91 XX XXXX XXXX</span>
-              </li>
+              {/* Phone number removed */}
             </ul>
           </div>
         </div>
@@ -115,8 +112,7 @@ export const Footer = () => {
         {/* Footer Bottom */}
         <div className="text-center text-sm text-slate-500">
           <p>
-            © 2026 ICEBM | Organized by Institute of Engineering & Management,
-            Kolkata
+            © 2026 ICEBM | In association with The Photovoltaic Institute of Île-de-France, France and EMLV - The Leonard De Vinci Business School, Paris
           </p>
           <p className="mt-1">
             In collaboration with{" "}
