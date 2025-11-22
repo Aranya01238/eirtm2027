@@ -123,7 +123,7 @@ const Home = () => {
                 variant="outline"
                 className="rounded-full border-2 border-sky-500 text-sky-700 hover:bg-sky-500 hover:text-white px-8 py-6 transition-transform hover:scale-[1.02]"
               >
-                <Link to="/contact">Explore Sponsorship</Link>
+                <Link to="/submission">Submissions</Link>
               </Button>
             </div>
           </div>
