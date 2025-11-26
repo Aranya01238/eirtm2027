@@ -99,9 +99,10 @@ const Home = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-[#ffff] mb-4">
               International Conference on Economics, Business & Management
             </h1>
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-[#ffff] mb-4">
-              In association with EMLV - The Leonard De Vinci Business School, Paris, France
-            </h3>
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight text-[#ffff] mb-4">
+  In association with EMLV - The Leonard De Vinci Business School, Paris, France
+</h3>
+
 
             <div className="flex flex-wrap items-center gap-3 text-[#92b3e7] text-base md:text-lg mb-6">
               <div className="inline-flex items-center gap-2">
