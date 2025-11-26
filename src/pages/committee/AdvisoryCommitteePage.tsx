@@ -14,6 +14,12 @@ const members: AdvisoryMember[] = [
     affiliation: "Saïd Business School, University of Oxford",
   },
   {
+    name: "Chinmoy Saha",
+    designation: "Professor",
+    affiliation:
+      "Indian Institute of Space Science and Technology, Department of Space, Government of India, Thiruvananthapuram, Kerala, India",
+  },
+  {
     name: "Justin Paul",
     designation: "Professor",
     affiliation:
