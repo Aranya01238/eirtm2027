@@ -6,18 +6,7 @@ import iemLogo from "@/assets/cropped-eirtmlogo.png";
 
 const navItems = [
   { name: "Home", path: "/" },
-  {
-    name: "Call for Papers",
-    path: "/call-for-papers",
-  },
-
-  // ⭐ BACK TO EIRTM updated with 2-line format
-{
-  name: "<div style='display:flex;flex-direction:column;line-height:1;align-items:center;'><span>Back to EIRTM</span><span style='font-size:9px; margin-top:-2px;'>(Home)</span></div>",
-  path: "https://eirtm2026congress.smartsociety.org/",
-  external: true,
-  html: true,
-},
+  { name: "Call for Papers", path: "/call-for-papers" },
 
   {
     name: "Publication",
@@ -61,9 +50,7 @@ export const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -80,21 +67,27 @@ export const Navbar = () => {
           {/* IEM Logo */}
           <div className="hidden lg:flex items-center gap-4">
             <Link to="/" className="flex-shrink-0 group">
-              <img
-                src={iemLogo ?? iemLogo}
-                alt="IEM Logo"
-                className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
-              />
+              <img src={iemLogo} alt="IEM Logo" className="h-12 w-auto transition-transform duration-300 group-hover:scale-105" />
             </Link>
           </div>
 
-          {/* Desktop Nav */}
+          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center absolute left-1/2 transform -translate-x-1/2 z-10">
             <div className="relative">
               <div className="absolute -left-8 top-0 bottom-0 w-8 bg-gradient-to-l from-white/70 to-transparent pointer-events-none"></div>
 
               <div className="flex items-center justify-center gap-0 rounded-full bg-white/70 backdrop-blur-md shadow-md border border-white/40 px-2 py-1">
 
+                {/* ⭐ Unique Back to EIRTM Button */}
+                <a
+                  href="https://eirtm2026congress.smartsociety.org/"
+                  className="px-3 py-1 text-[10px] xl:text-[11px] font-semibold rounded-lg transition-all duration-300 whitespace-nowrap flex flex-col items-center leading-tight text-foreground hover:text-primary hover:bg-primary/5 mr-2"
+                >
+                  <span>Back to EIRTM</span>
+                  <span className="text-[9px] mt-[-2px]">(Home)</span>
+                </a>
+
+                {/* Other nav items */}
                 {navItems.map((item) => (
                   <div
                     key={item.name}
@@ -128,7 +121,7 @@ export const Navbar = () => {
                                 <a
                                   key={subItem.name}
                                   href={subItem.path}
-                                  className="block px-3 py-2.5 text-sm rounded-lg hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 hover:text-primary transition-all duration-200"
+                                  className="block px-3 py-2.5 text-sm rounded-lg hover:bg-primary/5 hover:text-primary transition-all duration-200"
                                 >
                                   {subItem.name}
                                 </a>
@@ -136,7 +129,7 @@ export const Navbar = () => {
                                 <Link
                                   key={subItem.name}
                                   to={subItem.path}
-                                  className="block px-3 py-2.5 text-sm rounded-lg hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 hover:text-primary transition-all duration-200"
+                                  className="block px-3 py-2.5 text-sm rounded-lg hover:bg-primary/5 hover:text-primary transition-all duration-200"
                                 >
                                   {subItem.name}
                                 </Link>
@@ -145,14 +138,6 @@ export const Navbar = () => {
                           </div>
                         </div>
                       </>
-                    ) : item.external ? (
-                      <a
-                        href={item.path}
-                        className="px-2 py-1 text-[10px] xl:text-[11px] font-semibold rounded-lg transition-all duration-300 whitespace-nowrap text-foreground hover:text-primary hover:bg-primary/5"
-                      >
-                        {/* Render HTML */}
-                        <span dangerouslySetInnerHTML={{ __html: item.name }} />
-                      </a>
                     ) : (
                       <Link
                         to={item.path}
@@ -191,8 +176,23 @@ export const Navbar = () => {
         <div className="bg-card/95 backdrop-blur-xl border-t border-border/60">
           <div className="px-6 py-6 space-y-1 max-h-[calc(100vh-9rem)] overflow-y-auto">
 
+            {/* ⭐ Unique Back to EIRTM Button on Mobile */}
+            <a
+              href="https://eirtm2026congress.smartsociety.org/"
+              className="block py-3 font-semibold rounded-lg px-3 transition-all duration-200 text-foreground hover:text-primary hover:bg-primary/5 flex flex-col leading-tight"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <span>Back to EIRTM</span>
+              <span className="text-[10px] mt-[-2px]">(Home)</span>
+            </a>
+
+            {/* Other nav items */}
             {navItems.map((item, index) => (
-              <div key={item.name} className="animate-fade-in" style={{ animationDelay: `${index * 100}ms`, animationFillMode: "both" }}>
+              <div
+                key={item.name}
+                className="animate-fade-in"
+                style={{ animationDelay: `${index * 100}ms`, animationFillMode: "both" }}
+              >
                 {item.subItems ? (
                   <details className="group">
                     <summary className="flex items-center justify-between py-3 font-semibold text-foreground cursor-pointer hover:text-primary transition-colors list-none">
@@ -222,22 +222,11 @@ export const Navbar = () => {
                       )}
                     </div>
                   </details>
-                ) : item.external ? (
-                  <a
-                    href={item.path}
-                    className="block py-3 font-semibold rounded-lg px-3 transition-all duration-200 text-foreground hover:text-primary hover:bg-primary/5"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {/* Render HTML */}
-                    <span dangerouslySetInnerHTML={{ __html: item.name }} />
-                  </a>
                 ) : (
                   <Link
                     to={item.path}
                     className={`block py-3 font-semibold rounded-lg px-3 transition-all duration-200 ${
-                      location.pathname === item.path
-                        ? "text-primary bg-primary/10"
-                        : "text-foreground hover:text-primary hover:bg-primary/5"
+                      location.pathname === item.path ? "text-primary bg-primary/10" : "text-foreground hover:text-primary hover:bg-primary/5"
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
