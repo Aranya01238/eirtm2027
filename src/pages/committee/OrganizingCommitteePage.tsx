@@ -63,15 +63,15 @@ const members: CommitteeMember[] = [
   // === Publication Chair ===
   {
     role: "Publication Chair",
-    name: "Prof. Ranjan Chaudhuri",
-    designation: "Professor",
-    affiliation: "EMLV Business School, Paris, France",
+    name: "Prof. Suvodeep Mazumdar",
+    designation: "Senior Lecturer",
+    affiliation: "The University of Sheffield, England, United Kingdom",
   },
   {
     role: "Publication Chair",
-    name: "Dr. Avinash K. Shrivastava",
-    designation: "Associate Professor & Managing Editor",
-    affiliation: "International Management Institute (IMI) Kolkata, India",
+    name: "Prof. Arpita Biswas",
+    designation: "Associate Professor",
+    affiliation: "Department of Computer Science, Rutgers University",
   },
   {
     role: "Publication Chair",
@@ -112,7 +112,7 @@ const OrganizingCommitteePage: React.FC = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-sky-500 mx-auto mb-6 rounded"></div>
           <p className="text-lg text-[#334155] max-w-3xl mx-auto leading-relaxed">
             The organizing committee of{" "}
-            <span className="font-semibold text-sky-600">ICEBM 2026</span>{" "}
+            <span className="font-semibold text-sky-600">ICECIT 2026</span>{" "}
             brings together global experts, scholars, and industry leaders to
             guide the success of this international conference.
           </p>
