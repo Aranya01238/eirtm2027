@@ -9,27 +9,22 @@ interface CommitteeMember {
 
 const members: CommitteeMember[] = [
   {
-    name: "Arindam Banerjee",
+    name: "Prof. Arindam Banerjee",
     designation:
       "Professor (Finance) and Director – Masters of Applied Finance & Wealth Management, Head – Alumni Relations, Middle East and Africa, Director, Executive Program in Global Strategic Finance",
     affiliation: "SP Jain Global School of Management, Dubai, UAE",
   },
   {
-    name: "Amina Omrane",
-    designation: "Associate Professor, Management Science and Entrepreneurship",
-    affiliation: "University of Sfax, Sfax, Tunisia",
+    name: "Prof. Indrajit Mukherjee",
+    designation:
+      "Professor (Operations Management Group)",
+    affiliation: "Shailesh J. Mehta School of Management, India Institute of Technology, Bombay",
   },
   {
-    name: "Chinmoy Saha",
-    designation: "Professor",
-    affiliation:
-      "Indian Institute of Space Science and Technology, Department of Space, Government of India, Thiruvananthapuram, Kerala, India",
-  },
-  {
-    name: "Ts Dr. Zairi Ismael Rizman",
-    designation: "Senior Lecturer",
-    affiliation:
-      "School of Electrical Engineering, College of Engineering, Universiti Teknologi MARA, Malaysia",
+    name: "Dr. Subhash Chandra Panja",
+    designation:
+      "Associate Professor",
+    affiliation: "Jadavpur University",
   },
 ];
 
@@ -56,7 +51,7 @@ const TechnicalCommitteePage: React.FC = () => {
             <span className="font-semibold text-sky-600">
               Technical Committee
             </span>{" "}
-            of <span className="font-semibold text-sky-600">ICEBM 2026</span>{" "}
+            of <span className="font-semibold text-sky-600">ICECIT 2026</span>{" "}
             comprises distinguished academicians and experts responsible for
             maintaining the scientific and technical excellence of the
             conference.
