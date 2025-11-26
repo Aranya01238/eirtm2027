@@ -10,8 +10,14 @@ const navItems = [
     name: "Call for Papers",
     path: "/call-for-papers",
   },
-    // ⭐ BACK TO EIRTM added
-  { name: "Back to EIRTM", path: "https://eirtm2026congress.smartsociety.org/", external: true },
+
+  // ⭐ BACK TO EIRTM updated with 2-line format
+  {
+    name: "Back to EIRTM<br /><span style='font-size:9px'>(Home)</span>",
+    path: "https://eirtm2026congress.smartsociety.org/",
+    external: true,
+    html: true,
+  },
 
   {
     name: "Publication",
@@ -63,14 +69,7 @@ export const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "unset";
   }, [isMobileMenuOpen]);
 
   return (
@@ -85,10 +84,6 @@ export const Navbar = () => {
                 src={iemLogo ?? iemLogo}
                 alt="IEM Logo"
                 className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
-                onError={(e) => {
-                  const img = e.currentTarget as HTMLImageElement;
-                  if (img.src !== iemLogo) img.src = iemLogo;
-                }}
               />
             </Link>
           </div>
@@ -110,8 +105,7 @@ export const Navbar = () => {
                       <>
                         <button
                           className={`px-2 py-1 text-[10px] xl:text-[11px] font-semibold rounded-lg transition-all duration-300 whitespace-nowrap ${
-                            activeDropdown === item.name || location.pathname.includes(item.path)
-                              ? "text-primary bg-primary/10"
+                            activeDropdown === item.name ? "text-primary bg-primary/10"
                               : "text-foreground hover:text-primary hover:bg-primary/5"
                           }`}
                         >
@@ -133,7 +127,7 @@ export const Navbar = () => {
                               subItem.external ? (
                                 <a
                                   key={subItem.name}
-                                  href={subItem.path} // OPEN IN SAME TAB
+                                  href={subItem.path}
                                   className="block px-3 py-2.5 text-sm rounded-lg hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 hover:text-primary transition-all duration-200"
                                 >
                                   {subItem.name}
@@ -153,10 +147,11 @@ export const Navbar = () => {
                       </>
                     ) : item.external ? (
                       <a
-                        href={item.path} // OPEN IN SAME TAB
+                        href={item.path}
                         className="px-2 py-1 text-[10px] xl:text-[11px] font-semibold rounded-lg transition-all duration-300 whitespace-nowrap text-foreground hover:text-primary hover:bg-primary/5"
                       >
-                        {item.name}
+                        {/* Render HTML */}
+                        <span dangerouslySetInnerHTML={{ __html: item.name }} />
                       </a>
                     ) : (
                       <Link
@@ -208,7 +203,7 @@ export const Navbar = () => {
                         subItem.external ? (
                           <a
                             key={subItem.name}
-                            href={subItem.path} // OPEN IN SAME TAB
+                            href={subItem.path}
                             className="block py-2.5 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg px-3 transition-all duration-200"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -229,11 +224,12 @@ export const Navbar = () => {
                   </details>
                 ) : item.external ? (
                   <a
-                    href={item.path} // OPEN IN SAME TAB
+                    href={item.path}
                     className="block py-3 font-semibold rounded-lg px-3 transition-all duration-200 text-foreground hover:text-primary hover:bg-primary/5"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    {item.name}
+                    {/* Render HTML */}
+                    <span dangerouslySetInnerHTML={{ __html: item.name }} />
                   </a>
                 ) : (
                   <Link
