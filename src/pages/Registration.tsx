@@ -118,12 +118,7 @@ const Registration = () => {
               );
             })}
           </div>
-          <div className="mt-6 text-center">
-            <p className="text-muted-foreground">
-              * All fees are per paper. Additional paper by the same author: Add
-              50% of the registration fee
-            </p>
-          </div>
+          
         </div>
 
         {/* Registration Benefits */}
