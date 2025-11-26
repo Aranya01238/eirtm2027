@@ -10,6 +10,9 @@ const navItems = [
     name: "Call for Papers",
     path: "/call-for-papers",
   },
+    // ⭐ BACK TO EIRTM added
+  { name: "Back to EIRTM", path: "https://eirtm2026congress.smartsociety.org/", external: true },
+
   {
     name: "Publication",
     path: "/publication",
@@ -35,10 +38,6 @@ const navItems = [
   { name: "Keynote Speakers", path: "/keynote-speakers" },
   { name: "Gallery", path: "/gallery" },
   { name: "Contact", path: "/contact" },
-
-  // ⭐ BACK TO EIRTM added
-  { name: "Back to EIRTM", path: "https://eirtm2026congress.smartsociety.org/", external: true },
-
   {
     name: "Sister Conference",
     path: "#",
