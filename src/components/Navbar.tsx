@@ -36,7 +36,7 @@ const navItems = [
   { name: "Gallery", path: "/gallery" },
   { name: "Contact", path: "/contact" },
 
-  // ⭐ NEW BUTTON ADDED HERE
+  // ⭐ BACK TO EIRTM added
   { name: "Back to EIRTM", path: "https://eirtm2026congress.smartsociety.org/", external: true },
 
   {
@@ -75,12 +75,11 @@ export const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background shadow-lg border-b border-border"
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background shadow-lg border-b border-border">
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex items-center h-16 relative">
-          {/* Left IEM logo */}
+
+          {/* IEM Logo */}
           <div className="hidden lg:flex items-center gap-4">
             <Link to="/" className="flex-shrink-0 group">
               <img
@@ -95,11 +94,13 @@ export const Navbar = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Nav */}
           <div className="hidden lg:flex items-center absolute left-1/2 transform -translate-x-1/2 z-10">
             <div className="relative">
               <div className="absolute -left-8 top-0 bottom-0 w-8 bg-gradient-to-l from-white/70 to-transparent pointer-events-none"></div>
+
               <div className="flex items-center justify-center gap-0 rounded-full bg-white/70 backdrop-blur-md shadow-md border border-white/40 px-2 py-1">
+
                 {navItems.map((item) => (
                   <div
                     key={item.name}
@@ -115,22 +116,12 @@ export const Navbar = () => {
                               : "text-foreground hover:text-primary hover:bg-primary/5"
                           }`}
                         >
-                          <span className="flex items-center gap-1">
-                            {item.name}
-                            <svg
-                              className={`w-3 h-3 transition-transform duration-300 ${
-                                activeDropdown === item.name ? "rotate-180" : ""
-                              }`}
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
-                          </span>
+                          {item.name}
                         </button>
+
+                        {/* Dropdown */}
                         <div
-                          className={`absolute left-0 mt-2 w-56 transition-all duration-300 transform origin-top z-50 ${
+                          className={`absolute left-0 mt-2 w-56 transition-all duration-300 z-50 ${
                             activeDropdown === item.name
                               ? "opacity-100 scale-100 translate-y-0"
                               : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
@@ -138,44 +129,33 @@ export const Navbar = () => {
                           onMouseEnter={() => setActiveDropdown(item.name)}
                           onMouseLeave={() => setActiveDropdown(null)}
                         >
-                          <div className="bg-card backdrop-blur-md border border-border/80 rounded-xl shadow-2xl overflow-hidden">
-                            <div className="p-1">
-                              {item.subItems.map((subItem) =>
-                                subItem.external ? (
-                                  <a
-                                    key={subItem.name}
-                                    href={subItem.path}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center justify-between px-3 py-2.5 text-sm rounded-lg hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 hover:text-primary transition-all duration-200 group"
-                                    onClick={() => setActiveDropdown(null)}
-                                  >
-                                    <span>{subItem.name}</span>
-                                    <svg className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                    </svg>
-                                  </a>
-                                ) : (
-                                  <Link
-                                    key={subItem.name}
-                                    to={subItem.path}
-                                    className="block px-3 py-2.5 text-sm rounded-lg hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 hover:text-primary transition-all duration-200"
-                                    onClick={() => setActiveDropdown(null)}
-                                  >
-                                    {subItem.name}
-                                  </Link>
-                                )
-                              )}
-                            </div>
+                          <div className="bg-card backdrop-blur-md border border-border/80 rounded-xl shadow-2xl overflow-hidden p-1">
+                            {item.subItems.map((subItem) =>
+                              subItem.external ? (
+                                <a
+                                  key={subItem.name}
+                                  href={subItem.path} // OPEN IN SAME TAB
+                                  className="block px-3 py-2.5 text-sm rounded-lg hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 hover:text-primary transition-all duration-200"
+                                >
+                                  {subItem.name}
+                                </a>
+                              ) : (
+                                <Link
+                                  key={subItem.name}
+                                  to={subItem.path}
+                                  className="block px-3 py-2.5 text-sm rounded-lg hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 hover:text-primary transition-all duration-200"
+                                >
+                                  {subItem.name}
+                                </Link>
+                              )
+                            )}
                           </div>
                         </div>
                       </>
                     ) : item.external ? (
                       <a
-                        href={item.path}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`px-2 py-1 text-[10px] xl:text-[11px] font-semibold rounded-lg transition-all duration-300 whitespace-nowrap text-foreground hover:text-primary hover:bg-primary/5`}
+                        href={item.path} // OPEN IN SAME TAB
+                        className="px-2 py-1 text-[10px] xl:text-[11px] font-semibold rounded-lg transition-all duration-300 whitespace-nowrap text-foreground hover:text-primary hover:bg-primary/5"
                       >
                         {item.name}
                       </a>
@@ -197,7 +177,7 @@ export const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="icon"
@@ -205,58 +185,35 @@ export const Navbar = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <div className="relative w-6 h-6">
-              <Menu
-                className={`absolute inset-0 transition-all duration-300 ${
-                  isMobileMenuOpen ? "opacity-0 rotate-90 scale-0" : "opacity-100 rotate-0 scale-100"
-                }`}
-              />
-              <X
-                className={`absolute inset-0 transition-all duration-300 ${
-                  isMobileMenuOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-0"
-                }`}
-              />
+              <Menu className={`absolute inset-0 transition-all duration-300 ${isMobileMenuOpen ? "opacity-0 rotate-90 scale-0" : "opacity-100 rotate-0 scale-100"}`} />
+              <X className={`absolute inset-0 transition-all duration-300 ${isMobileMenuOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-0"}`} />
             </div>
           </Button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      <div
-        className={`lg:hidden transition-all duration-500 ease-in-out ${
-          isMobileMenuOpen ? "max-h-[calc(100vh-5rem)] opacity-100" : "max-h-0 opacity-0 overflow-hidden"
-        }`}
-      >
+      {/* Mobile Nav */}
+      <div className={`lg:hidden transition-all duration-500 ease-in-out ${isMobileMenuOpen ? "max-h-[calc(100vh-5rem)] opacity-100" : "max-h-0 opacity-0 overflow-hidden"}`}>
         <div className="bg-card/95 backdrop-blur-xl border-t border-border/60">
-          <div className="px-6 py-6 space-y-1 max-h-[calc(100vh-9rem)] overflow-y-auto overscroll-contain">
+          <div className="px-6 py-6 space-y-1 max-h-[calc(100vh-9rem)] overflow-y-auto">
+
             {navItems.map((item, index) => (
-              <div
-                key={item.name}
-                className="animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms`, animationFillMode: "both" }}
-              >
+              <div key={item.name} className="animate-fade-in" style={{ animationDelay: `${index * 100}ms`, animationFillMode: "both" }}>
                 {item.subItems ? (
                   <details className="group">
-                    <summary className="flex items-center justify-between py-3 font-semibold text-foreground cursor-pointer hover:text-primary transition-colors duration-200 list-none">
-                      <span>{item.name}</span>
-                      <svg className="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
+                    <summary className="flex items-center justify-between py-3 font-semibold text-foreground cursor-pointer hover:text-primary transition-colors list-none">
+                      {item.name}
                     </summary>
                     <div className="pl-4 space-y-1 pb-3">
                       {item.subItems.map((subItem) =>
                         subItem.external ? (
                           <a
                             key={subItem.name}
-                            href={subItem.path}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-between py-2.5 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg px-3 transition-all duration-200"
+                            href={subItem.path} // OPEN IN SAME TAB
+                            className="block py-2.5 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg px-3 transition-all duration-200"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
                             {subItem.name}
-                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
                           </a>
                         ) : (
                           <Link
@@ -273,9 +230,7 @@ export const Navbar = () => {
                   </details>
                 ) : item.external ? (
                   <a
-                    href={item.path}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={item.path} // OPEN IN SAME TAB
                     className="block py-3 font-semibold rounded-lg px-3 transition-all duration-200 text-foreground hover:text-primary hover:bg-primary/5"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -296,6 +251,7 @@ export const Navbar = () => {
                 )}
               </div>
             ))}
+
           </div>
         </div>
       </div>
