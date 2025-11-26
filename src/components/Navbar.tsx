@@ -12,12 +12,12 @@ const navItems = [
   },
 
   // ⭐ BACK TO EIRTM updated with 2-line format
-  {
-    name: "Back to EIRTM<br /><span style='font-size:9px'>(Home)</span>",
-    path: "https://eirtm2026congress.smartsociety.org/",
-    external: true,
-    html: true,
-  },
+{
+  name: "<div style='display:flex;flex-direction:column;line-height:1;align-items:center;'><span>Back to EIRTM</span><span style='font-size:9px; margin-top:-2px;'>(Home)</span></div>",
+  path: "https://eirtm2026congress.smartsociety.org/",
+  external: true,
+  html: true,
+},
 
   {
     name: "Publication",
