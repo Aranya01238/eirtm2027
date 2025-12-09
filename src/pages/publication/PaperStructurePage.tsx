@@ -1,5 +1,5 @@
 import React from 'react';
-import PaperStructurePdf from '@/assets/Paper-Structurewith-Submission-Guidelines.pdf'; // Import the PDF file
+import PaperStructurePdf from '@/assets/index_delayed_ui.pdf'; // Import the PDF file
 
 const PaperStructurePage = () => {
   return (
