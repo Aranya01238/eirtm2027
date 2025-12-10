@@ -3,6 +3,11 @@ import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { BookOpen } from "lucide-react";
 
+// Importing images directly from the path you provided
+// The '@' alias usually stands for the 'src' folder in React projects
+import atlantisLogo from "@/assets/atlantis.png";
+import springerLogo from "@/assets/springer.png";
+
 const ConferenceProceedingsPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-blue-50 text-slate-900 pt-24 pb-16 px-4">
@@ -48,9 +53,9 @@ const ConferenceProceedingsPage = () => {
               {/* Logo 1: Atlantis Press */}
               <div className="flex flex-col items-center gap-4 group">
                 <div className="h-32 w-64 flex items-center justify-center p-4 bg-slate-50 rounded-lg border hover:shadow-md transition-shadow">
-                  {/* FIXED: Used the 'raw' github link instead of the 'blob' link */}
+                  {/* Using the imported image variable */}
                   <img 
-                    src="https://raw.githubusercontent.com/iemaserver/EIRTM-2026-Technical/78c6287f1022c204446a8f1a123a3a0284b9ae9f/src/assets/atlantis.png" 
+                    src={atlantisLogo}
                     alt="Atlantis Press" 
                     className="max-h-full max-w-full object-contain"
                   />
@@ -64,9 +69,9 @@ const ConferenceProceedingsPage = () => {
               {/* Logo 2: Springer Nature */}
               <div className="flex flex-col items-center gap-4 group">
                 <div className="h-32 w-64 flex items-center justify-center p-4 bg-slate-50 rounded-lg border hover:shadow-md transition-shadow">
-                  {/* I added a working external URL for Springer so you can see the layout immediately. You can change this back to "/springer.png" later */}
+                  {/* Using the imported image variable */}
                   <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Springer_Nature_Logo.svg/2560px-Springer_Nature_Logo.svg.png" 
+                    src={springerLogo}
                     alt="Springer Nature" 
                     className="max-h-full max-w-full object-contain"
                   />
