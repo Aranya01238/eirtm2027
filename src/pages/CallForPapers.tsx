@@ -356,14 +356,6 @@ const CallForPapers = () => {
             >
               <Link to="/submission">Submit Paper</Link>
             </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-2 border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white px-8 py-6 transition-transform hover:scale-105"
-            >
-              <Link to="/publication">Publication Details</Link>
-            </Button>
           </div>
         </div>
       </motion.div>
