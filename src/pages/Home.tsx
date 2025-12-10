@@ -187,7 +187,6 @@ const Home = () => {
               {[
                 "Globally recognized flagship conference",
                 "Keynotes by renowned industry leaders and pioneers",
-                "Round tables and fireside chat sessions",
                 "Participants from 1000+ companies",
               ].map((text, idx) => (
                 <div
