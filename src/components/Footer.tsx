@@ -19,7 +19,7 @@ export const Footer = () => {
                 International Conference on Economics, Business, and Management
               </strong>
               <br />
-              In association with The Photovoltaic Institute of Île-de-France, France
+              In association with the
               <br />
               EMLV - The Leonard De Vinci Business School, Paris
             </p>
@@ -112,7 +112,7 @@ export const Footer = () => {
         {/* Footer Bottom */}
         <div className="text-center text-sm text-slate-500">
           <p>
-            © 2026 ICEBM | In association with The Photovoltaic Institute of Île-de-France, France and EMLV - The Leonard De Vinci Business School, Paris
+            © 2026 ICEBM | In association with The EMLV - The Leonard De Vinci Business School, Paris
           </p>
           <p className="mt-1">
             In collaboration with{" "}
