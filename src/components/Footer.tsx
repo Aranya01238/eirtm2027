@@ -21,6 +21,10 @@ export const Footer = () => {
               <br />
               In association with the
               EMLV - The Leonard De Vinci Business School, Paris
+              <br />
+               Venue: The Photovoltaic Institute of Île-de-France,
+                  <br />
+                  Paris, France
             </p>
             <p className="text-sm text-slate-500">
               Join global thought leaders, researchers, and industry experts to
