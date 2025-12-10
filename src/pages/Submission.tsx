@@ -18,12 +18,27 @@ const Submission = () => {
             Paper Submission
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-sky-500 mx-auto mb-6 rounded"></div>
-          <p className="text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed mb-8">
             Submit your research paper through our official submission system.
             Please review all guidelines carefully before submission to ensure
             compliance with ICEBM 2026 publication standards.
           </p>
+
+          {/* New Top Button */}
+          <div className="flex flex-col items-center justify-center">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-cyan-500 to-sky-600 text-white font-semibold shadow-lg hover:shadow-[0_0_20px_rgba(56,189,248,0.6)] hover:scale-105 transition-all duration-300 px-8 py-6 text-lg"
+              onClick={() => window.open("YOUR_EDAS_LINK_HERE", "_blank")}
+            >
+              Submit Via Edas
+            </Button>
+            <span className="text-cyan-600 font-medium mt-2 text-sm animate-pulse">
+              Click here
+            </span>
+          </div>
         </motion.div>
+
         {/* Submission Process */}
         <section className="mb-20 text-center">
           <h2 className="text-4xl font-bold text-sky-700 mb-8">
@@ -86,12 +101,21 @@ const Submission = () => {
             <p className="text-lg opacity-90 mb-6">
               Use the official EDAS submission system to upload your paper.
             </p>
-            <Button
-              size="lg"
-              className="bg-white text-cyan-700 font-semibold hover:bg-cyan-100 transition-transform hover:scale-105"
-            >
-              Submit via EDAS
-            </Button>
+            
+            {/* Bottom Button Group */}
+            <div className="flex flex-col items-center">
+              <Button
+                size="lg"
+                className="bg-white text-cyan-700 font-semibold hover:bg-cyan-100 transition-transform hover:scale-105"
+                onClick={() => window.open("YOUR_EDAS_LINK_HERE", "_blank")}
+              >
+                Submit Via Edas
+              </Button>
+              <span className="text-white font-medium mt-2 text-sm">
+                Click here
+              </span>
+            </div>
+
             <p className="mt-4 text-sm opacity-80">
               (You will be redirected to the EDAS submission portal)
             </p>
