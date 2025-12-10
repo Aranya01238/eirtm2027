@@ -1,12 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import {
-  CheckCircle2,
-  Upload,
-  FileText,
-  AlertCircle,
-  ClipboardList,
-} from "lucide-react";
+import { Upload, AlertCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Submission = () => {
@@ -69,8 +63,8 @@ const Submission = () => {
               },
               {
                 step: 2,
-                title: "Register on EasyChair",
-                desc: "Create or log in to your EasyChair account.",
+                title: "Register on EDAS",
+                desc: "Create or log in to your EDAS account.",
               },
               {
                 step: 3,
@@ -104,80 +98,7 @@ const Submission = () => {
           </div>
         </section>
 
-        {/* Pre-Submission Checklist */}
-        <Card className="p-8 mb-16 border-t-4 border-t-sky-500 bg-white rounded-2xl shadow-sm">
-          <div className="flex items-start gap-4 mb-6">
-            <ClipboardList className="h-10 w-10 text-cyan-500 flex-shrink-0" />
-            <div>
-              <h2 className="text-3xl font-bold mb-2 text-sky-700">
-                Pre-Submission Checklist
-              </h2>
-              <p className="text-slate-700">
-                Verify the following items before submitting your paper:
-              </p>
-            </div>
-          </div>
-
-          <div className="grid sm:grid-cols-2 gap-4">
-            {[
-              "Paper follows IEEE conference format (two-column, 10pt font)",
-              "Page count: 8–10 for full papers, 4–6 for short papers",
-              "Title ≤ 15 words; abstract 150–250 words",
-              "All figures and tables are clear and captioned",
-              "References follow IEEE citation style",
-              "Plagiarism < 15%",
-              "All co-authors have approved the submission",
-              "File is a single PDF under 10MB with embedded fonts",
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-3 p-3 hover:bg-cyan-50 rounded-lg transition-colors"
-              >
-                <CheckCircle2 className="h-5 w-5 text-cyan-500 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">{item}</span>
-              </div>
-            ))}
-          </div>
-        </Card>
-
-        {/* Technical Requirements */}
-        <Card className="p-8 mb-16 bg-blue-50 border-l-4 border-l-cyan-500 rounded-2xl">
-          <div className="flex items-start gap-4 mb-6">
-            <FileText className="h-10 w-10 text-sky-600 flex-shrink-0" />
-            <div>
-              <h2 className="text-3xl font-bold mb-2 text-sky-700">
-                Technical Requirements
-              </h2>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-slate-700">
-            <div>
-              <h3 className="font-bold text-lg mb-3 text-cyan-700">
-                Document Format
-              </h3>
-              <ul className="space-y-2">
-                <li>• File Format: PDF only</li>
-                <li>• Max File Size: 10 MB</li>
-                <li>• Paper Size: US Letter (8.5 × 11 in)</li>
-                <li>• Fonts: Embedded and subset</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold text-lg mb-3 text-cyan-700">
-                Content Requirements
-              </h3>
-              <ul className="space-y-2">
-                <li>• Language: English</li>
-                <li>• Full Papers: 8–10 pages</li>
-                <li>• Short Papers: 4–6 pages</li>
-                <li>• Plagiarism: Must be below 15%</li>
-              </ul>
-            </div>
-          </div>
-        </Card>
-
-        {/* EasyChair Submission */}
+        {/* EDAS Submission CTA */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -188,16 +109,16 @@ const Submission = () => {
             <Upload className="h-16 w-16 mx-auto mb-4" />
             <h2 className="text-3xl font-bold mb-3">Ready to Submit?</h2>
             <p className="text-lg opacity-90 mb-6">
-              Use the official EasyChair submission system to upload your paper.
+              Use the official EDAS submission system to upload your paper.
             </p>
             <Button
               size="lg"
               className="bg-white text-cyan-700 font-semibold hover:bg-cyan-100 transition-transform hover:scale-105"
             >
-              Submit via EasyChair
+              Submit via EDAS
             </Button>
             <p className="mt-4 text-sm opacity-80">
-              (You will be redirected to the EasyChair submission portal)
+              (You will be redirected to the EDAS submission portal)
             </p>
           </Card>
         </motion.div>
