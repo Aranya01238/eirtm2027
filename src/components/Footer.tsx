@@ -20,7 +20,6 @@ export const Footer = () => {
               </strong>
               <br />
               In association with the
-              <br />
               EMLV - The Leonard De Vinci Business School, Paris
             </p>
             <p className="text-sm text-slate-500">
