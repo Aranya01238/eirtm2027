@@ -59,7 +59,7 @@ const Submission = () => {
               {
                 step: 1,
                 title: "Prepare Paper",
-                desc: "Format your paper using the IEEE conference template.",
+                desc: "Format your paper using the official conference template.",
               },
               {
                 step: 2,
