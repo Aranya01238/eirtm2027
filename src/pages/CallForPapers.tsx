@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { FileText, Target, Zap, Cpu, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react"; // Added useState import
+import { useEffect, useState } from "react";
 
 const tracks = [
   {
@@ -172,8 +172,8 @@ const CallForPapers = () => {
           </p>
         </div>
 
-        {/* Submission Types */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        {/* Submission Types - CENTERED & SINGLE ITEM */}
+        <div className="flex justify-center mb-20">
           {[
             {
               icon: (
@@ -183,7 +183,11 @@ const CallForPapers = () => {
               desc: "3500 words and above, presenting comprehensive research, detailed methodologies, and analytical results.",
             },
           ].map((item, i) => (
-            <motion.div key={i} whileHover={{ scale: 1.05 }}>
+            <motion.div 
+                key={i} 
+                whileHover={{ scale: 1.05 }}
+                className="w-full max-w-lg" // Limit width so it looks like a card
+            >
               <Card className="p-8 text-center bg-white border border-cyan-100 hover:shadow-[0_0_25px_#38bdf8] hover:border-cyan-400 transition-all rounded-xl">
                 {item.icon}
                 <h3 className="text-xl font-bold mb-3 text-sky-700">
