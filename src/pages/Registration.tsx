@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, Users, Briefcase, GraduationCap } from "lucide-react";
+import { Check, Users, Briefcase, GraduationCap, ExternalLink } from "lucide-react";
 
 const Registration = () => {
   const registrationCategories = [
@@ -110,36 +110,43 @@ const Registration = () => {
         </div>
 
         {/* Registration CTA - Updated */}
-        <Card className="p-12 text-center bg-gradient-primary text-white">
-          <h2 className="text-4xl font-bold mb-4">Register & Submit</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Secure your spot or submit your paper for ICEBM 2026 via EDAS
-          </p>
-          
-          <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-            {/* Button 1: Register Now */}
-            <Button
-              size="lg"
-              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground text-lg px-8 py-6 w-full md:w-auto min-w-[250px]"
-              onClick={() => window.open("YOUR_EDAS_REGISTER_LINK_HERE", "_blank")}
-            >
-              Register Now (EDAS)
-            </Button>
+        <Card className="p-12 text-center bg-gradient-primary text-white relative overflow-hidden">
+          {/* Background decorative circles for "designed" feel */}
+          <div className="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-2xl"></div>
+          <div className="absolute bottom-0 right-0 w-48 h-48 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl"></div>
 
-            {/* Button 2: Paper Submission */}
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-white/10 hover:bg-white/20 text-white border-2 border-white/20 text-lg px-8 py-6 w-full md:w-auto min-w-[250px]"
-              onClick={() => window.open("YOUR_EDAS_SUBMISSION_LINK_HERE", "_blank")}
-            >
-              Submit Paper (EDAS)
-            </Button>
+          <div className="relative z-10">
+            <h2 className="text-4xl font-bold mb-4 tracking-tight">Register & Submit</h2>
+            <p className="text-xl mb-10 opacity-90">
+              Secure your spot or submit your paper for ICEBM 2026 via EDAS
+            </p>
+            
+            <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+              {/* Button 1: Register Now */}
+              <Button
+                size="lg"
+                className="bg-white text-primary hover:bg-white/90 font-bold text-lg px-8 py-7 h-auto w-full md:w-auto min-w-[280px] shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_25px_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-300 rounded-xl group"
+                onClick={() => window.open("YOUR_EDAS_REGISTER_LINK_HERE", "_blank")}
+              >
+                <span>Register Now (EDAS)</span>
+                <ExternalLink className="ml-2 h-5 w-5 opacity-70 group-hover:opacity-100 transition-opacity" />
+              </Button>
+
+              {/* Button 2: Paper Submission */}
+              <Button
+                size="lg"
+                className="bg-white text-primary hover:bg-white/90 font-bold text-lg px-8 py-7 h-auto w-full md:w-auto min-w-[280px] shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_25px_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-300 rounded-xl group"
+                onClick={() => window.open("YOUR_EDAS_SUBMISSION_LINK_HERE", "_blank")}
+              >
+                <span>Submit Paper (EDAS)</span>
+                <ExternalLink className="ml-2 h-5 w-5 opacity-70 group-hover:opacity-100 transition-opacity" />
+              </Button>
+            </div>
+
+            <p className="mt-8 text-sm opacity-75">
+              For registration queries, contact: registration@icebm2026.org
+            </p>
           </div>
-
-          <p className="mt-8 text-sm opacity-75">
-            For registration queries, contact: registration@icebm2026.org
-          </p>
         </Card>
       </div>
     </div>
