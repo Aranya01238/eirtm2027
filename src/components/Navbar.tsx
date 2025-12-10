@@ -15,7 +15,6 @@ const navItems = [
       { name: "Conference Proceedings", path: "/publication/proceedings" },
       { name: "Journal Publication", path: "/publication/journal" },
       { name: "Paper Structure", path: "/publication/structure" },
-      { name: "Style of Referencing", path: "/publication/referencing" },
     ],
   },
   {
