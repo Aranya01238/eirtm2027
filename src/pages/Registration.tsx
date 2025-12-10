@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, Users, Briefcase, GraduationCap, Globe } from "lucide-react";
+import { Check, Users, Briefcase, GraduationCap } from "lucide-react";
 
 const Registration = () => {
   const registrationCategories = [
@@ -28,17 +28,6 @@ const Registration = () => {
       regular: "€150",
       color: "secondary",
     },
-  ];
-
-  const benefits = [
-    "Access to all technical sessions and keynote speeches",
-    "Conference kit with proceedings (digital/print)",
-    "Lunch and refreshments during conference days",
-    "Certificate of participation",
-    "Networking opportunities with global researchers",
-    "Access to workshop sessions",
-    "Publication in conference proceedings",
-    "Entry to gala dinner (on registration basis)",
   ];
 
   return (
@@ -118,148 +107,39 @@ const Registration = () => {
               );
             })}
           </div>
-          
         </div>
 
-        {/* Registration Benefits */}
-        <Card className="p-8 mb-12 bg-muted">
-          <h2 className="text-3xl font-bold mb-6 text-primary">
-            Registration Includes
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start gap-3">
-                <Check className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
-                <span className="text-lg">{benefit}</span>
-              </div>
-            ))}
-          </div>
-        </Card>
-
-        {/* Payment Information */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          <Card className="p-8 border-t-4 border-t-primary">
-            <h2 className="text-2xl font-bold mb-6 text-primary">
-              Payment Methods
-            </h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="font-bold text-lg mb-2">
-                  Bank Transfer (India)
-                </h3>
-                <div className="bg-muted p-4 rounded-lg space-y-2 text-sm">
-                  <p>
-                    <strong>Bank Name:</strong> State Bank of India
-                  </p>
-                  <p>
-                    <strong>Account Name:</strong> ICEBM 2026
-                  </p>
-                  <p>
-                    <strong>Account Number:</strong> XXXX XXXX XXXX
-                  </p>
-                  <p>
-                    <strong>IFSC Code:</strong> SBINXXXXXXX
-                  </p>
-                  <p>
-                    <strong>Branch:</strong> IEM Campus, Kolkata
-                  </p>
-                </div>
-              </div>
-              <div>
-                <h3 className="font-bold text-lg mb-2">
-                  International Wire Transfer
-                </h3>
-                <div className="bg-muted p-4 rounded-lg space-y-2 text-sm">
-                  <p>
-                    <strong>SWIFT Code:</strong> SBINXXXXXXX
-                  </p>
-                  <p>
-                    <strong>Bank Address:</strong> IEM Campus Branch, Kolkata,
-                    India
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Card>
-
-          <Card className="p-8 border-t-4 border-t-secondary">
-            <h2 className="text-2xl font-bold mb-6 text-primary">
-              Registration Process
-            </h2>
-            <ol className="space-y-4">
-              <li className="flex gap-3">
-                <span className="text-secondary font-bold text-xl">1.</span>
-                <div>
-                  <strong>Submit Your Paper:</strong> Papers must be accepted
-                  before registration
-                </div>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-secondary font-bold text-xl">2.</span>
-                <div>
-                  <strong>Receive Acceptance:</strong> Wait for acceptance
-                  notification
-                </div>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-secondary font-bold text-xl">3.</span>
-                <div>
-                  <strong>Make Payment:</strong> Transfer the registration fee
-                  to the provided account
-                </div>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-secondary font-bold text-xl">4.</span>
-                <div>
-                  <strong>Submit Proof:</strong> Email payment proof to
-                  registration@icebm2026.org
-                </div>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-secondary font-bold text-xl">5.</span>
-                <div>
-                  <strong>Get Confirmation:</strong> Receive registration
-                  confirmation and participant ID
-                </div>
-              </li>
-            </ol>
-          </Card>
-        </div>
-
-        {/* Registration CTA */}
+        {/* Registration CTA - Updated */}
         <Card className="p-12 text-center bg-gradient-primary text-white">
-          <h2 className="text-4xl font-bold mb-4">Register Now</h2>
+          <h2 className="text-4xl font-bold mb-4">Register & Submit</h2>
           <p className="text-xl mb-8 opacity-90">
-            Secure your spot at ICEBM 2026
+            Secure your spot or submit your paper for ICEBM 2026 via EDAS
           </p>
-          <Button
-            size="lg"
-            className="bg-secondary hover:bg-secondary/90 text-secondary-foreground text-lg px-8 py-6"
-          >
-            Complete Registration
-          </Button>
-          <p className="mt-6 text-sm opacity-75">
+          
+          <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+            {/* Button 1: Register Now */}
+            <Button
+              size="lg"
+              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground text-lg px-8 py-6 w-full md:w-auto min-w-[250px]"
+              onClick={() => window.open("YOUR_EDAS_REGISTER_LINK_HERE", "_blank")}
+            >
+              Register Now (EDAS)
+            </Button>
+
+            {/* Button 2: Paper Submission */}
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-white/10 hover:bg-white/20 text-white border-2 border-white/20 text-lg px-8 py-6 w-full md:w-auto min-w-[250px]"
+              onClick={() => window.open("YOUR_EDAS_SUBMISSION_LINK_HERE", "_blank")}
+            >
+              Submit Paper (EDAS)
+            </Button>
+          </div>
+
+          <p className="mt-8 text-sm opacity-75">
             For registration queries, contact: registration@icebm2026.org
           </p>
-        </Card>
-
-        {/* Cancellation Policy */}
-        <Card className="p-8 mt-12 bg-muted">
-          <h2 className="text-2xl font-bold mb-4 text-primary">
-            Cancellation & Refund Policy
-          </h2>
-          <div className="space-y-3 text-muted-foreground">
-            <p>
-              • Cancellations before "February 1, 2026": 80% refund (processing
-              fee deducted)
-            </p>
-            <p>• Cancellations between "February 1-20, 2026": 50% refund</p>
-            <p>• Cancellations after "February 20, 2025": No refund</p>
-            <p>
-              • In case of conference cancellation, full refund will be
-              processed within 30 days
-            </p>
-          </div>
         </Card>
       </div>
     </div>
