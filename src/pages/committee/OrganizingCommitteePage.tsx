@@ -112,7 +112,7 @@ const OrganizingCommitteePage: React.FC = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-sky-500 mx-auto mb-6 rounded"></div>
           <p className="text-lg text-[#334155] max-w-3xl mx-auto leading-relaxed">
             The organizing committee of{" "}
-            <span className="font-semibold text-sky-600">ICECIT 2026</span>{" "}
+            <span className="font-semibold text-sky-600">ICEBM 2026</span>{" "}
             brings together global experts, scholars, and industry leaders to
             guide the success of this international conference.
           </p>
