@@ -93,8 +93,8 @@ const tracks = [
 ];
 
 const importantDates = [
-  { event: "Full Paper Submission", date: "10th December, 2025" },
-  { event: "Acceptance Notification", date: "10th January, 2026" },
+  { event: "Full Paper Submission", date: "10th January, 2026" },
+  { event: "Acceptance Notification", date: "10th February, 2026" },
   { event: "Registration Deadline", date: "20th March, 2026" },
   { event: "Presentation Submission", date: "20th March, 2026" },
   { event: "Conference Dates", date: "21st – 23rd April, 2026" },
@@ -180,17 +180,7 @@ const CallForPapers = () => {
                 <FileText className="h-12 w-12 text-cyan-500 mx-auto mb-4" />
               ),
               title: "Full Papers",
-              desc: "8–10 pages presenting comprehensive research, detailed methodologies, and analytical results.",
-            },
-            {
-              icon: <Target className="h-12 w-12 text-sky-500 mx-auto mb-4" />,
-              title: "Short Papers",
-              desc: "4–6 pages for preliminary research, innovative ideas, and emerging work-in-progress studies.",
-            },
-            {
-              icon: <Zap className="h-12 w-12 text-cyan-400 mx-auto mb-4" />,
-              title: "Industry Papers",
-              desc: "4–8 pages highlighting business case studies, industrial challenges, and real-world applications.",
+              desc: "3500 words and above, presenting comprehensive research, detailed methodologies, and analytical results.",
             },
           ].map((item, i) => (
             <motion.div key={i} whileHover={{ scale: 1.05 }}>
@@ -270,13 +260,13 @@ const CallForPapers = () => {
             </li>
             <li>
               • Papers should follow the{" "}
-              <span className="text-sky-600 font-semibold">IEEE format</span>
+              <span className="text-sky-600 font-semibold">Conference format</span>
               and be written in English.
             </li>
             <li>
               • Submit through the{" "}
               <span className="text-cyan-600 font-semibold">
-                EasyChair submission system
+                Edas submission system
               </span>
               .
             </li>
