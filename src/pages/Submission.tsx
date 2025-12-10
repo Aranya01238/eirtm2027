@@ -24,31 +24,6 @@ const Submission = () => {
             compliance with ICEBM 2026 publication standards.
           </p>
         </motion.div>
-
-        {/* Important Notice */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-        >
-          <Card className="p-6 mb-12 bg-cyan-50 border-l-4 border-l-cyan-500">
-            <div className="flex items-start gap-3">
-              <AlertCircle className="h-7 w-7 text-cyan-600 flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="font-bold text-lg text-sky-700 mb-2">
-                  Important Notice
-                </h3>
-                <p className="text-slate-700">
-                  Submission Deadline:{" "}
-                  <strong className="text-cyan-600">Coming Soon</strong>. Please
-                  ensure your manuscript follows IEEE formatting guidelines and
-                  is submitted on time. Late submissions will not be accepted.
-                </p>
-              </div>
-            </div>
-          </Card>
-        </motion.div>
-
         {/* Submission Process */}
         <section className="mb-20 text-center">
           <h2 className="text-4xl font-bold text-sky-700 mb-8">
