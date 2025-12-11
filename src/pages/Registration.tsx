@@ -109,9 +109,8 @@ const Registration = () => {
           </div>
         </div>
 
-        {/* Registration CTA - Updated */}
+        {/* Registration CTA with Updated Links */}
         <Card className="p-12 text-center bg-gradient-primary text-white relative overflow-hidden">
-          {/* Background decorative circles for "designed" feel */}
           <div className="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-2xl"></div>
           <div className="absolute bottom-0 right-0 w-48 h-48 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl"></div>
 
@@ -120,23 +119,28 @@ const Registration = () => {
             <p className="text-xl mb-10 opacity-90">
               Secure your spot or submit your paper for ICEBM 2026 via EDAS
             </p>
-            
+
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-              {/* Button 1: Register Now */}
+              
+              {/* Updated Button 1: Register Now */}
               <Button
                 size="lg"
                 className="bg-white text-primary hover:bg-white/90 font-bold text-lg px-8 py-7 h-auto w-full md:w-auto min-w-[280px] shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_25px_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-300 rounded-xl group"
-                onClick={() => window.open("YOUR_EDAS_REGISTER_LINK_HERE", "_blank")}
+                onClick={() =>
+                  window.open("https://edas.info/newPaper.php?c=34692", "_blank")
+                }
               >
                 <span>Register Now (EDAS)</span>
                 <ExternalLink className="ml-2 h-5 w-5 opacity-70 group-hover:opacity-100 transition-opacity" />
               </Button>
 
-              {/* Button 2: Paper Submission */}
+              {/* Updated Button 2: Submit Paper */}
               <Button
                 size="lg"
                 className="bg-white text-primary hover:bg-white/90 font-bold text-lg px-8 py-7 h-auto w-full md:w-auto min-w-[280px] shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_25px_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-300 rounded-xl group"
-                onClick={() => window.open("YOUR_EDAS_SUBMISSION_LINK_HERE", "_blank")}
+                onClick={() =>
+                  window.open("https://edas.info/newPaper.php?c=34692", "_blank")
+                }
               >
                 <span>Submit Paper (EDAS)</span>
                 <ExternalLink className="ml-2 h-5 w-5 opacity-70 group-hover:opacity-100 transition-opacity" />
