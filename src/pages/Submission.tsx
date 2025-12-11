@@ -29,7 +29,9 @@ const Submission = () => {
             <Button
               size="lg"
               className="bg-gradient-to-r from-cyan-500 to-sky-600 text-white font-semibold shadow-lg hover:shadow-[0_0_20px_rgba(56,189,248,0.6)] hover:scale-105 transition-all duration-300 px-8 py-6 text-lg"
-              onClick={() => window.open("YOUR_EDAS_LINK_HERE", "_blank")}
+              onClick={() =>
+                window.open("https://edas.info/newPaper.php?c=34692", "_blank")
+              }
             >
               Submit Via Edas
             </Button>
@@ -101,13 +103,15 @@ const Submission = () => {
             <p className="text-lg opacity-90 mb-6">
               Use the official EDAS submission system to upload your paper.
             </p>
-            
+
             {/* Bottom Button Group */}
             <div className="flex flex-col items-center">
               <Button
                 size="lg"
                 className="bg-white text-cyan-700 font-semibold hover:bg-cyan-100 transition-transform hover:scale-105"
-                onClick={() => window.open("YOUR_EDAS_LINK_HERE", "_blank")}
+                onClick={() =>
+                  window.open("https://edas.info/newPaper.php?c=34692", "_blank")
+                }
               >
                 Submit Via Edas
               </Button>
