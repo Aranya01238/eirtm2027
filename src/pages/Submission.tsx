@@ -47,47 +47,54 @@ const Submission = () => {
             Submission Process
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {[
-              {
-                step: 1,
-                title: "Prepare Paper",
-                desc: "Format your paper using the official conference template.",
-              },
-              {
-                step: 2,
-                title: "Register on EDAS",
-                desc: "Create or log in to your EDAS account.",
-              },
-              {
-                step: 3,
-                title: "Submit Paper",
-                desc: "Upload your PDF and fill in all required details.",
-              },
-              {
-                step: 4,
-                title: "Track Status",
-                desc: "Monitor submission status and review progress.",
-              },
-            ].map((item, idx) => (
-              <motion.div
-                key={idx}
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 250 }}
-              >
-                <Card className="p-8 text-center bg-white border border-cyan-100 rounded-2xl hover:shadow-[0_0_25px_#38bdf8] transition-all duration-300">
-                  <div className="bg-gradient-to-r from-cyan-400 to-sky-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-5 shadow-[0_0_20px_#06b6d4]">
-                    <span className="text-2xl font-bold text-white">
-                      {item.step}
-                    </span>
-                  </div>
-                  <h3 className="font-bold text-sky-700 mb-2 text-lg">
-                    {item.title}
-                  </h3>
-                  <p className="text-slate-700 text-sm">{item.desc}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+  {[
+    {
+      step: 1,
+      title: "Prepare Paper",
+      desc: (
+        <>
+          Format your paper using the{" "}
+          <a
+            href="/ICEBM-2026-paper-format.pdf"
+            download
+            className="text-blue-600 underline hover:text-blue-800"
+          >
+            official conference template (PDF)
+          </a>
+          .
+        </>
+      ),
+    },
+    {
+      step: 2,
+      title: "Register on EDAS",
+      desc: "Create or log in to your EDAS account.",
+    },
+    {
+      step: 3,
+      title: "Submit Paper",
+      desc: "Upload your PDF and fill in all required details.",
+    },
+    {
+      step: 4,
+      title: "Track Status",
+      desc: "Monitor submission status and review progress.",
+    },
+  ].map((item, idx) => (
+    <motion.div
+      key={idx}
+      whileHover={{ scale: 1.05 }}
+      transition={{ type: "spring", stiffness: 250 }}
+      className="p-6 rounded-2xl shadow-md bg-white"
+    >
+      <h3 className="text-lg font-semibold mb-2">
+        Step {item.step}: {item.title}
+      </h3>
+      <p className="text-gray-600">{item.desc}</p>
+    </motion.div>
+  ))}
+</div>
+
         </section>
 
         {/* EDAS Submission CTA */}
