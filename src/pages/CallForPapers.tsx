@@ -93,7 +93,7 @@ const tracks = [
 ];
 
 const importantDates = [
-  { event: "Full Paper Submission", date: "10th January, 2026" },
+  { event: "Full Paper Submission", date: "30th January, 2026" },
   { event: "Acceptance Notification", date: "10th February, 2026" },
   { event: "Registration Deadline", date: "20th March, 2026" },
   { event: "Presentation Submission", date: "20th March, 2026" },
