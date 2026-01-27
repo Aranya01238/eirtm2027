@@ -60,6 +60,12 @@ const members: AdvisoryMember[] = [
     affiliation:
       "College of Healthcare Management & Economics, Gulf Medical University, UAE",
   },
+  {
+    name: "Dr. Ayman Ibrahim",
+    designation: "Associate Professor",
+    affiliation:
+      "Rochester Institute of Technology, Dubai, UAE",
+  },
 ];
 
 const AdvisoryCommitteePage: React.FC = () => {
