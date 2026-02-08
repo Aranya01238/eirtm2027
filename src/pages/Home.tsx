@@ -14,8 +14,8 @@ import ass from "@/assets/ars.png";
 import imgs from "@/assets/Gemini_Generated_Image_7wsqb57wsqb57wsq.png";
 
 const importantDates = [
-  { label: "Full Paper Submission", date: "30th January, 2026" },
-  { label: "Acceptance Notification", date: "10th February, 2026" },
+  { label: "Full Paper Submission", date: "15th February, 2026" },
+  { label: "Acceptance Notification", date: "10th March, 2026" },
   { label: "Registration", date: "20th March, 2026" },
   { label: "Presentation Submission", date: "20th March, 2026" },
   { label: "Conference On", date: "21st – 23rd April, 2026" },
