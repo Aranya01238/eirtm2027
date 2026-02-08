@@ -5,8 +5,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Calendar, MapPin, Users, BookOpen, Award } from "lucide-react";
 
 const timelineData = [
-  { id: 1, title: "Full Paper Submission", date: "30 Jan, 2026", description: "Submit research papers.", icon: Calendar },
-  { id: 2, title: "Acceptance Notification", date: "10 Feb, 2026", description: "Notification of accepted papers.", icon: Award },
+  { id: 1, title: "Full Paper Submission", date: "15th Feb, 2026", description: "Submit research papers.", icon: Calendar },
+  { id: 2, title: "Acceptance Notification", date: "10th Mar, 2026", description: "Notification of accepted papers.", icon: Award },
   { id: 3, title: "Registration Deadline", date: "20 Mar, 2026", description: "Deadline for registration.", icon: Users },
   { id: 4, title: "Presentation Submission", date: "20 Mar, 2026", description: "Upload slides or posters.", icon: BookOpen },
   { id: 5, title: "Conference Begins", date: "21-23 Apr, 2026", description: "Keynote speeches start.", icon: MapPin },
