@@ -1,0 +1,161 @@
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Upload, AlertCircle } from "lucide-react";
+import { motion } from "framer-motion";
+
+const Submission = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-white to-blue-50 text-[#0f172a] pt-24 pb-16 px-4 sm:px-6 lg:px-8 font-sans">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-sky-600 drop-shadow-[0_0_15px_rgba(56,189,248,0.5)] mb-4">
+            Paper Submission
+          </h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-sky-500 mx-auto mb-6 rounded"></div>
+          <p className="text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed mb-8">
+            Submit your research paper through our official submission system.
+            Please review all guidelines carefully before submission to ensure
+            compliance with ICEBM 2026 publication standards.
+          </p>
+
+          {/* New Top Button */}
+          <div className="flex flex-col items-center justify-center">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-cyan-500 to-sky-600 text-white font-semibold shadow-lg hover:shadow-[0_0_20px_rgba(56,189,248,0.6)] hover:scale-105 transition-all duration-300 px-8 py-6 text-lg"
+              onClick={() =>
+                window.open("https://edas.info/newPaper.php?c=34692", "_blank")
+              }
+            >
+              Submit Via Edas
+            </Button>
+            <span className="text-cyan-600 font-medium mt-2 text-sm animate-pulse">
+              Click here
+            </span>
+          </div>
+        </motion.div>
+
+        {/* Submission Process */}
+        <section className="mb-20 text-center">
+          <h2 className="text-4xl font-bold text-sky-700 mb-8">
+            Submission Process
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+  {[
+    {
+      step: 1,
+      title: "Prepare Paper",
+      desc: (
+        <>
+          Format your paper using the{" "}
+          <a
+            href="/ICEBM-2026-paper-format.pdf"
+            download
+            className="text-blue-600 underline hover:text-blue-800"
+          >
+            official conference template (PDF)
+          </a>
+          .
+        </>
+      ),
+    },
+    {
+      step: 2,
+      title: "Register on EDAS",
+      desc: "Create or log in to your EDAS account.",
+    },
+    {
+      step: 3,
+      title: "Submit Paper",
+      desc: "Upload your PDF and fill in all required details.",
+    },
+    {
+      step: 4,
+      title: "Track Status",
+      desc: "Monitor submission status and review progress.",
+    },
+  ].map((item, idx) => (
+    <motion.div
+      key={idx}
+      whileHover={{ scale: 1.05 }}
+      transition={{ type: "spring", stiffness: 250 }}
+      className="p-6 rounded-2xl shadow-md bg-white"
+    >
+      <h3 className="text-lg font-semibold mb-2">
+        Step {item.step}: {item.title}
+      </h3>
+      <p className="text-gray-600">{item.desc}</p>
+    </motion.div>
+  ))}
+</div>
+
+        </section>
+
+        {/* EDAS Submission CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <Card className="p-12 text-center bg-gradient-to-r from-cyan-500 to-sky-500 text-white rounded-3xl shadow-lg mb-16">
+            <Upload className="h-16 w-16 mx-auto mb-4" />
+            <h2 className="text-3xl font-bold mb-3">Ready to Submit?</h2>
+            <p className="text-lg opacity-90 mb-6">
+              Use the official EDAS submission system to upload your paper.
+            </p>
+
+            {/* Bottom Button Group */}
+            <div className="flex flex-col items-center">
+              <Button
+                size="lg"
+                className="bg-white text-cyan-700 font-semibold hover:bg-cyan-100 transition-transform hover:scale-105"
+                onClick={() =>
+                  window.open("https://edas.info/newPaper.php?c=34692", "_blank")
+                }
+              >
+                Submit Via Edas
+              </Button>
+              <span className="text-white font-medium mt-2 text-sm">
+                Click here
+              </span>
+            </div>
+
+            <p className="mt-4 text-sm opacity-80">
+              (You will be redirected to the EDAS submission portal)
+            </p>
+          </Card>
+        </motion.div>
+
+        {/* Review Process */}
+        <Card className="p-10 border-t-4 border-t-cyan-500 rounded-2xl bg-white">
+          <h2 className="text-3xl font-bold mb-6 text-sky-700">
+            Review Process
+          </h2>
+          <div className="space-y-5 text-slate-700 text-lg">
+            {[
+              "Initial Screening – Formatting and plagiarism check",
+              "Double-Blind Review – Minimum two independent reviewers",
+              "Review Period – Typically 2–3 weeks",
+              "Decision Notification – Review comments via email",
+              "Camera-Ready Submission – Revised version upload",
+            ].map((step, index) => (
+              <div key={index} className="flex gap-3">
+                <span className="text-cyan-600 font-bold">{index + 1}.</span>
+                <span>{step}</span>
+              </div>
+            ))}
+          </div>
+        </Card>
+      </div>
+    </div>
+  );
+};
+
+export default Submission;
