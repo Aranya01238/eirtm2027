@@ -1,6 +1,12 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, Users, Briefcase, GraduationCap, ExternalLink } from "lucide-react";
+import {
+  Check,
+  Users,
+  Briefcase,
+  GraduationCap,
+  ExternalLink,
+} from "lucide-react";
 
 const Registration = () => {
   const registrationCategories = [
@@ -50,7 +56,7 @@ const Registration = () => {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
             <div>
-              <strong>Full Paper Submission:</strong> Until "15th February, 2026"
+              <strong>Full Paper Submission:</strong> Until "15th March, 2026"
             </div>
             <div>
               <strong>Late Registration:</strong> ""
@@ -115,19 +121,23 @@ const Registration = () => {
           <div className="absolute bottom-0 right-0 w-48 h-48 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl"></div>
 
           <div className="relative z-10">
-            <h2 className="text-4xl font-bold mb-4 tracking-tight">Register & Submit</h2>
+            <h2 className="text-4xl font-bold mb-4 tracking-tight">
+              Register & Submit
+            </h2>
             <p className="text-xl mb-10 opacity-90">
               Secure your spot or submit your paper for ICEBM 2026 via EDAS
             </p>
 
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-              
               {/* Updated Button 1: Register Now */}
               <Button
                 size="lg"
                 className="bg-white text-primary hover:bg-white/90 font-bold text-lg px-8 py-7 h-auto w-full md:w-auto min-w-[280px] shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_25px_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-300 rounded-xl group"
                 onClick={() =>
-                  window.open("https://edas.info/newPaper.php?c=34692", "_blank")
+                  window.open(
+                    "https://edas.info/newPaper.php?c=34692",
+                    "_blank",
+                  )
                 }
               >
                 <span>Register Now (EDAS)</span>
@@ -139,7 +149,10 @@ const Registration = () => {
                 size="lg"
                 className="bg-white text-primary hover:bg-white/90 font-bold text-lg px-8 py-7 h-auto w-full md:w-auto min-w-[280px] shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_25px_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-300 rounded-xl group"
                 onClick={() =>
-                  window.open("https://edas.info/newPaper.php?c=34692", "_blank")
+                  window.open(
+                    "https://edas.info/newPaper.php?c=34692",
+                    "_blank",
+                  )
                 }
               >
                 <span>Submit Paper (EDAS)</span>

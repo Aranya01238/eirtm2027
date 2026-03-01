@@ -93,10 +93,10 @@ const tracks = [
 ];
 
 const importantDates = [
-  { event: "Full Paper Submission", date: "15th February, 2026" },
-  { event: "Acceptance Notification", date: "10th March, 2026" },
-  { event: "Registration Deadline", date: "20th March, 2026" },
-  { event: "Presentation Submission", date: "20th March, 2026" },
+  { event: "Full Paper Submission", date: "15th March, 2026" },
+  { event: "Acceptance Notification", date: "22nd March, 2026" },
+  { event: "Registration Deadline", date: "29th March, 2026" },
+  { event: "Presentation Submission", date: "05th April, 2026" },
   { event: "Conference Dates", date: "21st – 23rd April, 2026" },
 ];
 // Helper function to generate URL-friendly slugs
@@ -182,10 +182,10 @@ const CallForPapers = () => {
               desc: "3500 words and above, presenting comprehensive research, detailed methodologies, and analytical results.",
             },
           ].map((item, i) => (
-            <motion.div 
-                key={i} 
-                whileHover={{ scale: 1.05 }}
-                className="w-full max-w-lg" // Limit width so it looks like a card
+            <motion.div
+              key={i}
+              whileHover={{ scale: 1.05 }}
+              className="w-full max-w-lg" // Limit width so it looks like a card
             >
               <Card className="p-8 text-center bg-white border border-cyan-100 hover:shadow-[0_0_25px_#38bdf8] hover:border-cyan-400 transition-all rounded-xl">
                 {item.icon}
@@ -263,7 +263,9 @@ const CallForPapers = () => {
             </li>
             <li>
               • Papers should follow the{" "}
-              <span className="text-sky-600 font-semibold">Conference format</span>
+              <span className="text-sky-600 font-semibold">
+                Conference format
+              </span>
               and be written in English.
             </li>
             <li>
