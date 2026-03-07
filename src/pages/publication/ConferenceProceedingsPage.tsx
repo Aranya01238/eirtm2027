@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { BookOpen } from "lucide-react";
@@ -12,9 +12,8 @@ const ConferenceProceedingsPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-blue-50 text-slate-900 pt-24 pb-16 px-4">
       <div className="max-w-6xl mx-auto">
-        
         {/* Header Section */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -25,7 +24,8 @@ const ConferenceProceedingsPage = () => {
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto rounded-full mb-6"></div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Access information regarding the publication of accepted research papers.
+            Access information regarding the publication of accepted research
+            papers.
           </p>
         </motion.div>
 
@@ -36,31 +36,39 @@ const ConferenceProceedingsPage = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <Card className="p-10 md:p-14 shadow-lg border-t-4 border-t-blue-500 bg-white text-center">
-            
             <BookOpen className="w-16 h-16 text-blue-500 mx-auto mb-6" />
-            
+
             <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-8">
               Publication Partners
             </h2>
-            
+
             <p className="text-xl text-slate-600 mb-12 leading-relaxed">
-              The conference proceedings will be published in <span className="font-semibold text-blue-700">Atlantis Press</span>, part of <span className="font-semibold text-blue-700">Springer Nature</span>.
+              The conference proceedings will be published in{" "}
+              <span className="font-semibold text-blue-700">
+                Atlantis Press
+              </span>
+              , part of{" "}
+              <span className="font-semibold text-blue-700">
+                Springer Nature
+              </span>
+              .
             </p>
 
             {/* Logos Row */}
             <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 grayscale hover:grayscale-0 transition-all duration-500">
-              
               {/* Logo 1: Atlantis Press */}
               <div className="flex flex-col items-center gap-4 group">
                 <div className="h-32 w-64 flex items-center justify-center p-4 bg-slate-50 rounded-lg border hover:shadow-md transition-shadow">
                   {/* Using the imported image variable */}
-                  <img 
+                  <img
                     src={atlantisLogo}
-                    alt="Atlantis Press" 
+                    alt="Atlantis Press"
                     className="max-h-full max-w-full object-contain"
                   />
                 </div>
-                <span className="text-sm font-medium text-slate-500 group-hover:text-blue-600 transition-colors">Atlantis Press</span>
+                <span className="text-sm font-medium text-slate-500 group-hover:text-blue-600 transition-colors">
+                  Atlantis Press
+                </span>
               </div>
 
               {/* Divider (Hidden on mobile) */}
@@ -70,24 +78,65 @@ const ConferenceProceedingsPage = () => {
               <div className="flex flex-col items-center gap-4 group">
                 <div className="h-32 w-64 flex items-center justify-center p-4 bg-slate-50 rounded-lg border hover:shadow-md transition-shadow">
                   {/* Using the imported image variable */}
-                  <img 
+                  <img
                     src={springerLogo}
-                    alt="Springer Nature" 
+                    alt="Springer Nature"
                     className="max-h-full max-w-full object-contain"
                   />
                 </div>
-                <span className="text-sm font-medium text-slate-500 group-hover:text-blue-600 transition-colors">Springer Nature</span>
+                <span className="text-sm font-medium text-slate-500 group-hover:text-blue-600 transition-colors">
+                  Springer Nature
+                </span>
               </div>
-
             </div>
           </Card>
         </motion.div>
 
-        {/* Additional Info / Footer note */}
-        <p className="text-center text-slate-500 mt-12 italic">
-          * All accepted papers must be presented at the conference to be included in the proceedings.
-        </p>
+        {/* Book / Book Publications Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+          className="mt-12"
+        >
+          <Card className="p-10 md:p-14 shadow-lg border-t-4 border-t-cyan-500 bg-white text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-8">
+              Book/Book Publications
+            </h2>
 
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+              <div className="flex flex-col items-center gap-4 group">
+                <div className="h-32 w-full flex items-center justify-center p-4 bg-amber-800 rounded-lg border border-amber-900 hover:shadow-md transition-shadow overflow-hidden">
+                  <img
+                    src="/CFP OF ICETPS (1).png"
+                    alt="Book Publication Logo 1"
+                    className="max-h-full max-w-full object-contain scale-[1.75]"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center gap-4 group">
+                <div className="h-32 w-full flex items-center justify-center p-4 bg-amber-800 rounded-lg border border-amber-900 hover:shadow-md transition-shadow overflow-hidden">
+                  <img
+                    src="/CFP OF ICETPS (2).png"
+                    alt="Book Publication Logo 2"
+                    className="max-h-full max-w-full object-contain scale-[1.75]"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center gap-4 group">
+                <div className="h-32 w-full flex items-center justify-center p-4 bg-amber-800 rounded-lg border border-amber-900 hover:shadow-md transition-shadow overflow-hidden">
+                  <img
+                    src="/CFP OF ICETPS (3).png"
+                    alt="Book Publication Logo 3"
+                    className="max-h-full max-w-full object-contain scale-[1.75]"
+                  />
+                </div>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
       </div>
     </div>
   );
