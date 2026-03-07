@@ -13,6 +13,7 @@ const navItems = [
     path: "/publication",
     subItems: [
       { name: "Conference Proceedings", path: "/publication/proceedings" },
+      { name: "Book/Book Publication", path: "/publication/book-publication" },
       { name: "Journal Publication", path: "/publication/journal" },
       { name: "Paper Structure", path: "/publication/structure" },
     ],
@@ -62,11 +63,14 @@ export const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background shadow-lg border-b border-border">
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex items-center h-16 relative">
-
           {/* IEM Logo */}
           <div className="hidden lg:flex items-center gap-4">
             <Link to="/" className="flex-shrink-0 group">
-              <img src={iemLogo} alt="IEM Logo" className="h-12 w-auto transition-transform duration-300 group-hover:scale-105" />
+              <img
+                src={iemLogo}
+                alt="IEM Logo"
+                className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+              />
             </Link>
           </div>
 
@@ -76,7 +80,6 @@ export const Navbar = () => {
               <div className="absolute -left-8 top-0 bottom-0 w-8 bg-gradient-to-l from-white/70 to-transparent pointer-events-none"></div>
 
               <div className="flex items-center justify-center gap-0 rounded-full bg-white/70 backdrop-blur-md shadow-md border border-white/40 px-2 py-1">
-
                 {/* ⭐ Unique Back to EIRTM Button */}
                 <a
                   href="https://eirtm2026congress.smartsociety.org/"
@@ -91,13 +94,16 @@ export const Navbar = () => {
                   <div
                     key={item.name}
                     className="relative"
-                    onMouseEnter={() => item.subItems && setActiveDropdown(item.name)}
+                    onMouseEnter={() =>
+                      item.subItems && setActiveDropdown(item.name)
+                    }
                   >
                     {item.subItems ? (
                       <>
                         <button
                           className={`px-2 py-1 text-[10px] xl:text-[11px] font-semibold rounded-lg transition-all duration-300 whitespace-nowrap ${
-                            activeDropdown === item.name ? "text-primary bg-primary/10"
+                            activeDropdown === item.name
+                              ? "text-primary bg-primary/10"
                               : "text-foreground hover:text-primary hover:bg-primary/5"
                           }`}
                         >
@@ -132,7 +138,7 @@ export const Navbar = () => {
                                 >
                                   {subItem.name}
                                 </Link>
-                              )
+                              ),
                             )}
                           </div>
                         </div>
@@ -163,18 +169,23 @@ export const Navbar = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <div className="relative w-6 h-6">
-              <Menu className={`absolute inset-0 transition-all duration-300 ${isMobileMenuOpen ? "opacity-0 rotate-90 scale-0" : "opacity-100 rotate-0 scale-100"}`} />
-              <X className={`absolute inset-0 transition-all duration-300 ${isMobileMenuOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-0"}`} />
+              <Menu
+                className={`absolute inset-0 transition-all duration-300 ${isMobileMenuOpen ? "opacity-0 rotate-90 scale-0" : "opacity-100 rotate-0 scale-100"}`}
+              />
+              <X
+                className={`absolute inset-0 transition-all duration-300 ${isMobileMenuOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-0"}`}
+              />
             </div>
           </Button>
         </div>
       </div>
 
       {/* Mobile Nav */}
-      <div className={`lg:hidden transition-all duration-500 ease-in-out ${isMobileMenuOpen ? "max-h-[calc(100vh-5rem)] opacity-100" : "max-h-0 opacity-0 overflow-hidden"}`}>
+      <div
+        className={`lg:hidden transition-all duration-500 ease-in-out ${isMobileMenuOpen ? "max-h-[calc(100vh-5rem)] opacity-100" : "max-h-0 opacity-0 overflow-hidden"}`}
+      >
         <div className="bg-card/95 backdrop-blur-xl border-t border-border/60">
           <div className="px-6 py-6 space-y-1 max-h-[calc(100vh-9rem)] overflow-y-auto">
-
             {/* ⭐ Unique Back to EIRTM Button on Mobile */}
             <a
               href="https://eirtm2026congress.smartsociety.org/"
@@ -190,7 +201,10 @@ export const Navbar = () => {
               <div
                 key={item.name}
                 className="animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms`, animationFillMode: "both" }}
+                style={{
+                  animationDelay: `${index * 100}ms`,
+                  animationFillMode: "both",
+                }}
               >
                 {item.subItems ? (
                   <details className="group">
@@ -217,7 +231,7 @@ export const Navbar = () => {
                           >
                             {subItem.name}
                           </Link>
-                        )
+                        ),
                       )}
                     </div>
                   </details>
@@ -225,7 +239,9 @@ export const Navbar = () => {
                   <Link
                     to={item.path}
                     className={`block py-3 font-semibold rounded-lg px-3 transition-all duration-200 ${
-                      location.pathname === item.path ? "text-primary bg-primary/10" : "text-foreground hover:text-primary hover:bg-primary/5"
+                      location.pathname === item.path
+                        ? "text-primary bg-primary/10"
+                        : "text-foreground hover:text-primary hover:bg-primary/5"
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -234,7 +250,6 @@ export const Navbar = () => {
                 )}
               </div>
             ))}
-
           </div>
         </div>
       </div>

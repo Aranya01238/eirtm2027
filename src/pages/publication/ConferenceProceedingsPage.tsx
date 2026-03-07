@@ -91,52 +91,6 @@ const ConferenceProceedingsPage = () => {
             </div>
           </Card>
         </motion.div>
-
-        {/* Book / Book Publications Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.25 }}
-          className="mt-12"
-        >
-          <Card className="p-10 md:p-14 shadow-lg border-t-4 border-t-cyan-500 bg-white text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-8">
-              Book/Book Publications
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-              <div className="flex flex-col items-center gap-4 group">
-                <div className="h-32 w-full flex items-center justify-center p-4 bg-amber-800 rounded-lg border border-amber-900 hover:shadow-md transition-shadow overflow-hidden">
-                  <img
-                    src="/CFP OF ICETPS (1).png"
-                    alt="Book Publication Logo 1"
-                    className="max-h-full max-w-full object-contain scale-[1.75]"
-                  />
-                </div>
-              </div>
-
-              <div className="flex flex-col items-center gap-4 group">
-                <div className="h-32 w-full flex items-center justify-center p-4 bg-amber-800 rounded-lg border border-amber-900 hover:shadow-md transition-shadow overflow-hidden">
-                  <img
-                    src="/CFP OF ICETPS (2).png"
-                    alt="Book Publication Logo 2"
-                    className="max-h-full max-w-full object-contain scale-[1.75]"
-                  />
-                </div>
-              </div>
-
-              <div className="flex flex-col items-center gap-4 group">
-                <div className="h-32 w-full flex items-center justify-center p-4 bg-amber-800 rounded-lg border border-amber-900 hover:shadow-md transition-shadow overflow-hidden">
-                  <img
-                    src="/CFP OF ICETPS (3).png"
-                    alt="Book Publication Logo 3"
-                    className="max-h-full max-w-full object-contain scale-[1.75]"
-                  />
-                </div>
-              </div>
-            </div>
-          </Card>
-        </motion.div>
       </div>
     </div>
   );
