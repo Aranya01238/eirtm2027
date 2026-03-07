@@ -13,7 +13,10 @@ const navItems = [
     path: "/publication",
     subItems: [
       { name: "Conference Proceedings", path: "/publication/proceedings" },
-      { name: "Book/Book Publication", path: "/publication/book-publication" },
+      {
+        name: "Book/Book Series Publication",
+        path: "/publication/book-publication",
+      },
       { name: "Journal Publication", path: "/publication/journal" },
       { name: "Paper Structure", path: "/publication/structure" },
     ],
