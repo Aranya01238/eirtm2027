@@ -7,22 +7,22 @@ import { Calendar, MapPin, Users, BookOpen, Award } from "lucide-react";
 const timelineData = [
   {
     id: 1,
-    title: "Full Paper Submission",
-    date: "15th Mar, 2026",
+    title: "Final Paper Submission",
+    date: "31st Mar, 2026",
     description: "Submit research papers.",
     icon: Calendar,
   },
   {
     id: 2,
     title: "Acceptance Notification",
-    date: "22nd Mar, 2026",
+    date: "31st Mar, 2026",
     description: "Notification of accepted papers.",
     icon: Award,
   },
   {
     id: 3,
     title: "Registration Deadline",
-    date: "29 Mar, 2026",
+    date: "31st Mar, 2026",
     description: "Deadline for registration.",
     icon: Users,
   },
