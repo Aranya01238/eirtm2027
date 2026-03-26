@@ -75,6 +75,16 @@ const members: AdvisoryMember[] = [
     designation: "Associate Professor",
     affiliation: "Rochester Institute of Technology, Dubai, UAE",
   },
+  {
+    name: "Shahab Tayeb",
+    designation: "Associate Professor",
+    affiliation: "California State University",
+  },
+  {
+    name: "Dr. Pravir Malik",
+    designation: "Founder",
+    affiliation: "Deep Order Technologies",
+  },
 ];
 
 const AdvisoryCommitteePage: React.FC = () => {
