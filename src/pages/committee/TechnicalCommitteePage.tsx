@@ -16,15 +16,19 @@ const members: CommitteeMember[] = [
   },
   {
     name: "Prof. Indrajit Mukherjee",
-    designation:
-      "Professor (Operations Management Group)",
-    affiliation: "Shailesh J. Mehta School of Management, India Institute of Technology, Bombay",
+    designation: "Professor (Operations Management Group)",
+    affiliation:
+      "Shailesh J. Mehta School of Management, India Institute of Technology, Bombay",
   },
   {
     name: "Dr. Subhash Chandra Panja",
-    designation:
-      "Associate Professor",
+    designation: "Associate Professor",
     affiliation: "Jadavpur University",
+  },
+  {
+    name: "Kamran Hameed Khawaja",
+    designation: "Lecturer",
+    affiliation: "Imam Abdulrahman Bin Faisal University",
   },
 ];
 
@@ -34,7 +38,7 @@ const TechnicalCommitteePage: React.FC = () => {
   const filtered = members.filter(
     (m) =>
       m.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      m.affiliation.toLowerCase().includes(searchTerm.toLowerCase())
+      m.affiliation.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   return (
