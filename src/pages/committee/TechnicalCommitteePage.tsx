@@ -30,6 +30,11 @@ const members: CommitteeMember[] = [
     designation: "Lecturer",
     affiliation: "Imam Abdulrahman Bin Faisal University",
   },
+  {
+    name: "Shahriar Khan",
+    designation: "Professor",
+    affiliation: "Independent University Bangladesh",
+  },
 ];
 
 const TechnicalCommitteePage: React.FC = () => {
