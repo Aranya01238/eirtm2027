@@ -21,6 +21,12 @@ const members: CommitteeMember[] = [
       "Shailesh J. Mehta School of Management, India Institute of Technology, Bombay",
   },
   {
+    name: "Deyby Huamanchahua C., PhD.",
+    designation:
+      "Profesor Auxiliar, Departamento de Ingeniería Electrónica y Mecatrónica, Coordinador de la Línea de Investigación en Biorobótica",
+    affiliation: "Universidad de Ingeniería y Tecnología (UTEC), Peru",
+  },
+  {
     name: "Dr. Subhash Chandra Panja",
     designation: "Associate Professor",
     affiliation: "Jadavpur University",
