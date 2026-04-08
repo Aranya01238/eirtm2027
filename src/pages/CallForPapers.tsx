@@ -93,10 +93,10 @@ const tracks = [
 ];
 
 const importantDates = [
-  { event: "Final Paper Submission", date: "31st March, 2026" },
-  { event: "Acceptance Notification", date: "31st March, 2026" },
-  { event: "Registration Deadline", date: "31st March, 2026" },
-  { event: "Presentation Submission", date: "05th April, 2026" },
+  { event: "Final Paper Submission", date: "10th April, 2026" },
+  { event: "Acceptance Notification", date: "10th April, 2026" },
+  { event: "Registration Deadline", date: "12th April, 2026" },
+  { event: "Presentation Submission", date: "15th April, 2026" },
   { event: "Conference Dates", date: "21st – 23rd April, 2026" },
 ];
 // Helper function to generate URL-friendly slugs
