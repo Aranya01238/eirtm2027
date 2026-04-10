@@ -19,12 +19,13 @@ export const Footer = () => {
                 International Conference on Economics, Business, and Management
               </strong>
               <br />
-              In association with the
-              EMLV - The Leonard De Vinci Business School, Paris
+              In association with EMLV – The Leonard De Vinci Business School,
+              Paris, France and ESILV – Ecole Supérieure d'Ingénieurs, Léonard
+              de Vinci, Paris, France
               <br />
-               Venue: The Photovoltaic Institute of Île-de-France,
-                  <br />
-                  Paris, France
+              Venue: The Photovoltaic Institute of Île-de-France,
+              <br />
+              Paris, France
             </p>
             <p className="text-sm text-slate-500">
               Join global thought leaders, researchers, and industry experts to
@@ -115,7 +116,9 @@ export const Footer = () => {
         {/* Footer Bottom */}
         <div className="text-center text-sm text-slate-500">
           <p>
-            © 2026 ICEBM | In association with The EMLV - The Leonard De Vinci Business School, Paris
+            © 2026 ICEBM | In association with EMLV – The Leonard De Vinci
+            Business School, Paris, France and ESILV – Ecole Supérieure
+            d'Ingénieurs, Léonard de Vinci, Paris, France
           </p>
           <p className="mt-1">
             In collaboration with{" "}
