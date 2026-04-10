@@ -20,6 +20,27 @@ const KeynoteSpeakers = () => {
         "Microwave and Terahertz Technologies for Next-Generation Communication Systems",
       image: "/maurizio-bozzi%20(1).jpg",
     },
+    {
+      name: "Professor Ilkyeong Moon, Ph.D., P.E.",
+      designation:
+        "Department of Industrial Engineering, Seoul National University, Seoul 08826, Korea",
+      topic: "Keynote talk title to be announced",
+      image: "/ilkyeong-moon.jpg",
+      profile:
+        "Co-Editor-in-Chief, European Journal of Industrial Engineering (EJIE) | Fellow, Korean Academy of Science and Technology (KAST) | Fellow, International Foundation for Production Research (IFPR) | Former President (2019-2020), Korean Institute of Industrial Engineers (KIIE)",
+      contact:
+        "Phone: +82-2-880-7151 | Fax: +82-2-889-8560 | Mobile: +82-10-9470-2451",
+      links: [
+        { label: "Homepage", url: "http://scm.snu.ac.kr/" },
+        {
+          label: "EJIE Homepage",
+          url: "https://www.inderscience.com/jhome.php?jcode=ejie",
+        },
+        { label: "KAST Homepage", url: "https://kast.or.kr/en/" },
+        { label: "IFPR Homepage", url: "https://ifpr-icpr.org" },
+        { label: "KIIE Homepage", url: "http://kiie.org/" },
+      ],
+    },
   ];
 
   return (
