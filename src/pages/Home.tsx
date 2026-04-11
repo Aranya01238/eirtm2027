@@ -22,10 +22,10 @@ import ass from "@/assets/ars.png";
 import imgs from "@/assets/Gemini_Generated_Image_7wsqb57wsqb57wsq.png";
 
 const importantDates = [
-  { label: "Final Paper Submission", date: "10th April, 2026" },
-  { label: "Acceptance Notification", date: "10th April, 2026" },
-  { label: "Registration", date: "12th April, 2026" },
-  { label: "Presentation Submission", date: "15th April, 2026" },
+  { label: "Final Paper Submission", date: "15th April, 2026" },
+  { label: "Acceptance Notification", date: "15th April, 2026" },
+  { label: "Registration", date: "17th April, 2026" },
+  { label: "Presentation Submission", date: "20th April, 2026" },
   { label: "Conference On", date: "21st – 23rd April, 2026" },
 ];
 

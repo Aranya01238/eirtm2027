@@ -56,10 +56,10 @@ const Registration = () => {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
             <div>
-              <strong>Final Paper Submission:</strong> Until "10th April, 2026"
+              <strong>Final Paper Submission:</strong> Until "15th April, 2026"
             </div>
             <div>
-              <strong>Late Registration:</strong> ""
+              <strong>Registration Deadline:</strong> "17th April, 2026"
             </div>
           </div>
         </Card>
