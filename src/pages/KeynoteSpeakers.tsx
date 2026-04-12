@@ -41,6 +41,14 @@ const KeynoteSpeakers = () => {
         { label: "KIIE Homepage", url: "http://kiie.org/" },
       ],
     },
+    {
+      name: "Sulekha Chattopadhyay, PhD",
+      designation:
+        "Transportation and Air Quality Expert, Fulbright Specialist, IEEE Senior Member (APS, EMBS, MTTS, VTS, WIE)",
+      image: "/sulekha-chattopadhyay.jpg",
+      profile:
+        "California Air Resources Board | University of California, Riverside | Los Angeles Metropolitan Area",
+    },
   ];
 
   return (
