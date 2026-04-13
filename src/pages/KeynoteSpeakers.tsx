@@ -42,10 +42,11 @@ const KeynoteSpeakers = () => {
       ],
     },
     {
-      name: "Sulekha Chattopadhyay, PhD",
+      name: "Dr. Sulekha Chattopadhyay, PhD",
       designation:
-        "Transportation and Air Quality Expert, Fulbright Specialist, IEEE Senior Member (APS, EMBS, MTTS, VTS, WIE)",
+        "Fulbright Specialist, Senior Engineer, California Environmental Protection Agency, USA",
       image: "/sulekha-chattopadhyay.jpg",
+      topic: "Profit, Policy, Planet: An Engineering Perspective",
       profile:
         "California Air Resources Board | University of California, Riverside | Los Angeles Metropolitan Area",
     },
