@@ -21,6 +21,29 @@ const KeynoteSpeakers = () => {
       image: "/maurizio-bozzi%20(1).jpg",
     },
     {
+      name: "Prof. Hajer Kefi",
+      designation:
+        "Full Professor of Management Information Systems and Digital Marketing, EMLV Ecole de Management Léonard de Vinci.",
+      topic:
+        "Microwave and Terahertz Technologies for Next-Generation Communication Systems",
+      image: "/hajer-kefi.jpg",
+    },
+    {
+      name: "Prof. Ranjan Chaudhuri",
+      designation:
+        "Director (DBA), Distinguished Visiting Professor, IIMK and Full Professor of Digital Marketing Business at Ecole de Management Léonard de Vinci, Paris, France",
+      topic: "",
+      image: "/Ranjan Chaudhuri.jpg",
+    },
+    {
+      name: "Prof. Alessandro Biancalani",
+      designation:
+        "Professor at De Vinci Higher Education, Paris La Defense, ESILV - Ecole Supérieure d'Ingénieurs Léonard de Vinci Sorbonne Université France",
+      topic: "",
+      image: "/allessandro-biancalani.jpg",
+    },
+
+    {
       name: "Professor Ilkyeong Moon, Ph.D., P.E.",
       designation:
         "Department of Industrial Engineering, Seoul National University, Seoul 08826, Korea",
