@@ -39,7 +39,7 @@ const KeynoteSpeakers = () => {
       name: "Prof. Alessandro Biancalani",
       designation:
         "Professor at De Vinci Higher Education, Paris La Defense, ESILV - Ecole Supérieure d'Ingénieurs Léonard de Vinci Sorbonne Université France",
-      topic: "",
+      topic: "Nuclear fusion as a possible help for the future energy need, and how to do virtual experiments of it.",
       image: "/allessandro-biancalani.jpg",
     },
 
