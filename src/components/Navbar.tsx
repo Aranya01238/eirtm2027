@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -40,6 +40,11 @@ const navItems = [
     name: "Sister Conference",
     path: "#",
     subItems: [
+      {
+        name: "EIRTM 2026",
+        path: "https://eirtm2026congress.smartsociety.org/",
+        external: true,
+      },
       { name: "IRTM", path: "https://irtm.smartsociety.org", external: true },
       { name: "IEMTRONICS", path: "https://iemtronics.org", external: true },
     ],
@@ -85,7 +90,7 @@ export const Navbar = () => {
               <div className="flex items-center justify-center gap-0 rounded-full bg-white/70 backdrop-blur-md shadow-md border border-white/40 px-2 py-1">
                 {/* ⭐ Unique Back to EIRTM Button */}
                 <a
-                  href="https://eirtm2026congress.smartsociety.org/"
+                  href="https://eirtm2027congress.smartsociety.org/"
                   className="px-3 py-1 text-[10px] xl:text-[11px] font-semibold rounded-lg transition-all duration-300 whitespace-nowrap flex flex-col items-center leading-tight text-foreground hover:text-primary hover:bg-primary/5 mr-2"
                 >
                   <span>Back to EIRTM</span>
@@ -191,7 +196,7 @@ export const Navbar = () => {
           <div className="px-6 py-6 space-y-1 max-h-[calc(100vh-9rem)] overflow-y-auto">
             {/* ⭐ Unique Back to EIRTM Button on Mobile */}
             <a
-              href="https://eirtm2026congress.smartsociety.org/"
+              href="https://eirtm2027congress.smartsociety.org/"
               className="block py-3 font-semibold rounded-lg px-3 transition-all duration-200 text-foreground hover:text-primary hover:bg-primary/5 flex flex-col leading-tight"
               onClick={() => setIsMobileMenuOpen(false)}
             >

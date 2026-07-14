@@ -1,5 +1,5 @@
-import React from 'react';
-import PaperStructurePdf from '@/assets/ICEBM 2026-paper-format.pdf'; // Import the PDF file
+﻿import React from "react";
+import PaperStructurePdf from "@/assets/ICEBM 2026-paper-format.pdf"; // Import the PDF file
 
 const PaperStructurePage = () => {
   return (
@@ -11,30 +11,35 @@ const PaperStructurePage = () => {
             Paper Structure & Submission Guidelines
           </h1>
           <p className="text-lg text-[#1e293b] max-w-3xl mx-auto font-medium leading-relaxed">
-            Please find below the detailed guidelines for the structure and formatting of your submitted papers. Adhering to these instructions is crucial for a successful submission to ICEBM 2026.
+            Please find below the detailed guidelines for the structure and
+            formatting of your submitted papers. Adhering to these instructions
+            is crucial for a successful submission to EIRTM 2027.
           </p>
         </div>
 
         {/* PDF Viewer */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-center mb-6 text-sky-700">View Guidelines</h2>
+          <h2 className="text-3xl font-bold text-center mb-6 text-sky-700">
+            View Guidelines
+          </h2>
           <div className="aspect-w-16 aspect-h-9 mb-6">
             <iframe
               src={PaperStructurePdf}
               width="100%"
               height="600px" // You can adjust the height as needed
-              style={{ border: 'none' }}
+              style={{ border: "none" }}
               title="Paper Structure and Submission Guidelines"
               className="rounded-lg shadow-lg"
             >
-              This browser does not support PDFs. Please download the PDF to view it.
+              This browser does not support PDFs. Please download the PDF to
+              view it.
             </iframe>
           </div>
           <p className="text-center text-lg text-[#1e293b] font-medium">
             If the PDF does not load, you can download it directly:{" "}
             <a
               href={PaperStructurePdf}
-              download="Paper-Structure-Submission-Guidelines-ICEBM2026.pdf"
+              download="Paper-Structure-Submission-Guidelines-EIRTM2027.pdf"
               className="text-cyan-600 hover:underline font-semibold"
             >
               Download PDF

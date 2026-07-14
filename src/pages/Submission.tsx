@@ -1,159 +1,147 @@
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Upload, AlertCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import { Clock, ArrowLeft, Sparkles, FileText } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Submission = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-blue-50 text-[#0f172a] pt-24 pb-16 px-4 sm:px-6 lg:px-8 font-sans">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
+    <div className="min-h-screen relative flex items-center justify-center overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-cyan-950 to-sky-900" />
+
+      {/* Floating orbs */}
+      <motion.div
+        animate={{ scale: [1, 1.25, 1], opacity: [0.25, 0.45, 0.25] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/4 left-1/5 w-96 h-96 rounded-full bg-cyan-500/25 blur-3xl pointer-events-none"
+      />
+      <motion.div
+        animate={{ scale: [1.2, 1, 1.2], opacity: [0.15, 0.35, 0.15] }}
+        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-1/4 right-1/5 w-80 h-80 rounded-full bg-sky-400/25 blur-3xl pointer-events-none"
+      />
+      <motion.div
+        animate={{ scale: [1, 1.3, 1], opacity: [0.1, 0.2, 0.1] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-blue-600/10 blur-3xl pointer-events-none"
+      />
+
+      {/* Stars / particles */}
+      {[...Array(18)].map((_, i) => (
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-sky-600 drop-shadow-[0_0_15px_rgba(56,189,248,0.5)] mb-4">
-            Paper Submission
-          </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-sky-500 mx-auto mb-6 rounded"></div>
-          <p className="text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed mb-8">
-            Submit your research paper through our official submission system.
-            Please review all guidelines carefully before submission to ensure
-            compliance with ICEBM 2026 publication standards.
-          </p>
+          key={i}
+          animate={{ opacity: [0, 1, 0], y: [0, -20, 0] }}
+          transition={{
+            duration: 3 + (i % 4),
+            repeat: Infinity,
+            delay: i * 0.4,
+          }}
+          className="absolute w-1 h-1 rounded-full bg-cyan-300/60 pointer-events-none"
+          style={{
+            left: `${8 + ((i * 5.2) % 88)}%`,
+            top: `${10 + ((i * 7.3) % 80)}%`,
+          }}
+        />
+      ))}
 
-          {/* New Top Button */}
-          <div className="flex flex-col items-center justify-center">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-cyan-500 to-sky-600 text-white font-semibold shadow-lg hover:shadow-[0_0_20px_rgba(56,189,248,0.6)] hover:scale-105 transition-all duration-300 px-8 py-6 text-lg"
-              onClick={() =>
-                window.open("https://edas.info/newPaper.php?c=34692", "_blank")
-              }
-            >
-              Submit Via Edas
-            </Button>
-            <span className="text-cyan-600 font-medium mt-2 text-sm animate-pulse">
-              Click here
-            </span>
-          </div>
-        </motion.div>
-
-        {/* Submission Process */}
-        <section className="mb-20 text-center">
-          <h2 className="text-4xl font-bold text-sky-700 mb-8">
-            Submission Process
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-  {[
-    {
-      step: 1,
-      title: "Prepare Paper",
-      desc: (
-        <>
-          Format your paper using the{" "}
-          <a
-            href="/ICEBM-2026-paper-format.pdf"
-            download
-            className="text-blue-600 underline hover:text-blue-800"
+      {/* Glassmorphism card */}
+      <motion.div
+        initial={{ opacity: 0, y: 50, scale: 0.93 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
+        className="relative z-10 max-w-xl w-full mx-4 text-center"
+      >
+        <div className="backdrop-blur-2xl bg-white/[0.07] border border-white/20 rounded-3xl p-12 shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
+          {/* Glowing icon */}
+          <motion.div
+            animate={{
+              boxShadow: [
+                "0 0 30px rgba(56,189,248,0.4)",
+                "0 0 60px rgba(56,189,248,0.7)",
+                "0 0 30px rgba(56,189,248,0.4)",
+              ],
+            }}
+            transition={{ duration: 3, repeat: Infinity }}
+            className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-400 to-sky-600 mb-8 mx-auto"
           >
-            official conference template (PDF)
-          </a>
-          .
-        </>
-      ),
-    },
-    {
-      step: 2,
-      title: "Register on EDAS",
-      desc: "Create or log in to your EDAS account.",
-    },
-    {
-      step: 3,
-      title: "Submit Paper",
-      desc: "Upload your PDF and fill in all required details.",
-    },
-    {
-      step: 4,
-      title: "Track Status",
-      desc: "Monitor submission status and review progress.",
-    },
-  ].map((item, idx) => (
-    <motion.div
-      key={idx}
-      whileHover={{ scale: 1.05 }}
-      transition={{ type: "spring", stiffness: 250 }}
-      className="p-6 rounded-2xl shadow-md bg-white"
-    >
-      <h3 className="text-lg font-semibold mb-2">
-        Step {item.step}: {item.title}
-      </h3>
-      <p className="text-gray-600">{item.desc}</p>
-    </motion.div>
-  ))}
-</div>
+            <FileText className="w-10 h-10 text-white" />
+          </motion.div>
 
-        </section>
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3 }}
+            className="inline-flex items-center gap-2 bg-cyan-500/20 border border-cyan-400/40 rounded-full px-4 py-1.5 mb-6"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-cyan-300" />
+            <span className="text-cyan-200 text-xs font-semibold tracking-[0.2em] uppercase">
+              EIRTM 2027
+            </span>
+          </motion.div>
 
-        {/* EDAS Submission CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <Card className="p-12 text-center bg-gradient-to-r from-cyan-500 to-sky-500 text-white rounded-3xl shadow-lg mb-16">
-            <Upload className="h-16 w-16 mx-auto mb-4" />
-            <h2 className="text-3xl font-bold mb-3">Ready to Submit?</h2>
-            <p className="text-lg opacity-90 mb-6">
-              Use the official EDAS submission system to upload your paper.
-            </p>
+          {/* Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-sky-100 to-white mb-3"
+          >
+            Coming Soon
+          </motion.h1>
 
-            {/* Bottom Button Group */}
-            <div className="flex flex-col items-center">
-              <Button
-                size="lg"
-                className="bg-white text-cyan-700 font-semibold hover:bg-cyan-100 transition-transform hover:scale-105"
-                onClick={() =>
-                  window.open("https://edas.info/newPaper.php?c=34692", "_blank")
-                }
-              >
-                Submit Via Edas
-              </Button>
-              <span className="text-white font-medium mt-2 text-sm">
-                Click here
-              </span>
-            </div>
+          {/* Divider */}
+          <div className="w-20 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent mx-auto mb-5" />
 
-            <p className="mt-4 text-sm opacity-80">
-              (You will be redirected to the EDAS submission portal)
-            </p>
-          </Card>
-        </motion.div>
+          {/* Sub heading */}
+          <motion.h2
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="text-xl font-semibold text-white/90 mb-3"
+          >
+            Paper Submission Portal
+          </motion.h2>
 
-        {/* Review Process */}
-        <Card className="p-10 border-t-4 border-t-cyan-500 rounded-2xl bg-white">
-          <h2 className="text-3xl font-bold mb-6 text-sky-700">
-            Review Process
-          </h2>
-          <div className="space-y-5 text-slate-700 text-lg">
-            {[
-              "Initial Screening – Formatting and plagiarism check",
-              "Double-Blind Review – Minimum two independent reviewers",
-              "Review Period – Typically 2–3 weeks",
-              "Decision Notification – Review comments via email",
-              "Camera-Ready Submission – Revised version upload",
-            ].map((step, index) => (
-              <div key={index} className="flex gap-3">
-                <span className="text-cyan-600 font-bold">{index + 1}.</span>
-                <span>{step}</span>
-              </div>
-            ))}
-          </div>
-        </Card>
-      </div>
+          {/* Body */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="text-white/55 leading-relaxed mb-10 text-sm"
+          >
+            The submission portal for the{" "}
+            <span className="text-cyan-300 font-medium">
+              European Congress on Interdisciplinary Research in Technology and
+              Management
+            </span>{" "}
+            is currently being set up. Please check back soon.
+          </motion.p>
+
+          {/* Clock row */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7 }}
+            className="flex items-center justify-center gap-2 text-white/40 text-xs mb-8"
+          >
+            <Clock className="w-3.5 h-3.5" />
+            <span>Opening April 2027</span>
+          </motion.div>
+
+          {/* Back button */}
+          <motion.button
+            whileHover={{ scale: 1.06 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={() => navigate("/")}
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-sky-600 hover:from-cyan-400 hover:to-sky-500 text-white font-semibold px-8 py-3 rounded-xl shadow-[0_0_30px_rgba(56,189,248,0.35)] transition-all duration-300 text-sm"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Home
+          </motion.button>
+        </div>
+      </motion.div>
     </div>
   );
 };
