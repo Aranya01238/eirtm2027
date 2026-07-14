@@ -1,4 +1,4 @@
-﻿import { Card } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { BookOpen, FileText, List, Quote } from "lucide-react";
 
 const Publication = () => {

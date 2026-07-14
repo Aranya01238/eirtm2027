@@ -1,4 +1,4 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Facebook, Linkedin, Twitter, Mail, MapPin } from "lucide-react";
 
 export const Footer = () => {
@@ -12,11 +12,11 @@ export const Footer = () => {
           {/* About Section */}
           <div>
             <h3 className="text-2xl font-bold mb-4 text-cyan-700">
-              EIRTM 2027
+              ICEBM 2026
             </h3>
             <p className="text-sm text-slate-600 mb-3 leading-relaxed">
               <strong>
-                European Congress on Interdisciplinary Research in Technology and Management
+                International Conference on Economics, Business, and Management
               </strong>
               <br />
               In association with EMLV – The Leonard De Vinci Business School,
@@ -116,7 +116,7 @@ export const Footer = () => {
         {/* Footer Bottom */}
         <div className="text-center text-sm text-slate-500">
           <p>
-            © 2027 EIRTM | In association with EMLV – The Leonard De Vinci
+            © 2026 ICEBM | In association with EMLV – The Leonard De Vinci
             Business School, Paris, France and ESILV – Ecole Supérieure
             d'Ingénieurs, Léonard de Vinci, Paris, France
           </p>

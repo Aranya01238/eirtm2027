@@ -1,4 +1,4 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -22,11 +22,11 @@ import ass from "@/assets/ars.png";
 import imgs from "@/assets/Gemini_Generated_Image_7wsqb57wsqb57wsq.png";
 
 const importantDates = [
-  { label: "Final Paper Submission", date: "15th April, 2027" },
-  { label: "Acceptance Notification", date: "15th April, 2027" },
-  { label: "Registration", date: "17th April, 2027" },
-  { label: "Presentation Submission", date: "20th April, 2027" },
-  { label: "Conference On", date: "21st – 23rd April, 2027" },
+  { label: "Final Paper Submission", date: "15th April, 2026" },
+  { label: "Acceptance Notification", date: "15th April, 2026" },
+  { label: "Registration", date: "17th April, 2026" },
+  { label: "Presentation Submission", date: "20th April, 2026" },
+  { label: "Conference On", date: "21st – 23rd April, 2026" },
 ];
 
 // Helper function to generate URL-friendly slugs
@@ -102,10 +102,10 @@ const Home = () => {
         >
           <div className="max-w-2xl">
             <p className="text-[#ffff00] font-semibold tracking-wide mb-2">
-              EIRTM 2027
+              ICEBM 2026
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-[#ffff] mb-4">
-              European Congress on Interdisciplinary Research in Technology and Management
+              International Conference on Economics, Business & Management
             </h1>
             <h3 className="text-xl md:text-2xl lg:text-3xl font-extrabold leading-tight text-[#ffff] mb-4">
               In association with EMLV – The Leonard De Vinci Business School,
@@ -116,7 +116,7 @@ const Home = () => {
             <div className="flex flex-wrap items-center gap-3 text-[#92b3e7] text-base md:text-lg mb-6">
               <div className="inline-flex items-center gap-2">
                 <Calendar className="h-5 w-5 text-cyan-600" />
-                <span>21–23 April, 2027</span>
+                <span>21–23 April, 2026</span>
               </div>
               <span className="hidden md:inline text-slate-400">•</span>
               <div className="inline-flex items-center">
@@ -188,15 +188,15 @@ const Home = () => {
           {/* Right: Content and checklist */}
           <div>
             <h2 className="text-4xl font-bold mb-4 text-[#0f172a]">
-              About EIRTM
+              About ICEBM
             </h2>
             <p className="text-[#1e293b] text-lg leading-relaxed mb-8">
-              The European Congress on Interdisciplinary Research in
-              Technology and Management (EIRTM 2027) is a premier global
-              platform fostering collaboration between academia, industry, and
-              researchers to explore modern trends and challenges in
-              interdisciplinary research, technology innovation, and sustainable
-              management strategies shaping the global economy.
+              The International Conference on Economics, Business, and
+              Management (ICEBM 2026) is a premier global platform fostering
+              collaboration between academia, industry, and researchers to
+              explore modern trends and challenges in economics, business
+              innovation, and sustainable management strategies shaping the
+              global economy.
             </p>
 
             <div className="space-y-4">
@@ -392,7 +392,7 @@ const Home = () => {
           {/* Left: Text and Buttons */}
           <div>
             <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-[#ffff] mb-6">
-              Join EIRTM 2027
+              Join ICEBM 2026
             </h2>
             <p className="text-yellow-300 text-lg mb-10 max-w-3xl font-medium">
               Be part of a global forum redefining the future of economics,

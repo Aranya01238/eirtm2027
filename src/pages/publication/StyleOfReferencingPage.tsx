@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import ApaStylePdf from '@/assets/APA-style-of-referencing_7th_-Edn.pdf'; // Import the PDF file
 
 const StyleOfReferencingPage = () => {
@@ -11,7 +11,7 @@ const StyleOfReferencingPage = () => {
             APA Style of Referencing (7th Edition)
           </h1>
           <p className="text-lg text-[#1e293b] max-w-3xl mx-auto font-medium leading-relaxed">
-            Please find below the detailed guidelines for the APA 7th Edition referencing style. Ensure your citations and bibliography adhere to this specified format for all submissions to EIRTM 2027.
+            Please find below the detailed guidelines for the APA 7th Edition referencing style. Ensure your citations and bibliography adhere to this specified format for all submissions to ICEBM 2026.
           </p>
         </div>
 

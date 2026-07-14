@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { BookOpen, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -18,7 +18,7 @@ const VolumeEditorsPage: React.FC = () => {
         <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-sky-500 mx-auto mb-8 rounded"></div>
         <p className="text-lg text-[#334155] max-w-3xl mx-auto leading-relaxed mb-20">
           The <span className="font-semibold text-sky-600">Volume Editors</span>{" "}
-          for <span className="font-semibold text-sky-600">EIRTM 2027</span>{" "}
+          for <span className="font-semibold text-sky-600">ICEBM 2026</span>{" "}
           will be announced soon. Our editorial board will consist of
           distinguished scholars and researchers ensuring high-quality
           publications in reputed journals and proceedings.
@@ -45,7 +45,7 @@ const VolumeEditorsPage: React.FC = () => {
                   To Be Announced
                 </h3>
                 <p className="text-cyan-600 font-medium">
-                  Volume Editor – EIRTM 2027
+                  Volume Editor – ICEBM 2026
                 </p>
               </div>
             </motion.div>
@@ -65,14 +65,14 @@ const VolumeEditorsPage: React.FC = () => {
           </h2>
           <p className="text-lg sm:text-xl max-w-2xl mx-auto opacity-90 leading-relaxed">
             Stay tuned as we announce the esteemed{" "}
-            <span className="font-semibold">Volume Editors</span> for EIRTM
-            2027. The announcement will be made in{" "}
-            <span className="font-semibold text-yellow-200">March 2027</span>.
+            <span className="font-semibold">Volume Editors</span> for ICEBM
+            2026. The announcement will be made in{" "}
+            <span className="font-semibold text-yellow-200">March 2026</span>.
           </p>
           <div className="mt-6 flex items-center justify-center gap-3 text-white/90">
             <Calendar className="h-5 w-5" />
             <p className="text-lg font-medium">
-              Announcement Timeline: March 2027
+              Announcement Timeline: March 2026
             </p>
           </div>
         </motion.div>

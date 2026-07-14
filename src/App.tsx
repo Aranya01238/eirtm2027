@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 // Import UI and library components (using absolute paths)
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";

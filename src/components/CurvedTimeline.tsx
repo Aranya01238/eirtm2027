@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,42 +8,42 @@ const timelineData = [
   {
     id: 1,
     title: "Final Paper Submission",
-    date: "15th Apr, 2027",
+    date: "15th Apr, 2026",
     description: "Submit research papers.",
     icon: Calendar,
   },
   {
     id: 2,
     title: "Acceptance Notification",
-    date: "15th Apr, 2027",
+    date: "15th Apr, 2026",
     description: "Notification of accepted papers.",
     icon: Award,
   },
   {
     id: 3,
     title: "Registration Deadline",
-    date: "17th Apr, 2027",
+    date: "17th Apr, 2026",
     description: "Deadline for registration.",
     icon: Users,
   },
   {
     id: 4,
     title: "Presentation Submission",
-    date: "20th Apr, 2027",
+    date: "20th Apr, 2026",
     description: "Upload slides or posters.",
     icon: BookOpen,
   },
   {
     id: 5,
     title: "Conference Begins",
-    date: "21-23 Apr, 2027",
+    date: "21-23 Apr, 2026",
     description: "Keynote speeches start.",
     icon: MapPin,
   },
   {
     id: 6,
     title: "Post-Conference",
-    date: "30 May, 2027",
+    date: "30 May, 2026",
     description: "Recorded sessions available.",
     icon: BookOpen,
   },

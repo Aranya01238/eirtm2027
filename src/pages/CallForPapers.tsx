@@ -1,4 +1,4 @@
-﻿import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { FileText, Target, Zap, Cpu, Calendar } from "lucide-react";
@@ -93,11 +93,11 @@ const tracks = [
 ];
 
 const importantDates = [
-  { event: "Final Paper Submission", date: "15th April, 2027" },
-  { event: "Acceptance Notification", date: "15th April, 2027" },
-  { event: "Registration Deadline", date: "17th April, 2027" },
-  { event: "Presentation Submission", date: "20th April, 2027" },
-  { event: "Conference Dates", date: "21st – 23rd April, 2027" },
+  { event: "Final Paper Submission", date: "15th April, 2026" },
+  { event: "Acceptance Notification", date: "15th April, 2026" },
+  { event: "Registration Deadline", date: "17th April, 2026" },
+  { event: "Presentation Submission", date: "20th April, 2026" },
+  { event: "Conference Dates", date: "21st – 23rd April, 2026" },
 ];
 // Helper function to generate URL-friendly slugs
 const generateSlug = (text: string) => {
@@ -152,13 +152,13 @@ const CallForPapers = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl font-extrabold mb-4 leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600 drop-shadow-[0_0_20px_rgba(56,189,248,0.5)]">
-            Call for Papers – EIRTM 2027
+            Call for Papers – ICEBM 2026
           </h1>
           <p className="text-lg text-[#1e293b] max-w-3xl mx-auto font-medium leading-relaxed">
             The{" "}
             <span className="text-cyan-600 font-semibold">
-              European Congress on Interdisciplinary Research in Technology and Management
-              (EIRTM 2027)
+              International Conference on Economics, Business, and Management
+              (ICEBM 2026)
             </span>{" "}
             invites{" "}
             <span className="text-sky-600 font-semibold">
@@ -287,7 +287,7 @@ const CallForPapers = () => {
               <span className="text-cyan-600 font-semibold">
                 register and present
               </span>{" "}
-              the paper at EIRTM 2027.
+              the paper at ICEBM 2026.
             </li>
           </ul>
         </Card>
@@ -346,7 +346,7 @@ const CallForPapers = () => {
         {/* CTA Section */}
         <div className="text-center">
           <h3 className="text-2xl font-bold mb-6 text-sky-700">
-            Be Part of <span className="text-cyan-600">EIRTM 2027</span> — Share
+            Be Part of <span className="text-cyan-600">ICEBM 2026</span> — Share
             Your Research and Shape the Future of Business and Management!
           </h3>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

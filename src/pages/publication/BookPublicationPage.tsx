@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
@@ -18,7 +18,7 @@ const BookPublicationPage = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto rounded-full mb-6"></div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Explore featured book publication opportunities associated with
-            EIRTM 2027.
+            ICECIT 2026.
           </p>
         </motion.div>
 

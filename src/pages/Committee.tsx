@@ -1,4 +1,4 @@
-﻿import { Card } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Users, Award, Briefcase, BookOpen } from "lucide-react";
 
 interface CommitteeMember {
@@ -123,9 +123,7 @@ const Committee = () => {
               className="bg-muted p-6 rounded-lg border-l-4 border-l-secondary hover:shadow-md transition-shadow"
             >
               <h3 className="text-xl font-bold mb-2">{member.name}</h3>
-              <p className="text-primary font-semibold mb-1">
-                {member.designation}
-              </p>
+              <p className="text-primary font-semibold mb-1">{member.designation}</p>
               <p className="text-muted-foreground">{member.affiliation}</p>
             </div>
           ))}
@@ -142,8 +140,8 @@ const Committee = () => {
           <h1 className="text-primary mb-4">Conference Committee</h1>
           <div className="w-24 h-1 bg-gradient-primary mx-auto mb-6"></div>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            EIRTM 2027 is supported by distinguished academicians, researchers,
-            and industry professionals from around the world.
+            EIRTM 2025 is supported by distinguished academicians, researchers, and industry
+            professionals from around the world.
           </p>
         </div>
 
@@ -186,13 +184,9 @@ const Committee = () => {
         {/* Note */}
         <Card className="p-8 bg-primary/5 border-l-4 border-l-primary">
           <p className="text-lg">
-            <strong>Note:</strong> The committee list is being updated. More
-            members will be added soon. If you are interested in joining the
-            committee, please{" "}
-            <a
-              href="/contact"
-              className="text-primary hover:underline font-semibold"
-            >
+            <strong>Note:</strong> The committee list is being updated. More members will be added
+            soon. If you are interested in joining the committee, please{" "}
+            <a href="/contact" className="text-primary hover:underline font-semibold">
               contact us
             </a>
             .

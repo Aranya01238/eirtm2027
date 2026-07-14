@@ -1,4 +1,4 @@
-﻿import { Card } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -90,7 +90,7 @@ const KeynoteSpeakers = () => {
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-sky-500 mx-auto mb-6 rounded"></div>
           <p className="text-lg text-[#1e293b] max-w-3xl mx-auto leading-relaxed">
-            <span className="font-semibold text-sky-600">EIRTM 2027</span>
+            <span className="font-semibold text-sky-600">ICEBM 2026</span>
             presents distinguished keynote speakers from world-leading
             institutions.
           </p>
@@ -157,7 +157,7 @@ const KeynoteSpeakers = () => {
             </p>
             <div className="mt-8 flex items-center justify-center gap-3 text-white/90">
               <Calendar className="h-5 w-5" />
-              <p className="text-lg font-medium">Final List by March 2027</p>
+              <p className="text-lg font-medium">Final List by March 2026</p>
             </div>
           </Card>
         </motion.div>
@@ -172,7 +172,7 @@ const KeynoteSpeakers = () => {
         >
           <Card className="p-10 bg-gradient-to-br from-blue-100 to-cyan-50 border border-cyan-200 rounded-2xl shadow-sm">
             <h2 className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-sky-600">
-              Interested in Speaking at EIRTM 2027?
+              Interested in Speaking at ICEBM 2026?
             </h2>
             <p className="text-lg text-[#334155] mb-4">
               We welcome proposals for keynote sessions, panel discussions, and
@@ -182,7 +182,7 @@ const KeynoteSpeakers = () => {
             <p className="text-[#334155]">
               Reach out to us at{" "}
               <a
-                href="mailto:speakers@icetps2027.org"
+                href="mailto:speakers@icetps2026.org"
                 className="text-cyan-600 hover:underline font-semibold"
               >
                 koyel.ganguly@iem.edu.in
