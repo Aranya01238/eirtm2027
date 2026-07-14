@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type CalendarPage = {
@@ -18,9 +18,9 @@ import aprImg from "@/assets/apr-2026.png";
 // Using imported asset URLs avoids the need to place files in public.
 const PAGES: CalendarPage[] = [
   { month: 11, year: 2025, imageSrc: decImg, imageAlt: "December 2025" },
-  { month: 0, year: 2026, imageSrc: janImg, imageAlt: "January 2026" },
-  { month: 2, year: 2026, imageSrc: marImg, imageAlt: "March 2026" },
-  { month: 3, year: 2026, imageSrc: aprImg, imageAlt: "April 2026" },
+  { month: 0, year: 2027, imageSrc: janImg, imageAlt: "January 2027" },
+  { month: 2, year: 2027, imageSrc: marImg, imageAlt: "March 2027" },
+  { month: 3, year: 2027, imageSrc: aprImg, imageAlt: "April 2027" },
 ];
 
 export default function DeskCalendar() {

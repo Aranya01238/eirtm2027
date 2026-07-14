@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import { Search } from "lucide-react";
 
 interface CommitteeMember {
@@ -66,7 +66,7 @@ const TechnicalCommitteePage: React.FC = () => {
             <span className="font-semibold text-sky-600">
               Technical Committee
             </span>{" "}
-            of <span className="font-semibold text-sky-600">ICEBM 2026</span>{" "}
+            of <span className="font-semibold text-sky-600">EIRTM 2027</span>{" "}
             comprises distinguished academicians and experts responsible for
             maintaining the scientific and buisness excellence of the
             conference.

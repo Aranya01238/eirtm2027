@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -58,7 +58,7 @@ const Contact = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-sky-500 mx-auto mb-6 rounded"></div>
           <p className="text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed">
             Have questions about{" "}
-            <span className="text-sky-600 font-semibold">ICEBM 2026</span>?
+            <span className="text-sky-600 font-semibold">EIRTM 2027</span>?
             Reach out to us through the contact form or view our primary details below.
           </p>
         </div>

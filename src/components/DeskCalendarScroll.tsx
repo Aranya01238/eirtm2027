@@ -1,4 +1,4 @@
-// src/components/DeskCalendarScroll.tsx
+﻿// src/components/DeskCalendarScroll.tsx
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -18,9 +18,9 @@ type CalendarPage = {
 
 const PAGES: CalendarPage[] = [
   { month: 11, year: 2025, imageSrc: decImg, imageAlt: "December 2025" },
-  { month: 0, year: 2026, imageSrc: janImg, imageAlt: "January 2026" },
-  { month: 2, year: 2026, imageSrc: marImg, imageAlt: "March 2026" },
-  { month: 3, year: 2026, imageSrc: aprImg, imageAlt: "April 2026" },
+  { month: 0, year: 2027, imageSrc: janImg, imageAlt: "January 2027" },
+  { month: 2, year: 2027, imageSrc: marImg, imageAlt: "March 2027" },
+  { month: 3, year: 2027, imageSrc: aprImg, imageAlt: "April 2027" },
 ];
 
 export default function DeskCalendarScroll() {

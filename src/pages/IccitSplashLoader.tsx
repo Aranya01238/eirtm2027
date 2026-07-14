@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect } from "react";
 import { motion, useCycle } from "framer-motion";
 
 // Define the component's props interface
@@ -76,7 +76,7 @@ export default function IccitSplashLoader({ children }: SplashLoaderProps) {
           <motion.div
             className="w-52 h-52 border-4 rounded-full absolute border-transparent"
             style={{
-                borderTopColor: '#FF6F00', // Changed accent color for ICECIT (Orange/Red)
+                borderTopColor: '#FF6F00', // Changed accent color for EIRTM (Orange/Red)
                 borderRightColor: '#FF6F00',
                 borderBottomColor: '#1A4D6B',
                 borderLeftColor: '#1A4D6B',
@@ -101,15 +101,15 @@ export default function IccitSplashLoader({ children }: SplashLoaderProps) {
                 boxShadow: { duration: 1.5, ease: "easeInOut", repeat: Infinity }
             }}
           >
-            {/* Logo Placeholder (Adjusted text for ICECIT) */}
+            {/* Logo Placeholder (Adjusted text for EIRTM) */}
             <motion.img
-              src="https://placehold.co/120x120/0A1A2F/FF6F00?text=ICEBM" // Placeholder updated
-              alt="ICEBM Logo"
+              src="https://placehold.co/120x120/0A1A2F/FF6F00?text=EIRTM" // Placeholder updated
+              alt="EIRTM Logo"
               className="w-24 h-24 object-contain rounded-full border-2 border-[#00FFFF]" // Border color changed
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="https://placehold.co/120x120/0A1A2F/FF6F00?text=ICEBM"}} // Fallback updated
+              onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="https://placehold.co/120x120/0A1A2F/FF6F00?text=EIRTM"}} // Fallback updated
             />
           </motion.div>
         </div>
@@ -122,7 +122,7 @@ export default function IccitSplashLoader({ children }: SplashLoaderProps) {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            Initializing ICEBM 2026 Portal
+            Initializing EIRTM 2027 Portal
           </motion.p>
 
 
