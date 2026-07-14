@@ -88,15 +88,6 @@ export const Navbar = () => {
               <div className="absolute -left-8 top-0 bottom-0 w-8 bg-gradient-to-l from-white/70 to-transparent pointer-events-none"></div>
 
               <div className="flex items-center justify-center gap-0 rounded-full bg-white/70 backdrop-blur-md shadow-md border border-white/40 px-2 py-1">
-                {/* ⭐ Unique Back to EIRTM Button */}
-                <a
-                  href="https://eirtm2027congress.smartsociety.org/"
-                  className="px-3 py-1 text-[10px] xl:text-[11px] font-semibold rounded-lg transition-all duration-300 whitespace-nowrap flex flex-col items-center leading-tight text-foreground hover:text-primary hover:bg-primary/5 mr-2"
-                >
-                  <span>Back to EIRTM</span>
-                  <span className="text-[9px] mt-[-2px]">(Home)</span>
-                </a>
-
                 {/* Other nav items */}
                 {navItems.map((item) => (
                   <div
@@ -194,16 +185,6 @@ export const Navbar = () => {
       >
         <div className="bg-card/95 backdrop-blur-xl border-t border-border/60">
           <div className="px-6 py-6 space-y-1 max-h-[calc(100vh-9rem)] overflow-y-auto">
-            {/* ⭐ Unique Back to EIRTM Button on Mobile */}
-            <a
-              href="https://eirtm2027congress.smartsociety.org/"
-              className="block py-3 font-semibold rounded-lg px-3 transition-all duration-200 text-foreground hover:text-primary hover:bg-primary/5 flex flex-col leading-tight"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              <span>Back to EIRTM</span>
-              <span className="text-[10px] mt-[-2px]">(Home)</span>
-            </a>
-
             {/* Other nav items */}
             {navItems.map((item, index) => (
               <div

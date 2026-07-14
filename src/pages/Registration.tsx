@@ -1,10 +1,7 @@
 import { motion } from "framer-motion";
-import { Clock, ArrowLeft, Sparkles, ClipboardList } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Clock, Sparkles, ClipboardList } from "lucide-react";
 
 const Registration = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="min-h-screen relative flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
@@ -118,16 +115,19 @@ const Registration = () => {
             <span>Opening April 2027</span>
           </motion.div>
 
-          {/* Back button */}
-          <motion.button
-            whileHover={{ scale: 1.06 }}
-            whileTap={{ scale: 0.97 }}
-            onClick={() => navigate("/")}
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-sky-600 hover:from-cyan-400 hover:to-sky-500 text-white font-semibold px-8 py-3 rounded-xl shadow-[0_0_30px_rgba(56,189,248,0.35)] transition-all duration-300 text-sm"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Home
-          </motion.button>
+          {/* Empty state button */}
+          <div className="flex flex-col items-center gap-3">
+            <button
+              type="button"
+              disabled
+              className="inline-flex items-center gap-2 rounded-xl border border-cyan-400/35 bg-white/5 px-8 py-3 text-sm font-semibold text-cyan-100/80 shadow-[0_0_24px_rgba(56,189,248,0.18)] cursor-not-allowed"
+            >
+              Coming Soon
+            </button>
+            <span className="text-[11px] uppercase tracking-[0.22em] text-white/35">
+              No actions are available yet
+            </span>
+          </div>
         </div>
       </motion.div>
     </div>
