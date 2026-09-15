@@ -1,204 +1,50 @@
-﻿import { Card } from "@/components/ui/card";
-import { Users, Award, Briefcase, BookOpen } from "lucide-react";
-
-interface CommitteeMember {
-  name: string;
-  designation: string;
-  affiliation: string;
-}
+import { Clock, Sparkles, Users } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Committee = () => {
-  const organizingCommittee: CommitteeMember[] = [
-    {
-      name: "Dr. Satyajit Chakrabarti",
-      designation: "Conference Chair",
-      affiliation: "IEM, Kolkata",
-    },
-    {
-      name: "Dr. Rajib Kumar Mandal",
-      designation: "Organizing Chair",
-      affiliation: "IEM, Kolkata",
-    },
-    {
-      name: "Prof. Anindya Sundar Dhar",
-      designation: "Technical Program Chair",
-      affiliation: "IEM, Kolkata",
-    },
-    {
-      name: "Dr. Priyanka Mondal",
-      designation: "Publication Chair",
-      affiliation: "IEM, Kolkata",
-    },
-  ];
+  return (
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-950 px-4 py-24">
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-cyan-950 to-sky-900" />
+      <div className="absolute -left-24 top-1/4 h-96 w-96 rounded-full bg-cyan-500/20 blur-3xl" />
+      <div className="absolute -right-24 bottom-1/4 h-96 w-96 rounded-full bg-sky-500/20 blur-3xl" />
 
-  const advisoryCommittee: CommitteeMember[] = [
-    {
-      name: "Prof. John Smith",
-      designation: "Professor",
-      affiliation: "MIT, USA",
-    },
-    {
-      name: "Dr. Maria Garcia",
-      designation: "Senior Researcher",
-      affiliation: "University of Cambridge, UK",
-    },
-    {
-      name: "Prof. Hiroshi Tanaka",
-      designation: "Dean",
-      affiliation: "Tokyo Institute of Technology, Japan",
-    },
-    {
-      name: "Dr. Priya Sharma",
-      designation: "Director",
-      affiliation: "IIT Delhi, India",
-    },
-  ];
+      <motion.div
+        initial={{ opacity: 0, y: 30, scale: 0.96 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="relative z-10 w-full max-w-2xl text-center"
+      >
+        <div className="rounded-3xl border border-white/20 bg-white/[0.08] p-8 shadow-[0_30px_80px_rgba(0,0,0,0.45)] backdrop-blur-2xl sm:p-12">
+          <div className="mx-auto mb-7 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-sky-600 shadow-[0_0_45px_rgba(56,189,248,0.45)]">
+            <Users className="h-10 w-10 text-white" />
+          </div>
 
-  const technicalCommittee: CommitteeMember[] = [
-    {
-      name: "Dr. Amit Kumar",
-      designation: "Associate Professor",
-      affiliation: "NIT Durgapur",
-    },
-    {
-      name: "Dr. Sneha Roy",
-      designation: "Assistant Professor",
-      affiliation: "Jadavpur University",
-    },
-    {
-      name: "Dr. Rajesh Verma",
-      designation: "Professor",
-      affiliation: "IIT Kharagpur",
-    },
-    {
-      name: "Dr. Anita Desai",
-      designation: "Senior Scientist",
-      affiliation: "CSIR-CEERI",
-    },
-  ];
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-500/20 px-4 py-1.5">
+            <Sparkles className="h-3.5 w-3.5 text-cyan-300" />
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">
+              EIRTM 2027
+            </span>
+          </div>
 
-  const volumeEditors: CommitteeMember[] = [
-    {
-      name: "Prof. David Williams",
-      designation: "Editor-in-Chief",
-      affiliation: "Springer",
-    },
-    {
-      name: "Dr. Sarah Johnson",
-      designation: "Associate Editor",
-      affiliation: "IEEE Publications",
-    },
-    {
-      name: "Prof. Michael Brown",
-      designation: "Volume Editor",
-      affiliation: "Elsevier",
-    },
-  ];
+          <h1 className="mb-3 bg-gradient-to-r from-cyan-300 via-sky-100 to-white bg-clip-text text-5xl font-extrabold text-transparent sm:text-6xl">
+            Coming Soon
+          </h1>
+          <div className="mx-auto mb-5 h-px w-20 bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
+          <h2 className="mb-4 text-xl font-semibold text-white/90">
+            Conference Committees
+          </h2>
+          <p className="mx-auto max-w-xl leading-relaxed text-white/60">
+            The organizing, advisory, technical, and publication committees
+            for EIRTM 2027 are being finalized. Their profiles will be
+            announced shortly.
+          </p>
 
-  const CommitteeSection = ({
-    id,
-    title,
-    icon: Icon,
-    members,
-    color,
-  }: {
-    id: string;
-    title: string;
-    icon: any;
-    members: CommitteeMember[];
-    color: string;
-  }) => (
-    <section id={id} className="mb-16 scroll-mt-24">
-      <Card className={`p-8 border-t-4 ${color}`}>
-        <div className="flex items-start gap-4 mb-8">
-          <Icon className="h-10 w-10 text-primary flex-shrink-0" />
-          <div>
-            <h2 className="text-3xl font-bold text-primary">{title}</h2>
+          <div className="mt-8 flex items-center justify-center gap-2 text-xs text-white/45">
+            <Clock className="h-4 w-4" />
+            <span>Committee announcements opening soon</span>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {members.map((member, index) => (
-            <div
-              key={index}
-              className="bg-muted p-6 rounded-lg border-l-4 border-l-secondary hover:shadow-md transition-shadow"
-            >
-              <h3 className="text-xl font-bold mb-2">{member.name}</h3>
-              <p className="text-primary font-semibold mb-1">
-                {member.designation}
-              </p>
-              <p className="text-muted-foreground">{member.affiliation}</p>
-            </div>
-          ))}
-        </div>
-      </Card>
-    </section>
-  );
-
-  return (
-    <div className="min-h-screen pt-24 pb-16">
-      <div className="section-container">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-primary mb-4">Conference Committee</h1>
-          <div className="w-24 h-1 bg-gradient-primary mx-auto mb-6"></div>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            EIRTM 2027 is supported by distinguished academicians, researchers,
-            and industry professionals from around the world.
-          </p>
-        </div>
-
-        {/* Organizing Committee */}
-        <CommitteeSection
-          id="organizing"
-          title="Organizing Committee"
-          icon={Users}
-          members={organizingCommittee}
-          color="border-t-primary"
-        />
-
-        {/* Advisory Committee */}
-        <CommitteeSection
-          id="advisory"
-          title="Advisory Committee"
-          icon={Award}
-          members={advisoryCommittee}
-          color="border-t-secondary"
-        />
-
-        {/* Technical Committee */}
-        <CommitteeSection
-          id="technical"
-          title="Technical Program Committee"
-          icon={Briefcase}
-          members={technicalCommittee}
-          color="border-t-primary"
-        />
-
-        {/* Volume Editors */}
-        <CommitteeSection
-          id="editors"
-          title="Volume Editors of Conference Proceedings"
-          icon={BookOpen}
-          members={volumeEditors}
-          color="border-t-secondary"
-        />
-
-        {/* Note */}
-        <Card className="p-8 bg-primary/5 border-l-4 border-l-primary">
-          <p className="text-lg">
-            <strong>Note:</strong> The committee list is being updated. More
-            members will be added soon. If you are interested in joining the
-            committee, please{" "}
-            <a
-              href="/contact"
-              className="text-primary hover:underline font-semibold"
-            >
-              contact us
-            </a>
-            .
-          </p>
-        </Card>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -11,12 +11,6 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 
-// Committee Pages
-import OrganizingCommitteePage from "@/pages/committee/OrganizingCommitteePage";
-import AdvisoryCommitteePage from "@/pages/committee/AdvisoryCommitteePage";
-import TechnicalCommitteePage from "@/pages/committee/TechnicalCommitteePage";
-import VolumeEditorsPage from "@/pages/committee/VolumeEditorsPage";
-
 // Publication Pages
 import ConferenceProceedingsPage from "@/pages/publication/ConferenceProceedingsPage";
 import BookPublicationPage from "@/pages/publication/BookPublicationPage";
@@ -88,19 +82,19 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route
                 path="/committee/organizing"
-                element={<OrganizingCommitteePage />}
+                element={<Committee />}
               />
               <Route
                 path="/committee/advisory"
-                element={<AdvisoryCommitteePage />}
+                element={<Committee />}
               />
               <Route
                 path="/committee/technical"
-                element={<TechnicalCommitteePage />}
+                element={<Committee />}
               />
               <Route
                 path="/committee/editors"
-                element={<VolumeEditorsPage />}
+                element={<Committee />}
               />
               <Route path="*" element={<NotFound />} />
             </Routes>

@@ -1,11 +1,16 @@
 ﻿import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { FileText, Target, Zap, Cpu, Calendar } from "lucide-react";
+import { FileText, Cpu, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const tracks = [
+type Track = {
+  category: string;
+  topics: string[];
+};
+
+const icebmTracks: Track[] = [
   {
     category: "Business",
     topics: [
@@ -88,6 +93,104 @@ const tracks = [
       "Ecommerce Strategy & Digital Payments",
       "Big Data & Internet-of-Things Applications",
       "Cross-Border & Legal Frameworks in Ecommerce",
+    ],
+  },
+];
+
+const icecitTracks: Track[] = [
+  {
+    category: "Internet of Things (IoT) & Data Science",
+    topics: [
+      "IoT and Big Data",
+      "Blockchain",
+      "Next-generation infrastructure for IoT",
+      "Cloud computing and IoT",
+      "Edge computing and IoT",
+      "IoT platforms, tools, and applications",
+      "IoT systems development methodologies",
+      "IoT applications",
+    ],
+  },
+  {
+    category: "Artificial Intelligence",
+    topics: [
+      "Artificial Intelligence (AI) solutions for IT",
+      "Explainable Artificial Intelligence (XAI)",
+      "Computer Vision & Transformers",
+      "Digital twinning & Autonomous Vehicles",
+      "Creative or generative artificial intelligence (AI)",
+      "Democratized AI: low-code, no-code AI",
+      "AI in cyber-security",
+      "Multimodal / Embedded machine learning",
+      "Federated / Adversarial Machine Learning",
+      "AI in Healthcare and Medicine",
+      "Quantum Machine Learning",
+      "Machine Learning and Deep Learning",
+      "Machine Learning in Bioinformatics & Metaverse",
+      "Natural Language Processing and Understanding",
+      "Explainability and Transparency in AI",
+      "AI for Multi-Agent Meta-Learning",
+      "AI in Industry and Business",
+      "AI and Data Ethics",
+    ],
+  },
+  {
+    category: "Mechatronics",
+    topics: [
+      "Sensing and Control Systems",
+      "Mechatronics Systems",
+      "Mechanical Systems",
+      "Artificial Intelligence",
+      "Robotics & Automation",
+      "Machine Learning",
+      "Deep learning",
+      "Recommendation system",
+    ],
+  },
+  {
+    category: "Communication",
+    topics: [
+      "Ad hoc networks",
+      "5G communications",
+      "Cloud and virtual networks",
+      "Cognitive radio networks",
+      "Cooperative communications",
+      "Self-organising networks",
+      "Vehicular networks",
+      "Wireless multicasting",
+      "Wireless sensor networks",
+    ],
+  },
+  {
+    category: "Cyber Security",
+    topics: [
+      "Network Security",
+      "Information Security",
+      "Encoding Technology",
+      "Cryptography",
+    ],
+  },
+  {
+    category: "Information Technology",
+    topics: [
+      "Neural Network",
+      "Intelligent System and Artificial Intelligence",
+      "Data Mining and Analytics",
+      "System Simulation",
+      "Network Design and Analysis",
+      "Quantum Information Science",
+      "Computation in Medical Science",
+      "Cloud Computing in E-Commerce Scenarios",
+      "Electronic Business Model and Method",
+    ],
+  },
+  {
+    category: "Material Science",
+    topics: [
+      "Materials for Energy applications",
+      "Materials for Medical applications",
+      "Carbon based materials",
+      "Biomaterials",
     ],
   },
 ];
@@ -199,44 +302,99 @@ const CallForPapers = () => {
         </div>
 
         {/* Research Tracks */}
-        <div className="mb-20">
-          <h2 className="text-4xl font-bold text-center mb-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-sky-600 drop-shadow-[0_0_15px_rgba(6,182,212,0.5)]">
-            Conference Tracks
-          </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {tracks.map((track, i) => {
-              const trackSlug = generateSlug(track.category);
+        <div className="mb-20 space-y-16">
+          <div className="text-center">
+            <p className="mb-2 text-sm font-bold uppercase tracking-[0.25em] text-cyan-600">
+              EIRTM 2027 Conference 1
+            </p>
+            <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-sky-600 drop-shadow-[0_0_15px_rgba(6,182,212,0.5)]">
+              ICEBM
+            </h2>
+            <p className="mt-3 text-lg font-semibold text-slate-600">
+              International Conference on Economics, Business &amp; Management
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {icebmTracks.map((track, i) => {
+              const trackSlug = `icebm-${generateSlug(track.category)}`;
               const isHashActive = activeHashSlug === trackSlug;
               const isCurrentlyHovered = hoveredSlug === trackSlug;
 
               return (
                 <motion.div
-                  key={i}
-                  whileHover={{ scale: 1.02 }}
+                  key={trackSlug}
+                  whileHover={{ y: -4 }}
+                  onMouseEnter={() => setHoveredSlug(trackSlug)}
+                  onMouseLeave={() => setHoveredSlug(null)}
+                  className={i === 0 ? "xl:col-span-1" : ""}
+                >
+                  <Card
+                    id={trackSlug}
+                    className={`h-full border bg-white p-5 rounded-xl shadow-sm transition-all ${
+                      isCurrentlyHovered || (isHashActive && !hoveredSlug)
+                        ? "border-cyan-400 shadow-[0_0_20px_#06b6d4]"
+                        : "border-sky-100"
+                    } hover:bg-cyan-50 hover:shadow-[0_0_20px_#06b6d4]`}
+                  >
+                    <h3 className="mb-3 flex items-start gap-2 text-lg font-bold text-sky-700">
+                      <Cpu className="mt-1 h-5 w-5 shrink-0 text-cyan-500" />
+                      <span>Track #{i + 1}: {track.category}</span>
+                    </h3>
+                    <ul className="list-disc space-y-1 pl-5 text-sm font-medium leading-snug text-[#334155]">
+                      {track.topics.map((topic) => (
+                        <li key={topic} className="transition-all hover:text-cyan-600">
+                          {topic}
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <div className="border-t border-sky-100 pt-16 text-center">
+            <p className="mb-2 text-sm font-bold uppercase tracking-[0.25em] text-amber-600">
+              EIRTM 2027 Conference 2
+            </p>
+            <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">
+              ICECIT
+            </h2>
+            <p className="mt-3 text-lg font-semibold text-slate-600">
+              International Conference on Emerging Computing &amp; Innovative Technologies
+            </p>
+            <p className="mx-auto mt-4 max-w-3xl text-slate-600">
+              Research papers are invited describing original works in related technologies and management. The conference includes peer-reviewed technical sessions, special sessions, tutorials, and demonstrations.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {icecitTracks.map((track, i) => {
+              const trackSlug = `icecit-${generateSlug(track.category)}`;
+              const isHashActive = activeHashSlug === trackSlug;
+              const isCurrentlyHovered = hoveredSlug === trackSlug;
+
+              return (
+                <motion.div
+                  key={trackSlug}
+                  whileHover={{ y: -4 }}
                   onMouseEnter={() => setHoveredSlug(trackSlug)}
                   onMouseLeave={() => setHoveredSlug(null)}
                 >
                   <Card
                     id={trackSlug}
-                    className={`p-6 border bg-white rounded-xl shadow-sm transition-all
-                      ${
-                        isCurrentlyHovered || (isHashActive && !hoveredSlug)
-                          ? "border-cyan-400 shadow-[0_0_20px_#06b6d4]"
-                          : "border-sky-100"
-                      }
-                      hover:bg-cyan-50 hover:shadow-[0_0_20px_#06b6d4]
-                    `}
+                    className={`h-full border bg-white p-5 rounded-xl shadow-sm transition-all ${
+                      isCurrentlyHovered || (isHashActive && !hoveredSlug)
+                        ? "border-amber-400 shadow-[0_0_20px_#f59e0b]"
+                        : "border-amber-100"
+                    } hover:bg-amber-50 hover:shadow-[0_0_20px_#f59e0b]`}
                   >
-                    <h3 className="text-xl font-bold mb-3 text-sky-700 flex items-center gap-2">
-                      <Cpu className="h-5 w-5 text-cyan-500" />
-                      <span>{track.category}</span>
+                    <h3 className="mb-3 flex items-start gap-2 text-lg font-bold text-amber-700">
+                      <Cpu className="mt-1 h-5 w-5 shrink-0 text-orange-500" />
+                      <span>Track #{i + 1}: {track.category}</span>
                     </h3>
-                    <ul className="list-disc list-inside text-[#334155] font-medium space-y-1 pl-3">
-                      {track.topics.map((topic, idx) => (
-                        <li
-                          key={idx}
-                          className="hover:text-cyan-600 hover:drop-shadow-[0_0_6px_#06b6d4] transition-all"
-                        >
+                    <ul className="list-disc space-y-1 pl-5 text-sm font-medium leading-snug text-[#334155]">
+                      {track.topics.map((topic) => (
+                        <li key={topic} className="transition-all hover:text-amber-600">
                           {topic}
                         </li>
                       ))}

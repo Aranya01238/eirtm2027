@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { Clock, Sparkles, FileText } from "lucide-react";
+import { useState } from "react";
 
 const Submission = () => {
+  const [conference, setConference] = useState("none");
+
   return (
     <div className="min-h-screen relative flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
@@ -127,17 +130,35 @@ const Submission = () => {
             <span>Opening April 2027</span>
           </motion.div>
 
-          {/* Empty state button */}
-          <div className="flex flex-col items-center gap-3">
+          {/* Conference selection */}
+          <div className="mx-auto flex max-w-sm flex-col items-stretch gap-3 text-left">
+            <label
+              htmlFor="submission-conference"
+              className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200/80"
+            >
+              Choose conference
+            </label>
+            <select
+              id="submission-conference"
+              value={conference}
+              onChange={(event) => setConference(event.target.value)}
+              className="h-12 w-full rounded-xl border border-cyan-300/30 bg-slate-950/60 px-4 text-sm font-semibold text-white outline-none transition focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/30"
+            >
+              <option value="none">Not Chosen</option>
+              <option value="ICEBM">ICEBM 2027</option>
+              <option value="ICECIT">ICECIT 2027</option>
+            </select>
             <button
               type="button"
-              disabled
-              className="inline-flex items-center gap-2 rounded-xl border border-cyan-400/35 bg-white/5 px-8 py-3 text-sm font-semibold text-cyan-100/80 shadow-[0_0_24px_rgba(56,189,248,0.18)] cursor-not-allowed"
+              disabled={conference === "none"}
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-cyan-400/35 bg-cyan-400/15 px-8 py-3 text-sm font-semibold text-cyan-100 shadow-[0_0_24px_rgba(56,189,248,0.18)] transition hover:bg-cyan-400/25 disabled:cursor-not-allowed disabled:opacity-40"
             >
-              Coming Soon
+              {conference === "none"
+                ? "Choose a conference to continue"
+                : `Submit to ${conference} 2027`}
             </button>
             <span className="text-[11px] uppercase tracking-[0.22em] text-white/35">
-              No actions are available yet
+              Submission opens April 2027
             </span>
           </div>
         </div>

@@ -173,24 +173,17 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Section (Two-column layout with image) */}
-      <section className="pt-16 pb-12 px-14 bg-gradient-to-b from-blue-50 to-white -mt-14">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.35fr_1fr] gap-12 items-center">
-          {/* Left: Image without boxy glow/border */}
-          <div className="relative">
-            <img
-              src={aboutImg}
-              alt="Conference audience"
-              className="w-full rounded-3xl md:h-[420px] lg:h-[500px] object-cover"
-            />
-          </div>
-
-          {/* Right: Content and checklist */}
+      {/* About Section */}
+      <section className="-mt-14 bg-gradient-to-b from-blue-50 to-white px-6 pb-16 pt-20 sm:px-10">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-8 xl:grid-cols-[1.2fr_0.9fr_0.9fr] xl:gap-10">
           <div>
-            <h2 className="text-4xl font-bold mb-4 text-[#0f172a]">
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-cyan-600">
+              The Congress
+            </p>
+            <h2 className="mb-5 text-4xl font-bold text-[#0f172a]">
               About EIRTM
             </h2>
-            <p className="text-[#1e293b] text-lg leading-relaxed mb-8">
+            <p className="text-lg leading-relaxed text-[#1e293b]">
               The European Congress on Interdisciplinary Research in
               Technology and Management (EIRTM 2027) is a premier global
               platform fostering collaboration between academia, industry, and
@@ -198,24 +191,116 @@ const Home = () => {
               interdisciplinary research, technology innovation, and sustainable
               management strategies shaping the global economy.
             </p>
-
-            <div className="space-y-4">
+            <div className="relative mt-8">
+              <img
+                src={aboutImg}
+                alt="Conference audience"
+                className="h-[260px] w-full rounded-3xl object-cover shadow-xl sm:h-[320px]"
+              />
+              <div className="absolute -bottom-4 left-5 rounded-xl bg-slate-950 px-5 py-3 text-white shadow-lg sm:left-8">
+                <p className="text-2xl font-extrabold text-cyan-300">EIRTM 2027</p>
+                <p className="text-xs font-medium uppercase tracking-wider text-slate-300">
+                  Research. Innovation. Impact.
+                </p>
+              </div>
+            </div>
+            <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-3 xl:grid-cols-1">
               {[
                 "Globally recognized flagship conference",
                 "Keynotes by renowned industry leaders and pioneers",
                 "Participants from 1000+ companies",
-              ].map((text, idx) => (
+              ].map((text) => (
                 <div
-                  key={idx}
-                  className="flex items-start gap-3 bg-white/90 border border-cyan-100 rounded-xl px-4 py-3 shadow-sm"
+                  key={text}
+                  className="flex items-start gap-3 rounded-xl border border-cyan-100 bg-white/90 px-4 py-3 shadow-sm"
                 >
-                  <span className="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-cyan-100">
-                    <CheckCircle className="h-4 w-4 text-cyan-700" />
-                  </span>
-                  <span className="text-[#0f172a] font-medium">{text}</span>
+                  <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-cyan-700" />
+                  <span className="font-medium text-[#0f172a]">{text}</span>
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="flex h-full flex-col rounded-2xl border-t-4 border-cyan-500 bg-white p-6 shadow-sm transition-transform hover:-translate-y-1">
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-100">
+              <Cpu className="h-6 w-6 text-cyan-700" />
+            </div>
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-cyan-600">
+              Conference 1
+            </p>
+            <h3 className="mb-3 text-2xl font-bold text-sky-800">ICEBM 2027</h3>
+            <p className="mb-5 text-sm font-semibold leading-relaxed text-slate-600">
+              International Conference on Economics, Business &amp; Management
+            </p>
+            <p className="mb-4 text-sm leading-relaxed text-slate-600">
+              Explore research across seven focused areas in economics,
+              business, and management.
+            </p>
+            <ol className="mb-6 space-y-2 border-t border-cyan-100 pt-4 text-sm text-slate-700">
+              {[
+                "Business",
+                "Management",
+                "Accounting & Banking",
+                "Finance",
+                "Economics",
+                "Marketing",
+                "E-Commerce and Q-Commerce",
+              ].map((track, index) => (
+                <li key={track} className="flex items-center gap-3">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-100 text-xs font-bold text-cyan-700">
+                    {index + 1}
+                  </span>
+                  <span className="font-medium">{track}</span>
+                </li>
+              ))}
+            </ol>
+            <Link
+              to="/call-for-papers#icebm-business"
+              className="mt-auto inline-flex font-semibold text-cyan-700 transition-colors hover:text-cyan-500"
+            >
+              View ICEBM tracks &rarr;
+            </Link>
+          </div>
+
+          <div className="flex h-full flex-col rounded-2xl border-t-4 border-amber-500 bg-white p-6 shadow-sm transition-transform hover:-translate-y-1">
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100">
+              <Cpu className="h-6 w-6 text-amber-700" />
+            </div>
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-amber-600">
+              Conference 2
+            </p>
+            <h3 className="mb-3 text-2xl font-bold text-amber-800">ICECIT 2027</h3>
+            <p className="mb-5 text-sm font-semibold leading-relaxed text-slate-600">
+              International Conference on Emerging Computing &amp; Innovative Technologies
+            </p>
+            <p className="mb-4 text-sm leading-relaxed text-slate-600">
+              Discover emerging research across seven technology-focused
+              tracks for ICECIT 2027.
+            </p>
+            <ol className="mb-6 space-y-2 border-t border-amber-100 pt-4 text-sm text-slate-700">
+              {[
+                "IoT & Data Science",
+                "Artificial Intelligence",
+                "Mechatronics",
+                "Communication",
+                "Cyber Security",
+                "Information Technology",
+                "Material Science",
+              ].map((track, index) => (
+                <li key={track} className="flex items-center gap-3">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-amber-100 text-xs font-bold text-amber-700">
+                    {index + 1}
+                  </span>
+                  <span className="font-medium">{track}</span>
+                </li>
+              ))}
+            </ol>
+            <Link
+              to="/call-for-papers#icecit-internet-of-things-iot-data-science"
+              className="mt-auto inline-flex font-semibold text-amber-700 transition-colors hover:text-amber-500"
+            >
+              View ICECIT tracks &rarr;
+            </Link>
           </div>
         </div>
       </section>
