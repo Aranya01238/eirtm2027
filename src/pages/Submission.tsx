@@ -145,8 +145,8 @@ const Submission = () => {
               className="h-12 w-full rounded-xl border border-cyan-300/30 bg-slate-950/60 px-4 text-sm font-semibold text-white outline-none transition focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/30"
             >
               <option value="none">Not Chosen</option>
-              <option value="ICEBM">ICEBM 2027</option>
-              <option value="ICECIT">ICECIT 2027</option>
+              <option value="Engineering">Engineering Set 2027</option>
+              <option value="Management">Management Set 2027</option>
             </select>
             <button
               type="button"
@@ -154,8 +154,8 @@ const Submission = () => {
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-cyan-400/35 bg-cyan-400/15 px-8 py-3 text-sm font-semibold text-cyan-100 shadow-[0_0_24px_rgba(56,189,248,0.18)] transition hover:bg-cyan-400/25 disabled:cursor-not-allowed disabled:opacity-40"
             >
               {conference === "none"
-                ? "Choose a conference to continue"
-                : `Submit to ${conference} 2027`}
+                ? "Choose a set to continue"
+                : `Submit to ${conference} Set 2027`}
             </button>
             <span className="text-[11px] uppercase tracking-[0.22em] text-white/35">
               Submission opens April 2027

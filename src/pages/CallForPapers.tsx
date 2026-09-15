@@ -10,7 +10,7 @@ type Track = {
   topics: string[];
 };
 
-const icebmTracks: Track[] = [
+const engineeringTracks: Track[] = [
   {
     category: "Business",
     topics: [
@@ -97,7 +97,7 @@ const icebmTracks: Track[] = [
   },
 ];
 
-const icecitTracks: Track[] = [
+const managementTracks: Track[] = [
   {
     category: "Internet of Things (IoT) & Data Science",
     topics: [
@@ -305,18 +305,18 @@ const CallForPapers = () => {
         <div className="mb-20 space-y-16">
           <div className="text-center">
             <p className="mb-2 text-sm font-bold uppercase tracking-[0.25em] text-cyan-600">
-              EIRTM 2027 Conference 1
+              EIRTM 2027 • Engineering Set
             </p>
             <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-sky-600 drop-shadow-[0_0_15px_rgba(6,182,212,0.5)]">
-              ICEBM
+              Engineering
             </h2>
             <p className="mt-3 text-lg font-semibold text-slate-600">
-              International Conference on Economics, Business &amp; Management
+              Technical and systems-oriented research set within EIRTM 2027
             </p>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {icebmTracks.map((track, i) => {
-              const trackSlug = `icebm-${generateSlug(track.category)}`;
+            {engineeringTracks.map((track, i) => {
+              const trackSlug = `engineering-${generateSlug(track.category)}`;
               const isHashActive = activeHashSlug === trackSlug;
               const isCurrentlyHovered = hoveredSlug === trackSlug;
 
@@ -355,21 +355,21 @@ const CallForPapers = () => {
 
           <div className="border-t border-sky-100 pt-16 text-center">
             <p className="mb-2 text-sm font-bold uppercase tracking-[0.25em] text-amber-600">
-              EIRTM 2027 Conference 2
+              EIRTM 2027 • Management Set
             </p>
             <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">
-              ICECIT
+              Management
             </h2>
             <p className="mt-3 text-lg font-semibold text-slate-600">
-              International Conference on Emerging Computing &amp; Innovative Technologies
+              Business, economics, and management-focused sessions within the same conference
             </p>
             <p className="mx-auto mt-4 max-w-3xl text-slate-600">
               Research papers are invited describing original works in related technologies and management. The conference includes peer-reviewed technical sessions, special sessions, tutorials, and demonstrations.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {icecitTracks.map((track, i) => {
-              const trackSlug = `icecit-${generateSlug(track.category)}`;
+            {managementTracks.map((track, i) => {
+              const trackSlug = `management-${generateSlug(track.category)}`;
               const isHashActive = activeHashSlug === trackSlug;
               const isCurrentlyHovered = hoveredSlug === trackSlug;
 

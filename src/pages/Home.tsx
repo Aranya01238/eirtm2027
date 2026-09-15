@@ -226,58 +226,17 @@ const Home = () => {
               <Cpu className="h-6 w-6 text-cyan-700" />
             </div>
             <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-cyan-600">
-              Conference 1
+              EIRTM 2027 Set A
             </p>
-            <h3 className="mb-3 text-2xl font-bold text-sky-800">ICEBM 2027</h3>
+            <h3 className="mb-3 text-2xl font-bold text-sky-800">Engineering</h3>
             <p className="mb-5 text-sm font-semibold leading-relaxed text-slate-600">
-              International Conference on Economics, Business &amp; Management
+              Technical innovation, systems, and emerging computing tracks
             </p>
             <p className="mb-4 text-sm leading-relaxed text-slate-600">
-              Explore research across seven focused areas in economics,
-              business, and management.
+              Explore research across seven technical domains spanning IoT,
+              AI, communication, cybersecurity, IT, and material science.
             </p>
             <ol className="mb-6 space-y-2 border-t border-cyan-100 pt-4 text-sm text-slate-700">
-              {[
-                "Business",
-                "Management",
-                "Accounting & Banking",
-                "Finance",
-                "Economics",
-                "Marketing",
-                "E-Commerce and Q-Commerce",
-              ].map((track, index) => (
-                <li key={track} className="flex items-center gap-3">
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-100 text-xs font-bold text-cyan-700">
-                    {index + 1}
-                  </span>
-                  <span className="font-medium">{track}</span>
-                </li>
-              ))}
-            </ol>
-            <Link
-              to="/call-for-papers#icebm-business"
-              className="mt-auto inline-flex font-semibold text-cyan-700 transition-colors hover:text-cyan-500"
-            >
-              View ICEBM tracks &rarr;
-            </Link>
-          </div>
-
-          <div className="flex h-full flex-col rounded-2xl border-t-4 border-amber-500 bg-white p-6 shadow-sm transition-transform hover:-translate-y-1">
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100">
-              <Cpu className="h-6 w-6 text-amber-700" />
-            </div>
-            <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-amber-600">
-              Conference 2
-            </p>
-            <h3 className="mb-3 text-2xl font-bold text-amber-800">ICECIT 2027</h3>
-            <p className="mb-5 text-sm font-semibold leading-relaxed text-slate-600">
-              International Conference on Emerging Computing &amp; Innovative Technologies
-            </p>
-            <p className="mb-4 text-sm leading-relaxed text-slate-600">
-              Discover emerging research across seven technology-focused
-              tracks for ICECIT 2027.
-            </p>
-            <ol className="mb-6 space-y-2 border-t border-amber-100 pt-4 text-sm text-slate-700">
               {[
                 "IoT & Data Science",
                 "Artificial Intelligence",
@@ -288,6 +247,47 @@ const Home = () => {
                 "Material Science",
               ].map((track, index) => (
                 <li key={track} className="flex items-center gap-3">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-100 text-xs font-bold text-cyan-700">
+                    {index + 1}
+                  </span>
+                  <span className="font-medium">{track}</span>
+                </li>
+              ))}
+            </ol>
+            <Link
+              to="/call-for-papers#engineering-internet-of-things-iot-data-science"
+              className="mt-auto inline-flex font-semibold text-cyan-700 transition-colors hover:text-cyan-500"
+            >
+              View Engineering set &rarr;
+            </Link>
+          </div>
+
+          <div className="flex h-full flex-col rounded-2xl border-t-4 border-amber-500 bg-white p-6 shadow-sm transition-transform hover:-translate-y-1">
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100">
+              <Cpu className="h-6 w-6 text-amber-700" />
+            </div>
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-amber-600">
+              EIRTM 2027 Set B
+            </p>
+            <h3 className="mb-3 text-2xl font-bold text-amber-800">Management</h3>
+            <p className="mb-5 text-sm font-semibold leading-relaxed text-slate-600">
+              Business, economics, and management-focused research developments
+            </p>
+            <p className="mb-4 text-sm leading-relaxed text-slate-600">
+              Discover seven focused areas covering business performance,
+              finance, economics, marketing, and digital commerce.
+            </p>
+            <ol className="mb-6 space-y-2 border-t border-amber-100 pt-4 text-sm text-slate-700">
+              {[
+                "Business",
+                "Management",
+                "Accounting & Banking",
+                "Finance",
+                "Economics",
+                "Marketing",
+                "E-Commerce and Q-Commerce",
+              ].map((track, index) => (
+                <li key={track} className="flex items-center gap-3">
                   <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-amber-100 text-xs font-bold text-amber-700">
                     {index + 1}
                   </span>
@@ -296,10 +296,10 @@ const Home = () => {
               ))}
             </ol>
             <Link
-              to="/call-for-papers#icecit-internet-of-things-iot-data-science"
+              to="/call-for-papers#engineering-business"
               className="mt-auto inline-flex font-semibold text-amber-700 transition-colors hover:text-amber-500"
             >
-              View ICECIT tracks &rarr;
+              View Management set &rarr;
             </Link>
           </div>
         </div>
