@@ -12,93 +12,6 @@ type Track = {
 
 const engineeringTracks: Track[] = [
   {
-    category: "Business",
-    topics: [
-      "Corporate Governance & Ethics",
-      "Strategic Planning & Competitive Advantage",
-      "Entrepreneurship & Business Models",
-      "Global Markets & Emerging Economies",
-      "Organizational Behaviour & Leadership",
-      "Risk Management & Business Continuity",
-      "Mergers, Acquisitions & Negotiations",
-    ],
-  },
-  {
-    category: "Management",
-    topics: [
-      "Human Resource & Talent Development",
-      "Financial & Risk Management",
-      "Operations & Supply Chain Management",
-      "Technology, Innovation and AI in Management",
-      "Sustainability & Environmental Management",
-      "Strategic & Quality Management",
-      "Event, Tourism & Hospitality Management",
-    ],
-  },
-  {
-    category: "Accounting & Banking",
-    topics: [
-      "Financial & Managerial Accounting",
-      "Corporate & Public Accounting Standards",
-      "Banking Systems & Monetary Policy",
-      "Financial Instruments & Capital Markets",
-      "Auditing & Risk Analysis",
-      "Cryptocurrency & Digital Banking",
-      "International & Islamic Banking Practices",
-    ],
-  },
-  {
-    category: "Finance",
-    topics: [
-      "Corporate Finance & Investment Strategies",
-      "Behavioral & Empirical Finance",
-      "Financial Markets, Regulations & Inclusion",
-      "Risk Management, Financial Engineering and Fintech",
-      "Insurance & Financial Services",
-      "Global Financial Crisis & Policy Responses",
-      "Public, Personal & Project Finance",
-    ],
-  },
-  {
-    category: "Economics",
-    topics: [
-      "Microeconomics & Macroeconomics",
-      "Economic Growth & Development",
-      "Fiscal & Monetary Policy",
-      "International & Comparative Economics",
-      "Employment, Inflation & Human Capital",
-      "Econometrics & Data Analysis",
-      "Energy & Environmental Economics",
-    ],
-  },
-  {
-    category: "Marketing",
-    topics: [
-      "Consumer Behavior & Brand Management",
-      "Digital, Social & Influencer Marketing",
-      "Marketing Analytics & Artificial Intelligence",
-      "International & Cross-Cultural Marketing",
-      "Content & Viral Marketing Strategies",
-      "CRM & Customer Experience Management",
-      "Sustainable & Ethical Marketing Practices",
-    ],
-  },
-  {
-    category: "E-Commerce and Q-Commerce",
-    topics: [
-      "Online Platforms & Marketplaces",
-      "Mobile & Omnichannel Commerce",
-      "Data Privacy & Cybersecurity",
-      "Blockchain & Smart Logistics",
-      "Ecommerce Strategy & Digital Payments",
-      "Big Data & Internet-of-Things Applications",
-      "Cross-Border & Legal Frameworks in Ecommerce",
-    ],
-  },
-];
-
-const managementTracks: Track[] = [
-  {
     category: "Internet of Things (IoT) & Data Science",
     topics: [
       "IoT and Big Data",
@@ -191,6 +104,93 @@ const managementTracks: Track[] = [
       "Materials for Medical applications",
       "Carbon based materials",
       "Biomaterials",
+    ],
+  },
+];
+
+const managementTracks: Track[] = [
+  {
+    category: "Business",
+    topics: [
+      "Corporate Governance & Ethics",
+      "Strategic Planning & Competitive Advantage",
+      "Entrepreneurship & Business Models",
+      "Global Markets & Emerging Economies",
+      "Organizational Behaviour & Leadership",
+      "Risk Management & Business Continuity",
+      "Mergers, Acquisitions & Negotiations",
+    ],
+  },
+  {
+    category: "Management",
+    topics: [
+      "Human Resource & Talent Development",
+      "Financial & Risk Management",
+      "Operations & Supply Chain Management",
+      "Technology, Innovation and AI in Management",
+      "Sustainability & Environmental Management",
+      "Strategic & Quality Management",
+      "Event, Tourism & Hospitality Management",
+    ],
+  },
+  {
+    category: "Accounting & Banking",
+    topics: [
+      "Financial & Managerial Accounting",
+      "Corporate & Public Accounting Standards",
+      "Banking Systems & Monetary Policy",
+      "Financial Instruments & Capital Markets",
+      "Auditing & Risk Analysis",
+      "Cryptocurrency & Digital Banking",
+      "International & Islamic Banking Practices",
+    ],
+  },
+  {
+    category: "Finance",
+    topics: [
+      "Corporate Finance & Investment Strategies",
+      "Behavioral & Empirical Finance",
+      "Financial Markets, Regulations & Inclusion",
+      "Risk Management, Financial Engineering and Fintech",
+      "Insurance & Financial Services",
+      "Global Financial Crisis & Policy Responses",
+      "Public, Personal & Project Finance",
+    ],
+  },
+  {
+    category: "Economics",
+    topics: [
+      "Microeconomics & Macroeconomics",
+      "Economic Growth & Development",
+      "Fiscal & Monetary Policy",
+      "International & Comparative Economics",
+      "Employment, Inflation & Human Capital",
+      "Econometrics & Data Analysis",
+      "Energy & Environmental Economics",
+    ],
+  },
+  {
+    category: "Marketing",
+    topics: [
+      "Consumer Behavior & Brand Management",
+      "Digital, Social & Influencer Marketing",
+      "Marketing Analytics & Artificial Intelligence",
+      "International & Cross-Cultural Marketing",
+      "Content & Viral Marketing Strategies",
+      "CRM & Customer Experience Management",
+      "Sustainable & Ethical Marketing Practices",
+    ],
+  },
+  {
+    category: "E-Commerce and Q-Commerce",
+    topics: [
+      "Online Platforms & Marketplaces",
+      "Mobile & Omnichannel Commerce",
+      "Data Privacy & Cybersecurity",
+      "Blockchain & Smart Logistics",
+      "Ecommerce Strategy & Digital Payments",
+      "Big Data & Internet-of-Things Applications",
+      "Cross-Border & Legal Frameworks in Ecommerce",
     ],
   },
 ];

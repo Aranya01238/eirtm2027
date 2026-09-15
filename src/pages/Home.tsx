@@ -296,7 +296,7 @@ const Home = () => {
               ))}
             </ol>
             <Link
-              to="/call-for-papers#engineering-business"
+              to="/call-for-papers#management-business"
               className="mt-auto inline-flex font-semibold text-amber-700 transition-colors hover:text-amber-500"
             >
               View Management set &rarr;
