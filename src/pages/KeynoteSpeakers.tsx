@@ -3,7 +3,7 @@ import { Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 
 const KeynoteSpeakers = () => {
-  const confirmedSpeakers = [
+  const previousSpeakers = [
     {
       name: "Dr. Pere Roca i Cabarrocas",
       designation:
@@ -86,19 +86,18 @@ const KeynoteSpeakers = () => {
         {/* Header Section */}
         <div className="text-center mb-20">
           <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600 drop-shadow-[0_0_20px_rgba(56,189,248,0.5)] mb-4">
-            Keynote Speakers
+            Previous Keynote Speakers
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-sky-500 mx-auto mb-6 rounded"></div>
           <p className="text-lg text-[#1e293b] max-w-3xl mx-auto leading-relaxed">
-            <span className="font-semibold text-sky-600">EIRTM 2027</span>
-            presents distinguished keynote speakers from world-leading
-            institutions.
+            Explore distinguished keynote speakers who have previously joined
+            EIRTM from world-leading institutions.
           </p>
         </div>
 
-        {/* Confirmed Speaker Cards */}
+        {/* Previous Speaker Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-24">
-          {confirmedSpeakers.map((speaker, i) => (
+          {previousSpeakers.map((speaker, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, scale: 0.9 }}
@@ -124,7 +123,7 @@ const KeynoteSpeakers = () => {
 
                 <div className="bg-[#d9e4ea] rounded-3xl px-8 py-7 border border-cyan-100 max-w-3xl mx-auto">
                   <h3 className="text-xs md:text-sm text-slate-500 font-bold mb-2 uppercase tracking-[0.16em]">
-                    Keynote Talk
+                    Previous Keynote Talk
                   </h3>
                   <p className="text-[#03558a] text-xl md:text-2xl font-semibold leading-snug">
                     {speaker.topic}
@@ -144,12 +143,12 @@ const KeynoteSpeakers = () => {
         >
           <Card className="p-16 text-center bg-gradient-to-r from-cyan-500 to-sky-500 text-white shadow-lg rounded-3xl">
             <h2 className="text-4xl font-extrabold mb-4 tracking-tight drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
-              More Speakers Coming Soon!
+              EIRTM 2027 Keynote Speakers
             </h2>
             <p className="text-lg opacity-90 max-w-3xl mx-auto leading-relaxed">
               We’re curating an exceptional lineup of thought leaders,
-              innovators, and global experts in computing, AI, IoT, and
-              sustainable technology.
+              innovators, and global experts for EIRTM 2027. The official
+              keynote speaker list will be announced soon.
               <span className="font-semibold text-white">
                 {" "}
                 Stay tuned for official announcements!
@@ -157,7 +156,7 @@ const KeynoteSpeakers = () => {
             </p>
             <div className="mt-8 flex items-center justify-center gap-3 text-white/90">
               <Calendar className="h-5 w-5" />
-              <p className="text-lg font-medium">Final List by March 2027</p>
+              <p className="text-lg font-medium">Final list by March 2027</p>
             </div>
           </Card>
         </motion.div>
