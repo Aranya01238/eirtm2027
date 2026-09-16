@@ -25,7 +25,6 @@ import Publication from "@/pages/Publication";
 import OrganizingCommitteePage from "@/pages/committee/OrganizingCommitteePage";
 import AdvisoryCommitteePage from "@/pages/committee/AdvisoryCommitteePage";
 import TechnicalCommitteePage from "@/pages/committee/TechnicalCommitteePage";
-import VolumeEditorsPage from "@/pages/committee/VolumeEditorsPage";
 import Submission from "@/pages/Submission";
 import Registration from "@/pages/Registration";
 import KeynoteSpeakers from "@/pages/KeynoteSpeakers";
@@ -94,10 +93,6 @@ const App = () => (
               <Route
                 path="/committee/technical"
                 element={<TechnicalCommitteePage />}
-              />
-              <Route
-                path="/committee/editors"
-                element={<VolumeEditorsPage />}
               />
               <Route path="*" element={<NotFound />} />
             </Routes>

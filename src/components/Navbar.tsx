@@ -28,7 +28,6 @@ const navItems = [
       { name: "Organizing Committee", path: "/committee/organizing" },
       { name: "Advisory Committee", path: "/committee/advisory" },
       { name: "Technical Committee", path: "/committee/technical" },
-      { name: "Volume Editors", path: "/committee/editors" },
     ],
   },
   { name: "Submission", path: "/submission" },

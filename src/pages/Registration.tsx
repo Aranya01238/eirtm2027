@@ -1,133 +1,66 @@
+import { ArrowUpRight, BriefcaseBusiness, GraduationCap, UserRound, UsersRound } from "lucide-react";
 import { motion } from "framer-motion";
-import { Clock, Sparkles, ClipboardList } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 
-const Registration = () => {
+const edasUrl = "https://edas.info/";
 
-  return (
-    <div className="min-h-screen relative flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-cyan-950 to-sky-900" />
+const fees = [
+  { title: "Academic (1 Paper)", price: "€250", icon: GraduationCap, accent: "amber" },
+  { title: "Academic (2 Papers)", price: "€350", icon: GraduationCap, accent: "amber" },
+  { title: "Industry", price: "€400", icon: BriefcaseBusiness, accent: "cyan" },
+  { title: "Attendee", price: "€150", icon: UsersRound, accent: "amber" },
+];
 
-      {/* Floating orbs */}
-      <motion.div
-        animate={{ scale: [1, 1.25, 1], opacity: [0.25, 0.45, 0.25] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/3 left-1/6 w-96 h-96 rounded-full bg-cyan-500/25 blur-3xl pointer-events-none"
-      />
-      <motion.div
-        animate={{ scale: [1.15, 1, 1.15], opacity: [0.15, 0.35, 0.15] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-1/3 right-1/6 w-80 h-80 rounded-full bg-sky-400/25 blur-3xl pointer-events-none"
-      />
-      <motion.div
-        animate={{ scale: [1, 1.35, 1], opacity: [0.08, 0.18, 0.08] }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-teal-600/10 blur-3xl pointer-events-none"
-      />
+const Registration = () => (
+  <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-sky-50 px-4 py-14 text-slate-800 sm:px-6 lg:px-8">
+    <motion.main className="mx-auto max-w-7xl" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+      <header className="mx-auto mb-14 max-w-4xl text-center">
+        <h1 className="text-5xl font-extrabold tracking-tight text-blue-600 sm:text-6xl">Registration</h1>
+        <div className="mx-auto mt-5 h-1 w-28 bg-blue-500" />
+        <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl">Register for EIRTM 2027 and be part of an exciting academic event in Paris, France.</p>
+      </header>
 
-      {/* Stars / particles */}
-      {[...Array(18)].map((_, i) => (
-        <motion.div
-          key={i}
-          animate={{ opacity: [0, 1, 0], y: [0, -20, 0] }}
-          transition={{ duration: 3 + (i % 4), repeat: Infinity, delay: i * 0.35 }}
-          className="absolute w-1 h-1 rounded-full bg-cyan-300/60 pointer-events-none"
-          style={{
-            left: `${8 + (i * 5.2) % 88}%`,
-            top: `${10 + (i * 7.3) % 80}%`,
-          }}
-        />
-      ))}
-
-      {/* Glassmorphism card */}
-      <motion.div
-        initial={{ opacity: 0, y: 50, scale: 0.93 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.9, ease: "easeOut" }}
-        className="relative z-10 max-w-xl w-full mx-4 text-center"
-      >
-        <div className="backdrop-blur-2xl bg-white/[0.07] border border-white/20 rounded-3xl p-12 shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
-
-          {/* Glowing icon */}
-          <motion.div
-            animate={{ boxShadow: ["0 0 30px rgba(56,189,248,0.4)", "0 0 60px rgba(56,189,248,0.7)", "0 0 30px rgba(56,189,248,0.4)"] }}
-            transition={{ duration: 3, repeat: Infinity }}
-            className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-400 to-sky-600 mb-8 mx-auto"
-          >
-            <ClipboardList className="w-10 h-10 text-white" />
-          </motion.div>
-
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3 }}
-            className="inline-flex items-center gap-2 bg-cyan-500/20 border border-cyan-400/40 rounded-full px-4 py-1.5 mb-6"
-          >
-            <Sparkles className="w-3.5 h-3.5 text-cyan-300" />
-            <span className="text-cyan-200 text-xs font-semibold tracking-[0.2em] uppercase">EIRTM 2027</span>
-          </motion.div>
-
-          {/* Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-sky-100 to-white mb-3"
-          >
-            Coming Soon
-          </motion.h1>
-
-          {/* Divider */}
-          <div className="w-20 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent mx-auto mb-5" />
-
-          {/* Sub heading */}
-          <motion.h2
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="text-xl font-semibold text-white/90 mb-3"
-          >
-            Registration Portal
-          </motion.h2>
-
-          {/* Body */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="text-white/55 leading-relaxed mb-10 text-sm"
-          >
-            Registration for the{" "}
-            <span className="text-cyan-300 font-medium">
-              European Congress on Interdisciplinary Research in Technology and Management
-            </span>{" "}
-            will open shortly. Please check back soon.
-          </motion.p>
-
-          {/* Clock row */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
-            className="flex items-center justify-center gap-2 text-white/40 text-xs mb-8"
-          >
-            <Clock className="w-3.5 h-3.5" />
-            <span>Opening 04th Jan, 2027</span>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-            className="text-[11px] uppercase tracking-[0.22em] text-white/35"
-          >
-            Registration opens 04th Jan, 2027
-          </motion.div>
+      <section className="mb-16 rounded-2xl border border-amber-200 border-l-4 border-l-amber-400 bg-amber-50/80 p-7 shadow-sm sm:p-8">
+        <h2 className="mb-6 flex items-center gap-3 text-2xl font-extrabold text-slate-900"><span className="text-amber-500">✓</span>Important Registration Dates</h2>
+        <div className="grid gap-5 text-lg md:grid-cols-3">
+          <p><strong>Abstract Submission:</strong> 20th Dec, 2026</p>
+          <p><strong>Full Paper Submission:</strong> 27th Dec, 2026</p>
+          <p><strong>Registration Deadline:</strong> 04th Jan, 2027</p>
         </div>
-      </motion.div>
-    </div>
-  );
-};
+        <p className="mt-5 font-semibold text-blue-700">Conference dates: 3–5th May, 2027</p>
+      </section>
+
+      <section className="mb-16">
+        <h2 className="mb-9 text-center text-4xl font-extrabold text-blue-600">Registration Fees</h2>
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+          {fees.map(({ title, price, icon: Icon, accent }) => (
+            <Card key={title} className={`border-0 border-t-4 ${accent === "cyan" ? "border-t-blue-600" : "border-t-amber-400"} bg-white p-7 text-center shadow-[0_8px_25px_rgba(30,64,175,0.1)]`}>
+              <div className={`mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full ${accent === "cyan" ? "bg-blue-100 text-blue-600" : "bg-amber-50 text-amber-500"}`}><Icon className="h-9 w-9" /></div>
+              <h3 className="mb-5 text-xl font-bold text-slate-900">{title}</h3>
+              <div className="rounded-xl bg-slate-100 px-5 py-4"><p className="text-sm text-slate-500">Regular</p><p className="mt-1 text-3xl font-extrabold text-amber-500">{price}</p></div>
+            </Card>
+          ))}
+        </div>
+        <p className="mt-6 text-center text-sm text-slate-500">Fees are shown in EUR. Payment and confirmation instructions are provided through the registration portal.</p>
+      </section>
+
+      <section className="mb-16 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-500 px-6 py-14 text-center text-white shadow-xl sm:px-10">
+        <h2 className="text-3xl font-extrabold sm:text-4xl">Register & Submit</h2>
+        <p className="mt-4 text-lg text-blue-50">Secure your place or submit your paper for EIRTM 2027 via EDAS.</p>
+        <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+          <Button asChild size="lg" className="bg-white text-blue-700 hover:bg-blue-50"><a href={edasUrl} target="_blank" rel="noreferrer">Register Now (EDAS) <ArrowUpRight className="ml-2 h-4 w-4" /></a></Button>
+          <Button asChild size="lg" className="bg-white text-blue-700 hover:bg-blue-50"><a href={edasUrl} target="_blank" rel="noreferrer">Submit Paper (EDAS) <ArrowUpRight className="ml-2 h-4 w-4" /></a></Button>
+        </div>
+        <p className="mt-7 text-sm text-blue-100">For registration queries, contact Sanghamitra@iem.edu.in</p>
+      </section>
+
+      <section className="grid gap-6 md:grid-cols-2">
+        <Card className="border-slate-200 bg-white p-7 shadow-sm"><div className="mb-4 flex items-center gap-3"><UserRound className="h-6 w-6 text-blue-600" /><h2 className="text-2xl font-bold text-blue-700">Registration includes</h2></div><ul className="space-y-3 text-slate-600"><li>Access to all conference sessions</li><li>Digital conference materials</li><li>Certificate of participation</li><li>Networking with researchers and industry professionals</li></ul></Card>
+        <Card className="border-slate-200 bg-white p-7 shadow-sm"><div className="mb-4 flex items-center gap-3"><UsersRound className="h-6 w-6 text-blue-600" /><h2 className="text-2xl font-bold text-blue-700">Need help?</h2></div><p className="leading-relaxed text-slate-600">For questions about fees, payment, attendance mode, or accessibility, contact the conference team before completing registration.</p><a href="mailto:Sanghamitra@iem.edu.in" className="mt-5 inline-block font-semibold text-blue-600 hover:underline">Sanghamitra@iem.edu.in</a></Card>
+      </section>
+    </motion.main>
+  </div>
+);
 
 export default Registration;
