@@ -1,0 +1,11 @@
+<svg width="520" height="220" viewBox="0 0 520 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="520" height="220" rx="28" fill="#F4F9FF"/>
+  <g>
+    <rect x="30" y="40" width="110" height="110" rx="26" fill="#EAF4FF"/>
+    <path d="M76 58C68.268 58 62 64.268 62 72V90C62 97.732 68.268 104 76 104H84C91.732 104 98 97.732 98 90V72C98 64.268 91.732 58 84 58H76ZM76 73H84C86.7614 73 89 75.2386 89 78V84C89 86.7614 86.7614 89 84 89H76C73.2386 89 71 86.7614 71 84V78C71 75.2386 73.2386 73 76 73Z" fill="#0B64C8"/>
+    <path d="M78 117H87C94.732 117 101 123.268 101 131V132H64V131C64 123.268 70.268 117 78 117Z" fill="#0B64C8"/>
+    <circle cx="101" cy="136" r="9" fill="#19B2D3"/>
+  </g>
+  <text x="170" y="106" fill="#123A67" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Bentham</text>
+  <text x="170" y="156" fill="#123A67" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="600">Science</text>
+</svg>

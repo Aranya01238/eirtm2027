@@ -367,9 +367,6 @@ const Home = () => {
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent" />
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-sm font-medium mb-3">
-            Tracks
-          </div>
           <h2 className="text-4xl font-bold text-[#ffff] mb-3">
             Conference Tracks
           </h2>

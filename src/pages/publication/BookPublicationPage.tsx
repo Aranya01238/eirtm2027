@@ -1,6 +1,8 @@
 ﻿import React from "react";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import novaLogo from "@/assets/Nova-Publishers.svg";
+import benthamLogo from "/B-logo.png";
 
 const BookPublicationPage = () => {
   return (
@@ -32,12 +34,22 @@ const BookPublicationPage = () => {
               Book/Book Series Publications
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
               <div className="flex flex-col items-center gap-4 group">
                 <div className="h-32 w-full flex items-center justify-center p-3 bg-white rounded-lg border border-slate-200 hover:shadow-md transition-shadow overflow-hidden">
                   <img
-                    src="/B-logo.png"
-                    alt="Book Publication Logo 1"
+                    src={novaLogo}
+                    alt="Nova Publishers"
+                    className="max-h-[72%] max-w-[90%] object-contain"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center gap-4 group">
+                <div className="h-32 w-full flex items-center justify-center p-3 bg-white rounded-lg border border-slate-200 hover:shadow-md transition-shadow overflow-hidden">
+                  <img
+                    src={benthamLogo}
+                    alt="Bentham Science"
                     className="max-h-[72%] max-w-[90%] object-contain"
                   />
                 </div>

@@ -1,92 +1,52 @@
 ﻿import React from "react";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { BookOpen } from "lucide-react";
-
-// Importing images directly from the path you provided
-// The '@' alias usually stands for the 'src' folder in React projects
-import atlantisLogo from "@/assets/atlantis.png";
 import springerLogo from "@/assets/springer.png";
 
 const ConferenceProceedingsPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-blue-50 text-slate-900 pt-24 pb-16 px-4">
-      <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-blue-50 px-4 pb-16 pt-24 text-slate-900">
+      <div className="mx-auto max-w-5xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.5 }}
+          className="mb-10 text-center"
         >
-          <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-6">
+          <span className="mb-4 inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-blue-700">
+            EIRTM 2027
+          </span>
+          <h1 className="mb-5 text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl">
             Conference Proceedings
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto rounded-full mb-6"></div>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Access information regarding the publication of accepted research
-            papers.
-          </p>
+          <div className="mx-auto mb-5 h-1.5 w-24 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500" />
         </motion.div>
 
-        {/* Publication Info Card */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <Card className="p-10 md:p-14 shadow-lg border-t-4 border-t-blue-500 bg-white text-center">
-            <BookOpen className="w-16 h-16 text-blue-500 mx-auto mb-6" />
-
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-8">
-              Publication Partners
-            </h2>
-
-            <p className="text-xl text-slate-600 mb-12 leading-relaxed">
-              The conference proceedings will be published in{" "}
-              <span className="font-semibold text-blue-700">
-                Atlantis Press
-              </span>
-              , part of{" "}
-              <span className="font-semibold text-blue-700">
-                Springer Nature
-              </span>
-              .
-            </p>
-
-            {/* Logos Row */}
-            <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 grayscale hover:grayscale-0 transition-all duration-500">
-              {/* Logo 1: Atlantis Press */}
-              <div className="flex flex-col items-center gap-4 group">
-                <div className="h-32 w-64 flex items-center justify-center p-4 bg-slate-50 rounded-lg border hover:shadow-md transition-shadow">
-                  {/* Using the imported image variable */}
-                  <img
-                    src={atlantisLogo}
-                    alt="Atlantis Press"
-                    className="max-h-full max-w-full object-contain"
-                  />
-                </div>
-                <span className="text-sm font-medium text-slate-500 group-hover:text-blue-600 transition-colors">
-                  Atlantis Press
-                </span>
+          <Card className="overflow-hidden border border-slate-200 bg-white shadow-[0_20px_60px_-30px_rgba(15,23,42,0.25)]">
+            <div className="flex flex-col items-center justify-center gap-8 bg-gradient-to-r from-slate-50 to-blue-50 p-8 text-center md:p-12">
+              <div className="flex h-24 w-full max-w-[320px] items-center justify-center rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:h-28">
+                <img
+                  src={springerLogo}
+                  alt="Springer"
+                  className="max-h-16 w-full object-contain md:max-h-20"
+                />
               </div>
 
-              {/* Divider (Hidden on mobile) */}
-              <div className="hidden md:block h-16 w-px bg-slate-200"></div>
-
-              {/* Logo 2: Springer Nature */}
-              <div className="flex flex-col items-center gap-4 group">
-                <div className="h-32 w-64 flex items-center justify-center p-4 bg-slate-50 rounded-lg border hover:shadow-md transition-shadow">
-                  {/* Using the imported image variable */}
-                  <img
-                    src={springerLogo}
-                    alt="Springer Nature"
-                    className="max-h-full max-w-full object-contain"
-                  />
-                </div>
-                <span className="text-sm font-medium text-slate-500 group-hover:text-blue-600 transition-colors">
+              <div className="max-w-3xl">
+                <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+                  Official publication partner
+                </p>
+                <h2 className="mb-4 text-2xl font-bold text-slate-900 md:text-3xl">
                   Springer Nature
-                </span>
+                </h2>
+                <p className="text-base leading-7 text-slate-600 md:text-lg">
+                  Accepted and selected papers will be published through the Springer platform, supporting international visibility, rigorous peer review, and strong academic recognition.
+                </p>
               </div>
             </div>
           </Card>
