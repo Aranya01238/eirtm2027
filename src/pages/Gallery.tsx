@@ -7,6 +7,8 @@ import {
   ChevronRight,
   Camera,
   Maximize2,
+  Pause,
+  Play,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -21,13 +23,16 @@ const gallery2026Images = [
   "/Gallery_2026/photo_2026-07-14_23-03-20.jpg",
   "/Gallery_2026/photo_2026-07-14_23-03-24.jpg",
   "/Gallery_2026/photo_2026-07-14_23-03-27.jpg",
+  "/Pic2.jpg",
+  "/Pic3.jpg",
+  "/Pic4.jpg",
 ];
 
 const TOTAL = gallery2026Images.length;
 const ANGLE_STEP = 360 / TOTAL;
-const RADIUS = 440;
-const CARD_W = 320;
-const CARD_H = 220;
+const RADIUS = 640;
+const CARD_W = 285;
+const CARD_H = 210;
 
 const Gallery = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -40,10 +45,10 @@ const Gallery = () => {
     [],
   );
 
-  // Auto-rotate every 3 s
+  // Auto-rotate every 3.5s
   useEffect(() => {
     if (paused) return;
-    const id = setInterval(goNext, 3000);
+    const id = setInterval(goNext, 3500);
     return () => clearInterval(id);
   }, [paused, goNext]);
 
@@ -70,13 +75,8 @@ const Gallery = () => {
         {/* -- EIRTM 2026 3D Carousel -- */}
         <section className="mb-20">
           {/* Dark stage */}
-          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-slate-900 via-cyan-950 to-slate-900 px-4 pt-12 pb-10 shadow-2xl">
-            {/* Ambient orbs */}
-            <div className="pointer-events-none absolute inset-0">
-              <div className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-cyan-500/10 blur-3xl" />
-              <div className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-sky-400/10 blur-3xl" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-blue-800/10 blur-3xl" />
-            </div>
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_50%_30%,rgba(14,116,144,0.36),transparent_34%),linear-gradient(135deg,#071522,#092f43_52%,#06131f)] px-3 pt-9 pb-7 shadow-2xl sm:px-6 sm:pt-12 sm:pb-10">
+            <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:42px_42px]" />
 
             {/* Heading */}
             <div className="relative z-10 text-center mb-10">
@@ -89,21 +89,20 @@ const Gallery = () => {
               <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-sky-100 to-white mb-2">
                 EIRTM 2026
               </h2>
-              <p className="text-white/50 text-sm">
-                Conference Highlights &mdash; click the front card to view full
-                size
+              <p className="text-sm text-white/55">
+                Conference highlights from research, conversations, and shared ideas
               </p>
             </div>
 
             {/* 3D stage */}
             <div
-              className="relative w-full flex items-center justify-center"
-              style={{ height: 440 }}
+              className="relative flex h-[340px] w-full items-center justify-center sm:h-[400px] md:h-[440px]"
               onMouseEnter={() => setPaused(true)}
               onMouseLeave={() => setPaused(false)}
             >
               <div
-                style={{ perspective: "1300px", perspectiveOrigin: "50% 45%" }}
+                className="scale-[0.58] sm:scale-[0.7] md:scale-[0.84] lg:scale-100"
+                style={{ perspective: "2000px", perspectiveOrigin: "50% 45%" }}
               >
                 <div
                   style={{
@@ -111,9 +110,10 @@ const Gallery = () => {
                     height: CARD_H,
                     position: "relative",
                     transformStyle: "preserve-3d",
+                    transformOrigin: "center center",
                     transform: `rotateY(${-activeIndex * ANGLE_STEP}deg)`,
-                    transition:
-                      "transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                    transition: "transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                    willChange: "transform",
                   }}
                 >
                   {gallery2026Images.map((src, i) => {
@@ -132,12 +132,12 @@ const Gallery = () => {
                           top: 0,
                           transform: `rotateY(${i * ANGLE_STEP}deg) translateZ(${RADIUS}px)`,
                           cursor: "pointer",
-                          borderRadius: 18,
+                          borderRadius: 22,
                           overflow: "hidden",
                           boxShadow: isActive
-                            ? "0 0 0 3px rgba(56,189,248,0.9), 0 28px 80px rgba(0,0,0,0.8), 0 0 50px rgba(56,189,248,0.3)"
-                            : "0 8px 30px rgba(0,0,0,0.6)",
-                          opacity: isActive ? 1 : 0.42,
+                            ? "0 0 0 2px rgba(125,211,252,0.95), 0 28px 80px rgba(0,0,0,0.8), 0 0 55px rgba(34,211,238,0.35)"
+                            : "0 12px 34px rgba(0,0,0,0.65)",
+                          opacity: isActive ? 1 : 0.34,
                           transition: "opacity 0.5s, box-shadow 0.5s",
                           backfaceVisibility: "hidden",
                         }}
@@ -162,16 +162,16 @@ const Gallery = () => {
                               position: "absolute",
                               inset: 0,
                               background:
-                                "linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%)",
+                                "linear-gradient(to top, rgba(2,12,20,0.72) 0%, transparent 62%)",
                             }}
                           />
                         )}
                         {isActive && (
-                          <div className="absolute bottom-3 right-3 bg-black/55 backdrop-blur-sm rounded-full p-1.5 text-white border border-white/25">
+                          <div className="absolute bottom-3 right-3 rounded-full border border-white/25 bg-black/55 p-1.5 text-white backdrop-blur-sm">
                             <Maximize2 className="h-4 w-4" />
                           </div>
                         )}
-                        <span className="absolute top-2.5 left-2.5 bg-black/60 backdrop-blur-sm text-white text-xs font-medium px-2.5 py-0.5 rounded-full">
+                        <span className="absolute left-3 top-3 rounded-full border border-white/15 bg-black/60 px-2.5 py-1 text-[11px] font-semibold tracking-wide text-white backdrop-blur-sm">
                           {i + 1} / {TOTAL}
                         </span>
                       </div>
@@ -189,32 +189,47 @@ const Gallery = () => {
                 }}
               />
 
+              <button
+                type="button"
+                aria-label={paused ? "Resume carousel" : "Pause carousel"}
+                onClick={() => setPaused((value) => !value)}
+                className="absolute bottom-2 left-1/2 z-10 -translate-x-1/2 rounded-full border border-white/20 bg-black/30 p-2 text-white/80 backdrop-blur-md transition hover:border-cyan-300/60 hover:bg-cyan-400/20 hover:text-white"
+              >
+                {paused ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}
+              </button>
+
               {/* Arrows */}
               <button
+                type="button"
+                aria-label="Previous gallery image"
                 onClick={() => {
                   setPaused(true);
                   goPrev();
                 }}
-                className="absolute left-3 sm:left-8 z-10 bg-white/10 hover:bg-cyan-400/20 border border-white/20 hover:border-cyan-400/50 text-white rounded-full p-3 shadow-xl transition-all duration-200 hover:scale-110 backdrop-blur-md"
+                className="absolute left-2 z-10 rounded-full border border-white/20 bg-black/25 p-2.5 text-white shadow-xl backdrop-blur-md transition-all duration-200 hover:scale-110 hover:border-cyan-300/60 hover:bg-cyan-400/20 sm:left-5 sm:p-3"
               >
                 <ChevronLeft className="h-6 w-6" />
               </button>
               <button
+                type="button"
+                aria-label="Next gallery image"
                 onClick={() => {
                   setPaused(true);
                   goNext();
                 }}
-                className="absolute right-3 sm:right-8 z-10 bg-white/10 hover:bg-cyan-400/20 border border-white/20 hover:border-cyan-400/50 text-white rounded-full p-3 shadow-xl transition-all duration-200 hover:scale-110 backdrop-blur-md"
+                className="absolute right-2 z-10 rounded-full border border-white/20 bg-black/25 p-2.5 text-white shadow-xl backdrop-blur-md transition-all duration-200 hover:scale-110 hover:border-cyan-300/60 hover:bg-cyan-400/20 sm:right-5 sm:p-3"
               >
                 <ChevronRight className="h-6 w-6" />
               </button>
             </div>
 
             {/* Dots */}
-            <div className="relative z-10 flex justify-center gap-2 mt-6">
+            <div className="relative z-10 mt-5 flex flex-wrap justify-center gap-2 px-8">
               {gallery2026Images.map((_, i) => (
                 <button
                   key={i}
+                  type="button"
+                  aria-label={`View gallery image ${i + 1}`}
                   onClick={() => {
                     setPaused(true);
                     setActiveIndex(i);
@@ -230,6 +245,12 @@ const Gallery = () => {
                   }}
                 />
               ))}
+            </div>
+
+            <div className="relative z-10 mt-5 flex items-center justify-center gap-3 text-xs font-medium uppercase tracking-[0.18em] text-cyan-100/70">
+              <span>Image {String(activeIndex + 1).padStart(2, "0")}</span>
+              <span className="h-px w-8 bg-cyan-300/35" />
+              <span>{String(TOTAL).padStart(2, "0")} moments</span>
             </div>
           </div>
         </section>
