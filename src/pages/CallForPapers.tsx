@@ -196,11 +196,10 @@ const managementTracks: Track[] = [
 ];
 
 const importantDates = [
-  { event: "Final Paper Submission", date: "15th April, 2027" },
-  { event: "Acceptance Notification", date: "15th April, 2027" },
-  { event: "Registration Deadline", date: "17th April, 2027" },
-  { event: "Presentation Submission", date: "20th April, 2027" },
-  { event: "Conference Dates", date: "21st – 23rd April, 2027" },
+  { event: "Abstract Submission", date: "20th Dec, 2026" },
+  { event: "Full Paper Submission", date: "27th Dec, 2026" },
+  { event: "Registration", date: "04th Jan, 2027" },
+  { event: "Conference Date", date: "3–5th May, 2027" },
 ];
 // Helper function to generate URL-friendly slugs
 const generateSlug = (text: string) => {

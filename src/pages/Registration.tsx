@@ -113,7 +113,7 @@ const Registration = () => {
             className="flex items-center justify-center gap-2 text-white/40 text-xs mb-8"
           >
             <Clock className="w-3.5 h-3.5" />
-            <span>Opening April 2027</span>
+            <span>Opening 04th Jan, 2027</span>
           </motion.div>
 
           <motion.div
@@ -122,7 +122,7 @@ const Registration = () => {
             transition={{ delay: 0.8 }}
             className="text-[11px] uppercase tracking-[0.22em] text-white/35"
           >
-            Registration opens April 2027
+            Registration opens 04th Jan, 2027
           </motion.div>
         </div>
       </motion.div>

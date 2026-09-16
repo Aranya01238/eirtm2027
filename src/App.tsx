@@ -22,7 +22,10 @@ import StyleOfReferencingPage from "@/pages/publication/StyleOfReferencingPage";
 import Home from "@/pages/Home";
 import CallForPapers from "@/pages/CallForPapers";
 import Publication from "@/pages/Publication";
-import Committee from "@/pages/Committee";
+import OrganizingCommitteePage from "@/pages/committee/OrganizingCommitteePage";
+import AdvisoryCommitteePage from "@/pages/committee/AdvisoryCommitteePage";
+import TechnicalCommitteePage from "@/pages/committee/TechnicalCommitteePage";
+import VolumeEditorsPage from "@/pages/committee/VolumeEditorsPage";
 import Submission from "@/pages/Submission";
 import Registration from "@/pages/Registration";
 import KeynoteSpeakers from "@/pages/KeynoteSpeakers";
@@ -74,7 +77,7 @@ const App = () => (
                 path="/publication/referencing"
                 element={<StyleOfReferencingPage />}
               />
-              <Route path="/committee" element={<Committee />} />
+              <Route path="/committee" element={<OrganizingCommitteePage />} />
               <Route path="/submission" element={<Submission />} />
               <Route path="/registration" element={<Registration />} />
               <Route path="/keynote-speakers" element={<KeynoteSpeakers />} />
@@ -82,19 +85,19 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route
                 path="/committee/organizing"
-                element={<Committee />}
+                element={<OrganizingCommitteePage />}
               />
               <Route
                 path="/committee/advisory"
-                element={<Committee />}
+                element={<AdvisoryCommitteePage />}
               />
               <Route
                 path="/committee/technical"
-                element={<Committee />}
+                element={<TechnicalCommitteePage />}
               />
               <Route
                 path="/committee/editors"
-                element={<Committee />}
+                element={<VolumeEditorsPage />}
               />
               <Route path="*" element={<NotFound />} />
             </Routes>

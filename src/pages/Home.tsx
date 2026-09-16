@@ -22,11 +22,10 @@ import ass from "@/assets/ars.png";
 import imgs from "@/assets/Gemini_Generated_Image_7wsqb57wsqb57wsq.png";
 
 const importantDates = [
-  { label: "Final Paper Submission", date: "15th April, 2027" },
-  { label: "Acceptance Notification", date: "15th April, 2027" },
-  { label: "Registration", date: "17th April, 2027" },
-  { label: "Presentation Submission", date: "20th April, 2027" },
-  { label: "Conference On", date: "21st – 23rd April, 2027" },
+  { label: "Abstract Submission", date: "20th Dec, 2026" },
+  { label: "Full Paper Submission", date: "27th Dec, 2026" },
+  { label: "Registration", date: "04th Jan, 2027" },
+  { label: "Conference Date", date: "3–5th May, 2027" },
 ];
 
 // Helper function to generate URL-friendly slugs
@@ -116,7 +115,7 @@ const Home = () => {
             <div className="flex flex-wrap items-center gap-3 text-[#92b3e7] text-base md:text-lg mb-6">
               <div className="inline-flex items-center gap-2">
                 <Calendar className="h-5 w-5 text-cyan-600" />
-                <span>21–23 April, 2027</span>
+                <span>3–5th May, 2027</span>
               </div>
               <span className="hidden md:inline text-slate-400">•</span>
               <div className="inline-flex items-center">

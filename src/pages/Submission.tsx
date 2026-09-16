@@ -125,7 +125,7 @@ const Submission = () => {
             className="flex items-center justify-center gap-2 text-white/40 text-xs mb-8"
           >
             <Clock className="w-3.5 h-3.5" />
-            <span>Opening April 2027</span>
+            <span>Abstract: 20th Dec, 2026 | Full Paper: 27th Dec, 2026</span>
           </motion.div>
 
           <motion.div
@@ -134,7 +134,7 @@ const Submission = () => {
             transition={{ delay: 0.8 }}
             className="text-[11px] uppercase tracking-[0.22em] text-white/35"
           >
-            Submission opens April 2027
+            Abstract Submission: 20th Dec, 2026 | Full Paper Submission: 27th Dec, 2026
           </motion.div>
         </div>
       </motion.div>

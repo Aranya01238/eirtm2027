@@ -2,50 +2,36 @@
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Calendar, MapPin, Users, BookOpen, Award } from "lucide-react";
+import { Calendar, FileText, MapPin, Users } from "lucide-react";
 
 const timelineData = [
   {
     id: 1,
-    title: "Final Paper Submission",
-    date: "15th Apr, 2027",
-    description: "Submit research papers.",
+    title: "Abstract Submission",
+    date: "20th Dec, 2026",
+    description: "Submit your abstract.",
     icon: Calendar,
   },
   {
     id: 2,
-    title: "Acceptance Notification",
-    date: "15th Apr, 2027",
-    description: "Notification of accepted papers.",
-    icon: Award,
+    title: "Full Paper Submission",
+    date: "27th Dec, 2026",
+    description: "Submit your full paper.",
+    icon: FileText,
   },
   {
     id: 3,
-    title: "Registration Deadline",
-    date: "17th Apr, 2027",
-    description: "Deadline for registration.",
+    title: "Registration",
+    date: "04th Jan, 2027",
+    description: "Complete your registration.",
     icon: Users,
   },
   {
     id: 4,
-    title: "Presentation Submission",
-    date: "20th Apr, 2027",
-    description: "Upload slides or posters.",
-    icon: BookOpen,
-  },
-  {
-    id: 5,
-    title: "Conference Begins",
-    date: "21-23 Apr, 2027",
-    description: "Keynote speeches start.",
+    title: "Conference Date",
+    date: "3–5th May, 2027",
+    description: "Join the conference.",
     icon: MapPin,
-  },
-  {
-    id: 6,
-    title: "Post-Conference",
-    date: "30 May, 2027",
-    description: "Recorded sessions available.",
-    icon: BookOpen,
   },
 ];
 
