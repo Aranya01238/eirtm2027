@@ -3,7 +3,28 @@ import { Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 
 const KeynoteSpeakers = () => {
-  const previousSpeakers = [
+  const speakers2027 = [
+    {
+      name: "Keynote Speaker 1",
+      designation: "Name, title, and institutional affiliation",
+      topic: "Keynote topic to be announced",
+      image: "",
+    },
+    {
+      name: "Keynote Speaker 2",
+      designation: "Name, title, and institutional affiliation",
+      topic: "Keynote topic to be announced",
+      image: "",
+    },
+    {
+      name: "Keynote Speaker 3",
+      designation: "Name, title, and institutional affiliation",
+      topic: "Keynote topic to be announced",
+      image: "",
+    },
+  ];
+
+  const speakers2026 = [
     {
       name: "Dr. Pere Roca i Cabarrocas",
       designation:
@@ -86,18 +107,58 @@ const KeynoteSpeakers = () => {
         {/* Header Section */}
         <div className="text-center mb-20">
           <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600 drop-shadow-[0_0_20px_rgba(56,189,248,0.5)] mb-4">
-            Previous Keynote Speakers
+            EIRTM Keynote Speakers
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-sky-500 mx-auto mb-6 rounded"></div>
           <p className="text-lg text-[#1e293b] max-w-3xl mx-auto leading-relaxed">
-            Explore distinguished keynote speakers who have previously joined
-            EIRTM from world-leading institutions.
+            Meet the keynote speakers joining EIRTM 2027, then explore the
+            distinguished speakers from the previous 2026 edition.
           </p>
         </div>
 
-        {/* Previous Speaker Cards */}
+        {/* 2027 Speaker Template */}
+        <section className="mb-24">
+          <div className="mb-10 text-center">
+            <h2 className="text-4xl font-extrabold text-[#0e6597]">EIRTM 2027 Keynote Speakers</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
+              Speaker profiles will be added here as the 2027 programme is confirmed.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
+            {speakers2027.map((speaker, i) => (
+              <motion.div
+                key={speaker.name}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.12 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full rounded-[2rem] border-2 border-dashed border-cyan-200 bg-white px-8 pb-10 pt-8 text-center shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
+                  <div className="mx-auto mb-8 flex h-36 w-36 items-center justify-center rounded-full border-4 border-cyan-100 bg-cyan-50 text-cyan-500">
+                    <Calendar className="h-12 w-12" />
+                  </div>
+                  <h3 className="mb-4 text-2xl font-extrabold text-[#0e6597]">{speaker.name}</h3>
+                  <p className="mb-6 text-lg leading-relaxed text-[#0088b6]">{speaker.designation}</p>
+                  <div className="rounded-3xl border border-cyan-100 bg-[#d9e4ea] px-6 py-5">
+                    <h4 className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-slate-500">Keynote Talk</h4>
+                    <p className="text-lg font-semibold leading-snug text-[#03558a]">{speaker.topic}</p>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* 2026 Previous Speaker Cards */}
+        <section>
+          <div className="mb-10 text-center">
+            <h2 className="text-4xl font-extrabold text-[#0e6597]">2026 Keynote Speakers</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
+              Previous-year keynote speakers from EIRTM 2026.
+            </p>
+          </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-24">
-          {previousSpeakers.map((speaker, i) => (
+          {speakers2026.map((speaker, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, scale: 0.9 }}
@@ -133,33 +194,7 @@ const KeynoteSpeakers = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Coming Soon Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <Card className="p-16 text-center bg-gradient-to-r from-cyan-500 to-sky-500 text-white shadow-lg rounded-3xl">
-            <h2 className="text-4xl font-extrabold mb-4 tracking-tight drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
-              EIRTM 2027 Keynote Speakers
-            </h2>
-            <p className="text-lg opacity-90 max-w-3xl mx-auto leading-relaxed">
-              We’re curating an exceptional lineup of thought leaders,
-              innovators, and global experts for EIRTM 2027. The official
-              keynote speaker list will be announced soon.
-              <span className="font-semibold text-white">
-                {" "}
-                Stay tuned for official announcements!
-              </span>
-            </p>
-            <div className="mt-8 flex items-center justify-center gap-3 text-white/90">
-              <Calendar className="h-5 w-5" />
-              <p className="text-lg font-medium">Final list by March 2027</p>
-            </div>
-          </Card>
-        </motion.div>
+        </section>
 
         {/* Speaking Opportunity Section */}
         <motion.div
