@@ -23,7 +23,7 @@ const gallery2026Images = [
   "/Gallery_2026/photo_2026-07-14_23-03-20.jpg",
   "/Gallery_2026/photo_2026-07-14_23-03-24.jpg",
   "/Gallery_2026/photo_2026-07-14_23-03-27.jpg",
-  "/Pic2.jpg",
+  "/Pic1.jpg",
   "/Pic3.jpg",
   "/Pic4.jpg",
 ];
